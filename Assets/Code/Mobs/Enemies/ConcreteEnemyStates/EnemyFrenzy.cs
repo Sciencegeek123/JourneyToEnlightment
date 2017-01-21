@@ -5,13 +5,13 @@ using UnityEngine;
 public class EnemyFrenzy : EnemyState
 {
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    public override void Start () {
 		
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    public override void Update () {
 		
 	}
 
@@ -19,13 +19,13 @@ public class EnemyFrenzy : EnemyState
     // Basic Enemy States
     public override void ToIdle(BaseEnemy myEnemy)
     {
-
+        base.ToIdle(myEnemy);
     }
 
     public override void ToRoam(BaseEnemy myEnemy)
     {
         // Conditions to prevent idle to roam
-
+        base.ToRoam(myEnemy);
     }
 
     public override void ToChase(BaseEnemy myEnemy)
@@ -35,7 +35,7 @@ public class EnemyFrenzy : EnemyState
 
     public override void ToAttack(BaseEnemy myEnemy)
     {
-
+        base.ToAttack(myEnemy);
     }
 
     // Responses to Bells
@@ -48,12 +48,12 @@ public class EnemyFrenzy : EnemyState
     // stop attack; wander around
     public override void ToConfuse(BaseEnemy myEnemy)
     {
-
+        base.ToConfuse(myEnemy);
     }
 
     // go nice NPC
     public override void ToSubdue(BaseEnemy myEnemy)
     {
-
+        base.ToSubdue(myEnemy);
     }
 }

@@ -7,7 +7,7 @@ public class StateSingleton : MonoBehaviour {
     private static StateSingleton instance;
     private static DBSingleton db;
     public int uid { get; set; }
-    public int[] bells = [0, 0, 0, 0, 0, 0];
+    public int[] bells = new int[6];
 
     public static StateSingleton get()
     {
@@ -22,7 +22,8 @@ public class StateSingleton : MonoBehaviour {
 	void Start () {
         db = DBSingleton.get();
         Debug.Log(db.createNewPlayer("User 1"));
-        Debug.Log(db.deletePlayer(6));
+        uid = 1;
+        db.setBells();
 	}
 	
 	// Update is called once per frame

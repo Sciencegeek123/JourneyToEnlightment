@@ -119,6 +119,15 @@ public class DBSingleton {
         }
     }    
 
+    /*public int[] loadPlayers()
+    {
+        conn = getConn();
+        cmd = getCmd();
+        Debug.Log("Fetching Users...");
+        cmd.CommandText = "SELECT UID FROM Player";
+        
+    }*/
+
     public void setBells()
     {
         ss = StateSingleton.get();
@@ -128,7 +137,11 @@ public class DBSingleton {
         cmd.ExecuteReader();
         IDataReader reader = cmd.ExecuteReader();
         reader.Read();
-        int[] bells = [reader.GetInt32(0), reader.GetInt32(1), reader.GetInt32(2), reader.GetInt32(3), reader.GetInt32(4), reader.GetInt32(5)];
+        int[] bells = new int[6];
+        for (int i = 0; i < bells.Length; i++)
+        {
+            bells[i] = reader.GetInt32(i);
+        }
         ss.setBells(bells);
         Debug.Log("Loaded Bells " + bells.ToString() + " to Player " + ss.uid);
     }

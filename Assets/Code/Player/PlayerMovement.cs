@@ -32,15 +32,14 @@ public class PlayerMovement : MonoBehaviour {
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-
         if (Physics.Raycast(ray, out outHit))
         {
-            Debug.Log(outHit.transform.gameObject.layer);
+            //sDebug.Log(outHit.transform.gameObject.layer);
             if(outHit.transform.gameObject.layer == 9) {
                 agent.SetDestination(outHit.point);
                 agent.Resume();
             } else {
-                agent.Stop();   
+                CancelAutoMove();  
             }
             //Debug.DrawRay(ray.origin, ray.direction*10, Color.red, 10);
             //Debug.DrawRay(outHit.point, Vector3.up*10, Color.green, 10);

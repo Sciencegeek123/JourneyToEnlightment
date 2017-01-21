@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour {
 
-	// Use this for initialization
+    // Use this for initialization
+    [SerializeField]
+    public AudioSource[] ambientSounds;
 	void Start () {
 		
 	}

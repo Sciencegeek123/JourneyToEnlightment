@@ -17,21 +17,51 @@ public class BaseEnemy : MonoBehaviour {
         CurrentState.ToSubdue(this);
     }
 
-    EnemyState CurrentState;
-    GameObject Player;
-
     public float MinDistanceToChase = 1.0f; // [m]
+    public float MaxDistanceToChase = 5.0f;
     public float MinDistanceToAttack = 0.3f; // [m]
     public float MaxIdleTime = 1.0f; // [s]
     public float MaxRoamTime = 4.0f; // [s]
+    public float AttackCooldownTime = 2.0f;
 
-    float TimeRoaming;
-    float TimeIdling;
+    public void SetState(EnemyState nextState)
+    { 
+        if(nextState != null)
+        {
+            if (CurrentState != null)
+            {
+                CurrentState.enabled = false;
+            }
+            CurrentState = nextState;
+            CurrentState.Enemy = this;
+            CurrentState.enabled = true;
+            CurrentState.Start();
+        }
+    }
 
-	// Use this for initialization
-	void Start () {
-        CurrentState = new EnemyIdle();
+    public float TimeRoaming;
+    public float TimeIdling;
+    public float TimeSinceAttack;
+
+    public EnemyState CurrentState;
+    public GameObject Player;
+    public UnityEngine.AI.NavMeshAgent agent { get; set; }
+
+    // Use this for initialization
+    void Start () {
+        EnemyState tempState = null;
+        tempState = GetComponent<EnemyIdle>();
+        if (tempState != null)
+        {
+            SetState(tempState);
+        }
+        else
+        {
+            Debug.Log("Couldn't initialize enemy's first state.");
+        }
+
         Player = GameObject.FindGameObjectWithTag("Player");
+        agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
 	}
 	
 	// Update is called once per frame
@@ -41,6 +71,8 @@ public class BaseEnemy : MonoBehaviour {
 
         EnemyIdle tempIdle = CurrentState as EnemyIdle;
         EnemyRoam tempRoam = CurrentState as EnemyRoam;
+        EnemyAttack tempAttack = CurrentState as EnemyAttack;
+        EnemyChase tempChase = CurrentState as EnemyChase;
   
         if( tempIdle != null )
         {
@@ -58,35 +90,48 @@ public class BaseEnemy : MonoBehaviour {
         {
             TimeRoaming = 0;
         }
+        if (tempAttack == null)
+        {
+            TimeSinceAttack += Time.deltaTime;
+        }
+        else
+        {
+            TimeSinceAttack = 0.0f;
+        }
 
-
+        Vector3 displacement = PlayerPosition - MyPosition;
         // if (plr-enemy).dist < engage distance
         // Chase();
-        if ( (PlayerPosition-MyPosition).magnitude < MinDistanceToChase )
+        if ( displacement.magnitude < MinDistanceToChase
+            && displacement.magnitude > MinDistanceToAttack)
         {
             Chase();
         }
         // if (plr-enemy).dist < attack distance
         // Attack();
-        else if ( (PlayerPosition-MyPosition).magnitude < MinDistanceToAttack )
+        else if (displacement.magnitude < MinDistanceToAttack 
+                && TimeSinceAttack > AttackCooldownTime)
         {
+            Debug.Log("Attempting to Attack");
             Attack();
         }
         // else if (roamingTime > maxroamTime)
         // Idle();
         else if ( TimeRoaming > MaxRoamTime )
         {
+            Debug.Log("Attempting To Idle");
             Idle();
         }
         // else if (idleTime> maxIdleTime)
         // Roam();
-        else if ( TimeIdling > MaxIdleTime )
+        else if ( TimeIdling > MaxIdleTime
+               || (displacement.magnitude > MaxDistanceToChase
+                   && tempChase != null) )
         {
+            Debug.Log("Attempting To Roam");
             Roam();
         }
-
 	}
-
 
     // internal state changing
 	void Idle()

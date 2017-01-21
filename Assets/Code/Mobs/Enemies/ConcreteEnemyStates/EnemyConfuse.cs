@@ -4,26 +4,26 @@ using UnityEngine;
 
 public class EnemyConfuse : EnemyState {
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    public override void Start () {
 		
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    public override void Update () {
 		
 	}
 
     // Basic Enemy States
     public override void ToIdle(BaseEnemy myEnemy)
     {
-        // Idle from idle?  get out of here
+        base.ToIdle(myEnemy);
     }
 
     public override void ToRoam(BaseEnemy myEnemy)
     {
         // Conditions to prevent idle to roam
-
+        base.ToRoam(myEnemy);
     }
 
     public override void ToChase(BaseEnemy myEnemy)
@@ -33,14 +33,14 @@ public class EnemyConfuse : EnemyState {
 
     public override void ToAttack(BaseEnemy myEnemy)
     {
-
+        base.ToAttack(myEnemy);
     }
 
     // Responses to Bells
     // Super attack
     public override void ToFrenzy(BaseEnemy myEnemy)
     {
-
+        base.ToFrenzy(myEnemy);
     }
 
     // stop attack; wander around
@@ -52,6 +52,6 @@ public class EnemyConfuse : EnemyState {
     // go nice NPC
     public override void ToSubdue(BaseEnemy myEnemy)
     {
-
+        base.ToSubdue(myEnemy);
     }
 }

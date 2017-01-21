@@ -5,12 +5,18 @@ using UnityEngine;
 public class EnemyAttack : EnemyState{
 
 	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
+	public override void Start () {
+        // Do Damage
+        // go To idle
+        if (Enemy != null)
+        {
+            Enemy.TimeSinceAttack = 0.0f;
+            ToIdle(Enemy);
+        }
+    }
+
+    // Update is called once per frame
+    public override void Update () {
 		
 	}
 
@@ -32,14 +38,14 @@ public class EnemyAttack : EnemyState{
 
     public override void ToAttack(BaseEnemy myEnemy)
     {
-        
+        // Don't transition to attack from attack
     }
 
     // Responses to Bells
     // Super attack
     public override void ToFrenzy(BaseEnemy myEnemy)
     {
-
+        //define frenzy behaviour
     }
 
     // stop attack; wander around

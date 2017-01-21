@@ -4,13 +4,15 @@ using Mono.Data.Sqlite;
 using System.Data;
 using UnityEngine;
 
-public class DBSingleton {
+public class DBSingleton
+{
 
     private static DBSingleton dbinstance;
     private static IDbConnection conn = null;
     private static IDbCommand cmd = null;
     private string connString = "URI=file:" + Application.dataPath + "/Code/Data/JourneyToEnlightenment.db";
     private static StateSingleton ss;
+    public enum BellType {Awareness, Fire, Water, Air, Earth, Enlightenment};
 
     public static DBSingleton get()
     {
@@ -18,6 +20,7 @@ public class DBSingleton {
         {
             dbinstance = new DBSingleton();
         }
+        Debug.Log("Connected to DBSingleton...");
         return dbinstance;
     }
 
@@ -33,7 +36,8 @@ public class DBSingleton {
                 Debug.LogError("ERROR: Database not found.");
             }
             return conn;
-        }else if (conn.State == ConnectionState.Closed || conn.State == ConnectionState.Broken)
+        }
+        else if (conn.State == ConnectionState.Closed || conn.State == ConnectionState.Broken)
         {
             Debug.Log("Recreating Connection...");
             conn = (IDbConnection)new SqliteConnection(connString);
@@ -43,10 +47,12 @@ public class DBSingleton {
                 Debug.LogError("ERROR: Database not found.");
             }
             return conn;
-        }else if (conn.State == ConnectionState.Open)
+        }
+        else if (conn.State == ConnectionState.Open)
         {
             return conn;
-        }else
+        }
+        else
         {
             Debug.LogError("Trying to execute new query before one has finished");
             return null;
@@ -68,10 +74,12 @@ public class DBSingleton {
         {
             Debug.LogError("ERROR: No Connection Esdtablished");
             return null;
-        }else if (cmd == null)
+        }
+        else if (cmd == null)
         {
             cmd = conn.CreateCommand();
-        }else if (cmd.CommandText != null)
+        }
+        else if (cmd.CommandText != null)
         {
             cmd.Dispose();
             cmd = conn.CreateCommand();
@@ -104,7 +112,8 @@ public class DBSingleton {
         return id;
     }
 
-    public int deletePlayer(int uid) {
+    public int deletePlayer(int uid)
+    {
         conn = getConn();
         cmd = getCmd();
         Debug.Log("Deleting User...");
@@ -117,24 +126,30 @@ public class DBSingleton {
             Debug.LogError("User could not be deleted");
             return -1;
         }
-    }    
+    }
 
-    /*public int[] loadPlayers()
+    public List<int> loadPlayers()
     {
         conn = getConn();
         cmd = getCmd();
         Debug.Log("Fetching Users...");
         cmd.CommandText = "SELECT UID FROM Player";
-        
-    }*/
+        IDataReader reader = cmd.ExecuteReader();
+        List<int> players = new List<int>();
+        while (reader.Read())
+        {
+            players.Add(reader.GetInt32(0));
+        }
+        return players;
+    }
 
     public void setBells()
     {
         ss = StateSingleton.get();
         conn = getConn();
         cmd = getCmd();
-        cmd.CommandText = "SELECT bell1,bell2,bell3,bell4,bell5,bell6 from Player where UID = " + ss.uid;
-        cmd.ExecuteReader();
+        cmd.CommandText = "SELECT Bell1, Bell2, Bell3, Bell4, Bell5, Bell6 from Player where UID = " + ss.uid;
+        Debug.Log(cmd.CommandText);
         IDataReader reader = cmd.ExecuteReader();
         reader.Read();
         int[] bells = new int[6];
@@ -142,7 +157,28 @@ public class DBSingleton {
         {
             bells[i] = reader.GetInt32(i);
         }
+        reader.Close();
         ss.setBells(bells);
-        Debug.Log("Loaded Bells " + bells.ToString() + " to Player " + ss.uid);
+        Debug.Log("Loaded Bells to Player " + ss.uid);
     }
+
+    public int updateBell(BellType bellNum)
+    {
+        ss = StateSingleton.get();
+        conn = getConn();
+        cmd = getCmd();
+        cmd.CommandText = "UPDATE Player SET " + bellNum + "  =  1 WHERE UID = " + ss.uid;
+        if (cmd.ExecuteNonQuery() > 0)
+        {
+            Debug.Log("Updated Bell...");
+            return 1;
+        }else
+        {
+            Debug.LogError("Failed to Update Bell");
+            return 0;
+        }  
+    }
+
+
 }
+

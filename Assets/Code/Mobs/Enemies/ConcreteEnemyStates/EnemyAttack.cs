@@ -15,42 +15,42 @@ public class EnemyAttack : EnemyState{
 	}
 
     // Basic Enemy States
-    public override void ToIdle()
+    public override void ToIdle(BaseEnemy myEnemy)
     {
-        base.ToIdle();
+        base.ToIdle(myEnemy);
     }
 
-    public override void ToRoam()
+    public override void ToRoam(BaseEnemy myEnemy)
     {
-        base.ToRoam();
+        base.ToRoam(myEnemy);
     }
 
-    public override void ToChase()
+    public override void ToChase(BaseEnemy myEnemy)
     {
-        base.ToChase();
+        base.ToChase(myEnemy);
     }
 
-    public override void ToAttack()
+    public override void ToAttack(BaseEnemy myEnemy)
     {
         
     }
 
     // Responses to Bells
     // Super attack
-    public override void ToFrenzy()
+    public override void ToFrenzy(BaseEnemy myEnemy)
     {
 
     }
 
     // stop attack; wander around
-    public override void ToConfuse()
+    public override void ToConfuse(BaseEnemy myEnemy)
     {
-
+        ToRoam(myEnemy);
     }
 
     // go nice NPC
-    public override void ToSubdue()
+    public override void ToSubdue(BaseEnemy myEnemy)
     {
-
+        ToIdle(myEnemy);
     }
 }

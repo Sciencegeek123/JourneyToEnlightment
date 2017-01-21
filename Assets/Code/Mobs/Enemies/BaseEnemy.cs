@@ -6,6 +6,11 @@ public class BaseEnemy : MonoBehaviour {
 
 	EnemyState CurrentState;
 
+    public float MinDistanceToEngage = 1.0f; // [m]
+    public float MinDistanceToAttack = 0.3f; // [m]
+    public float MaxIdleTime = 1.0f; // [s]
+    public float MaxRoamTime = 4.0f; // [s]
+
 	// Use this for initialization
 	void Start () {
         CurrentState = new EnemyIdle();
@@ -25,33 +30,33 @@ public class BaseEnemy : MonoBehaviour {
 
 	void Idle()
 	{
-		CurrentState.ToIdle();
+		CurrentState.ToIdle(this);
 	}
 	void Roam()
 	{
-		CurrentState.ToRoam();
+		CurrentState.ToRoam(this);
 	}
 	void Chase()
 	{
-		CurrentState.ToChase();
+		CurrentState.ToChase(this);
 	}
 	void Attack()
 	{
-		CurrentState.ToAttack();
+		CurrentState.ToAttack(this);
 	}
 	
     // For Bells to call
 	public void Frenzy()
 	{
-		CurrentState.ToFrenzy();
+		CurrentState.ToFrenzy(this);
 	}
 	public void Confuse()
 	{
-		CurrentState.ToConfuse();
+		CurrentState.ToConfuse(this);
 	}
 	public void Subdue()
 	{
-		CurrentState.ToSubdue();
+		CurrentState.ToSubdue(this);
 	}
 
 }

@@ -4,56 +4,62 @@ using UnityEngine;
 
 public class EnemyChase : EnemyState
 {
+    public UnityEngine.AI.NavMeshAgent agent { get; set; }
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    // Use this for initialization
+    public override void Start () {
+        agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
+        Player = GameObject.FindGameObjectWithTag("Player");
+    }
+
+    // Update is called once per frame
+    public override void Update () {
+        if(agent != null)
+        {
+            agent.SetDestination(Player.transform.position);
+            agent.Resume();
+        }
+    }
 
 
     // Basic Enemy States
     public override void ToIdle(BaseEnemy myEnemy)
     {
         // Idle from idle?  get out of here
+        base.ToIdle(myEnemy);
     }
 
     public override void ToRoam(BaseEnemy myEnemy)
     {
         // Conditions to prevent idle to roam
-
+        base.ToRoam(myEnemy);
     }
 
     public override void ToChase(BaseEnemy myEnemy)
     {
-        base.ToChase(myEnemy);
     }
 
     public override void ToAttack(BaseEnemy myEnemy)
     {
-
+        base.ToAttack(myEnemy);
     }
 
     // Responses to Bells
     // Super attack
     public override void ToFrenzy(BaseEnemy myEnemy)
     {
-
+        base.ToFrenzy(myEnemy);
     }
 
     // stop attack; wander around
     public override void ToConfuse(BaseEnemy myEnemy)
     {
-
+        base.ToConfuse(myEnemy);
     }
 
     // go nice NPC
     public override void ToSubdue(BaseEnemy myEnemy)
     {
-
+        base.ToSubdue(myEnemy);
     }
 }

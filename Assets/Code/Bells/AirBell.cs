@@ -5,8 +5,9 @@ using UnityEngine;
 
 public class AirBell : BaseBell
 {
-    public override void Emit()
+    public override void Emit(float range)
     {
         Debug.Log("Emitting Air");
+        BellEventEmitterSingleton.Instance.Emit(BellEventType.AirBellEvent, GetComponentInParent<Transform>(), range);
     }
 }

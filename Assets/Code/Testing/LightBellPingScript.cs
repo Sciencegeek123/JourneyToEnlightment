@@ -30,7 +30,8 @@ public class LightBellPingScript : MonoBehaviour {
 		}
 		pingCoroutineReference = PingCoroutine(delay);
 		StartCoroutine(pingCoroutineReference);
-	}
+
+    }
 
 	IEnumerator PingCoroutine(float delay = 0) {
 
@@ -38,9 +39,9 @@ public class LightBellPingScript : MonoBehaviour {
 
 		float startTime = Time.realtimeSinceStartup;
 
-		//myParticleSystem.Play();
-		
-		while(Time.realtimeSinceStartup - startTime < pingDuration) {
+        //myParticleSystem.Play();
+
+        while (Time.realtimeSinceStartup - startTime < pingDuration) {
 			float delta = (Time.realtimeSinceStartup - startTime) / pingDuration;
 			//float spotAngle = Mathf.Clamp01(SpotLightAngleCurve.Evaluate(delta))*180;
 			float spotIntensity = SpotLightIntensityCurve.Evaluate(delta);

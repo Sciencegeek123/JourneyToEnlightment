@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public delegate void BellPing(float delay);
 public class TestingSingleton {
     private static TestingSingleton instance = null;
     public static TestingSingleton Instance {

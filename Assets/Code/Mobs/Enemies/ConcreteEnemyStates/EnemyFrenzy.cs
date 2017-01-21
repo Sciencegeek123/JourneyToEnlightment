@@ -1,19 +1,34 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyFrenzy : EnemyState
 {
+    float TimeInFrenzy = 0.0f;
+    float MaxFrenzyTime = 5.0f;
+
+    public float MovementMultiplier = 2.0f;
+    NavMeshAgent agent;
 
     // Use this for initialization
     public override void Start () {
-		
-	}
+        agent = GetComponent<NavMeshAgent>();
+        agent.speed *= MovementMultiplier;
+        agent.angularSpeed *= MovementMultiplier;
+        agent.SetDestination(Player.transform.position);
+    }
 
     // Update is called once per frame
     public override void Update () {
-		
-	}
+        TimeInFrenzy += Time.deltaTime;
+        if (TimeInFrenzy >= MaxFrenzyTime)
+        {
+            agent.speed /= MovementMultiplier;
+            agent.angularSpeed /= MovementMultiplier;
+            ToChase(Enemy);
+        }
+    }
 
 
     // Basic Enemy States

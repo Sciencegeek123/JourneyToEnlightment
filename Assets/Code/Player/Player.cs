@@ -9,11 +9,33 @@ public class Player : MonoBehaviour {
     private static DBSingleton db;
     public float charge = 0f;
     public float cooldown = 0f;
+    [SerializeField]
+    AwarenessBell awarenessBell = null;
+    [SerializeField]
+    AirBell airBell = null;
+    [SerializeField]
+    FireBell fireBell = null;
+    [SerializeField]
+    WaterBell waterBell = null;
+    [SerializeField]
+    EarthBell earthBell = null;
+    [SerializeField]
+    EnlightenmentBell enlightenmentBell = null;
+
 
     void Awake()
     {
         ss = StateSingleton.get();
         db = DBSingleton.get();
+        ss.uid = db.createNewPlayer("User");
+        db.updateBell(DBSingleton.BellType.Awareness);
+        db.updateBell(DBSingleton.BellType.Air);
+        db.updateBell(DBSingleton.BellType.Fire);
+        db.updateBell(DBSingleton.BellType.Water);
+        db.updateBell(DBSingleton.BellType.Earth);
+        db.updateBell(DBSingleton.BellType.Enlightenment);
+        db.setBells();
+        db.deletePlayer(ss.uid);
     }
 
 	// Use this for initialization
@@ -28,12 +50,9 @@ public class Player : MonoBehaviour {
             Debug.Log("Grabbing Previous Bell");
             if (ss.curBell == 0)
             {
-                if (ss.bells[5].isActive)
-                {
+                if (ss.bells[5])
                     ss.curBell = 5;
-                }
-            }
-            else
+            }else
             {
                 ss.curBell--;
             }
@@ -44,10 +63,9 @@ public class Player : MonoBehaviour {
             if (ss.curBell == 5)
             {
                 ss.curBell = 0;
-            }
-            else
+            }else
             {
-                if (ss.bells[ss.curBell + 1].isActive)
+                if (ss.bells[ss.curBell + 1])
                 {
                     ss.curBell++;
                 }
@@ -70,10 +88,40 @@ public class Player : MonoBehaviour {
             {
                 cooldown = charge;
                 charge = 0;
-                ss.bells[ss.curBell].Emit();
+                switch (ss.curBell)
+                {
+                    case 0:
+                        if (ss.bells[0])
+                            awarenessBell.Emit();
+                        break;
+                    case 1:
+                        if (ss.bells[1])
+                            airBell.Emit();
+                        break;
+                    case 2:
+                        if (ss.bells[2])
+                            fireBell.Emit();
+                        break;
+                    case 3:
+                        if (ss.bells[3])
+                            waterBell.Emit();
+                        break;
+                    case 4:
+                        if (ss.bells[4])
+                            earthBell.Emit();
+                        break;
+                    case 5:
+                        if (ss.bells[5])
+                            enlightenmentBell.Emit();
+                        break;
+                    default:
+                        break;
+                }
             }else
             {
                 cooldown -= Time.deltaTime;
+                if (cooldown < 0)
+                    cooldown = 0;
             }
         }
     }

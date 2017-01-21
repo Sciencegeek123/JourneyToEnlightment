@@ -3,10 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-class Water : BaseBell
+public class AirBell : BaseBell
 {
     public override void Emit()
     {
-        Debug.Log("Emitting Water");
+        Debug.Log("Emitting Air");
     }
 }

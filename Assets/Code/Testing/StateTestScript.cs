@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TestScript : MonoBehaviour {
+public class StateTestScript : MonoBehaviour {
 
     private static StateSingleton ss;
     private static DBSingleton db;
@@ -30,32 +30,10 @@ public class TestScript : MonoBehaviour {
         if (Input.GetButtonDown("PrevBell"))
         {
             Debug.Log("Grabbing Previous Bell");
-            if (ss.curBell == 0)
-            {
-                if (ss.bells[5].isActive)
-                {
-                    ss.curBell = 5;
-                }
-            }
-            else
-            {
-                ss.curBell--;
-            }
         }
         if (Input.GetButtonDown("NextBell"))
         {
             Debug.Log("Grabbing Next Bell");
-            if (ss.curBell == 5)
-            {
-                ss.curBell = 0;
-            }
-            else
-            {
-                if (ss.bells[ss.curBell + 1].isActive)
-                {
-                    ss.curBell++;
-                }
-            }
         }
 
         if (Input.GetButton("Fire1"))
@@ -63,7 +41,7 @@ public class TestScript : MonoBehaviour {
             if (cooldown == 0f)
             {
                 charge += Time.deltaTime;
-                if (charge > 5f)
+                if (charge == 5f)
                 {
                     charge = 5f;
                 }
@@ -75,15 +53,10 @@ public class TestScript : MonoBehaviour {
             {
                 cooldown = charge;
                 charge = 0;
-                ss.bells[ss.curBell].Emit();
             }
             else
             {
                 cooldown -= Time.deltaTime;
-                if (cooldown < 0)
-                {
-                    cooldown = 0;
-                }
             }
         }
     }

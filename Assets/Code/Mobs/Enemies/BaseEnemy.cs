@@ -24,9 +24,6 @@ public class BaseEnemy : MonoBehaviour {
     public float MaxRoamTime = 4.0f; // [s]
     public float AttackCooldownTime = 2.0f;
 
-    Quaternion targetRotation = Quaternion.identity;
-    float MinVelocity = 0.1f;
-
     public void SetState(EnemyState nextState)
     { 
         if(nextState != null)
@@ -53,15 +50,10 @@ public class BaseEnemy : MonoBehaviour {
     public GameObject Player;
     public UnityEngine.AI.NavMeshAgent agent { get; set; }
 
-    Rigidbody rb;
-
     // Use this for initialization
     void Start () {
         EnemyState tempState = null;
         tempState = GetComponent<EnemyIdle>();
-        rb = GetComponent<Rigidbody>();
-
-        targetRotation = transform.rotation;
 
         if (tempState != null)
         {
@@ -78,6 +70,11 @@ public class BaseEnemy : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        HandleStateInfo();
+	}
+
+    void HandleStateInfo()
+    {
         Vector3 PlayerPosition = Player.transform.position;
         Vector3 MyPosition = transform.position;
 
@@ -85,8 +82,8 @@ public class BaseEnemy : MonoBehaviour {
         EnemyRoam tempRoam = CurrentState as EnemyRoam;
         EnemyAttack tempAttack = CurrentState as EnemyAttack;
         EnemyChase tempChase = CurrentState as EnemyChase;
-  
-        if( tempIdle != null )
+
+        if (tempIdle != null)
         {
             TimeIdling += Time.deltaTime;
         }
@@ -94,7 +91,7 @@ public class BaseEnemy : MonoBehaviour {
         {
             TimeIdling = 0;
         }
-        if( tempRoam != null )
+        if (tempRoam != null)
         {
             TimeRoaming += Time.deltaTime;
         }
@@ -114,36 +111,36 @@ public class BaseEnemy : MonoBehaviour {
         Vector3 displacement = PlayerPosition - MyPosition;
         // if (plr-enemy).dist < engage distance
         // Chase();
-        if ( displacement.magnitude <= MinDistanceToChase
+        if (displacement.magnitude <= MinDistanceToChase
             && displacement.magnitude > MinDistanceToAttack)
         {
             Chase();
         }
         // if (plr-enemy).dist < attack distance
         // Attack();
-        else if (displacement.magnitude <= MinDistanceToAttack 
+        else if (displacement.magnitude <= MinDistanceToAttack
                 && TimeSinceAttack > AttackCooldownTime)
         {
-           // Debug.Log("Attempting to Attack");
+            // Debug.Log("Attempting to Attack");
             Attack();
         }
         // else if (roamingTime > maxroamTime)
         // Idle();
-        else if ( TimeRoaming > MaxRoamTime )
+        else if (TimeRoaming > MaxRoamTime)
         {
-           // Debug.Log("Attempting To Idle");
+            // Debug.Log("Attempting To Idle");
             Idle();
         }
         // else if (idleTime> maxIdleTime)
         // Roam();
-        else if ( TimeIdling > MaxIdleTime
+        else if (TimeIdling > MaxIdleTime
                || (displacement.magnitude >= MaxDistanceToChase
-                   && tempChase != null) )
+                   && tempChase != null))
         {
             //Debug.Log("Attempting To Roam");
             Roam();
         }
-	}
+    }
 
     // internal state changing
 	void Idle()

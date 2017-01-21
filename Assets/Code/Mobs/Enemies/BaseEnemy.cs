@@ -44,11 +44,6 @@ public class BaseEnemy : MonoBehaviour {
 
     public void RotateTowardVelocity()
     {
-        if(rb.velocity.magnitude > MinVelocity)
-        {
-            targetRotation = Quaternion.LookRotation(rb.velocity, Vector3.up);
-        }
-        transform.rotation = targetRotation;
     }
     public float TimeRoaming;
     public float TimeIdling;

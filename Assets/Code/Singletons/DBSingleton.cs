@@ -12,7 +12,7 @@ public class DBSingleton
     private static IDbCommand cmd = null;
     private string connString = "URI=file:" + Application.dataPath + "/Code/Data/JourneyToEnlightenment.db";
     private static StateSingleton ss;
-    public enum BellType {Awareness, Fire, Water, Air, Earth, Enlightenment};
+    public enum BellType {Awareness, Air, Fire, Water, Earth, Enlightenment};
 
     public static DBSingleton get()
     {
@@ -148,7 +148,7 @@ public class DBSingleton
         ss = StateSingleton.get();
         conn = getConn();
         cmd = getCmd();
-        cmd.CommandText = "SELECT Bell1, Bell2, Bell3, Bell4, Bell5, Bell6 from Player where UID = " + ss.uid;
+        cmd.CommandText = "SELECT Awareness,Air,Fire,Water,Earth,Enlightenment from Player where UID = " + ss.uid;
         Debug.Log(cmd.CommandText);
         IDataReader reader = cmd.ExecuteReader();
         reader.Read();

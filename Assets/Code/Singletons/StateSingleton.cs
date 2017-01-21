@@ -2,12 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StateSingleton{
+public class StateSingleton {
 
     private static StateSingleton instance;
     private static DBSingleton db;
     public int uid = 0;
-    public int[] bells = new int[6];
+    public List<BaseBell> bells = new List<BaseBell>()
+    {
+        new Awareness(),
+        new Air(),
+        new Fire(),
+        new Water(),
+        new Earth(),
+        new Enlightenment()
+    };
+    public int curBell = 0;
 
     public static StateSingleton get()
     {
@@ -23,7 +32,10 @@ public class StateSingleton{
     {
         for (int i = 0; i < bellsArr.Length; i++)
         {
-            bells[i] = bellsArr[i];
+            if (bellsArr[i] == 1)
+            {
+                bells[i].isActive = true;
+            }
         }
     }
 }

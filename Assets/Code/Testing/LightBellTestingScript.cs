@@ -28,6 +28,7 @@ public class LightBellTestingScript : MonoBehaviour {
 			}
 			myLightCoRoutine = PlayLightCoRoutine();
 			StartCoroutine(myLightCoRoutine);
+			TestingSingleton.Instance.Emit(this.transform, 1000);
 		}
 		
 	}

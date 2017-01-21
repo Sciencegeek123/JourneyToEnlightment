@@ -176,8 +176,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bc9874b70a069b4c9fd94d12151fdf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MinDistanceToChase: 10
-  MaxDistanceToChase: 30
+  MinDistanceToChase: 5
+  MaxDistanceToChase: 10
   MinDistanceToAttack: 2
   MaxIdleTime: 1
   MaxRoamTime: 4
@@ -289,7 +289,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1886466803098874}
   m_Enabled: 1
   m_Radius: 0.7
-  m_Speed: 10
+  m_Speed: 5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120

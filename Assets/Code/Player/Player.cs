@@ -72,14 +72,21 @@ public class Player : MonoBehaviour {
             }
         }
 
-        if (Input.GetButton("Fire1"))
+        if (Input.GetButton("Fire2"))
         {
             if (cooldown == 0f)
             {
                 charge += Time.deltaTime;
-                if (charge == 5f)
+                if (charge > 5f)
                 {
                     charge = 5f;
+                }
+            }else
+            {
+                cooldown -= Time.deltaTime; 
+                if(cooldown < 0f)
+                {
+                    cooldown = 0f;
                 }
             }
         }else

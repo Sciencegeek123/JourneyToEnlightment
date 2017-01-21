@@ -23,17 +23,14 @@ public class EnemyConfuse : EnemyState {
     public override void ToRoam(BaseEnemy myEnemy)
     {
         // Conditions to prevent idle to roam
-        base.ToRoam(myEnemy);
     }
 
     public override void ToChase(BaseEnemy myEnemy)
     {
-        base.ToChase(myEnemy);
     }
 
     public override void ToAttack(BaseEnemy myEnemy)
     {
-        base.ToAttack(myEnemy);
     }
 
     // Responses to Bells

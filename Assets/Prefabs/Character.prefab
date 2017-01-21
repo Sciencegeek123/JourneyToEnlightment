@@ -63,7 +63,7 @@ GameObject:
   - component: {fileID: 81300091990466418}
   m_Layer: 8
   m_Name: Camera
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -270,6 +270,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed4040af7e56b754698c16bc80c335c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mySpotLight: {fileID: 0}
+  myPointLight: {fileID: 0}
+  myParticleSystem: {fileID: 0}
+  SpotLightIntensityCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  PointLightIntensityCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  SpotLightAngleCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  SpotLightDuration: 5
 --- !u!124 &124164722329952312
 Behaviour:
   m_ObjectHideFlags: 1

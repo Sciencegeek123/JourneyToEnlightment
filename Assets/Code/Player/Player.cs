@@ -7,6 +7,8 @@ public class Player : MonoBehaviour {
 
     private static StateSingleton ss;
     private static DBSingleton db;
+    public float charge = 0f;
+    public float cooldown = 0f;
 
     void Awake()
     {
@@ -52,9 +54,27 @@ public class Player : MonoBehaviour {
             }
         }
 
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButton("Fire1"))
         {
-            ss.bells[ss.curBell].Emit();
+            if (cooldown == 0f)
+            {
+                charge += Time.deltaTime;
+                if (charge == 5f)
+                {
+                    charge = 5f;
+                }
+            }
+        }else
+        {
+            if(charge > 0)
+            {
+                cooldown = charge;
+                charge = 0;
+                ss.bells[ss.curBell].Emit();
+            }else
+            {
+                cooldown -= Time.deltaTime;
+            }
         }
     }
 }

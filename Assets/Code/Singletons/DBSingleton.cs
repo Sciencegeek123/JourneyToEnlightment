@@ -128,17 +128,17 @@ public class DBSingleton
         }
     }
 
-    public List<int> loadPlayers()
+    public List<PlayerInfo> loadPlayers()
     {
         conn = getConn();
         cmd = getCmd();
         Debug.Log("Fetching Users...");
-        cmd.CommandText = "SELECT UID FROM Player";
+        cmd.CommandText = "SELECT UID,Name FROM Player";
         IDataReader reader = cmd.ExecuteReader();
-        List<int> players = new List<int>();
+        List<PlayerInfo> players = new List<PlayerInfo>();
         while (reader.Read())
         {
-            players.Add(reader.GetInt32(0));
+            players.Add(new PlayerInfo(reader.GetInt32(0),reader.GetString(1)));
         }
         return players;
     }

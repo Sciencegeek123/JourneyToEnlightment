@@ -19,17 +19,17 @@ public class PlayerMovement : MonoBehaviour {
 
     void Update()
     {
-        if (controller.isGrounded)
+        /*if (controller.isGrounded)
         {
             moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
             moveDirection = transform.TransformDirection(moveDirection);
             moveDirection *= speed;
-            /*if (Input.GetButton("Jump"))
+            if (Input.GetButton("Jump"))
                 moveDirection.y = jumpSpeed;
-            */
+            
         }
         moveDirection.y -= gravity * Time.deltaTime;
         transform.Rotate(0, Input.GetAxis("Rotate") * rotSpeed * Time.deltaTime, 0);
-        controller.Move(moveDirection * Time.deltaTime);
+        controller.Move(moveDirection * Time.deltaTime);*/
     }
 }

@@ -48,10 +48,28 @@ public class Player : MonoBehaviour {
         if (Input.GetButtonDown("PrevBell"))
         {
             Debug.Log("Grabbing Previous Bell");
+            if (ss.curBell == 0)
+            {
+                if (ss.bells[5])
+                    ss.curBell = 5;
+            }else
+            {
+                ss.curBell--;
+            }
         }
         if (Input.GetButtonDown("NextBell"))
         {
             Debug.Log("Grabbing Next Bell");
+            if (ss.curBell == 5)
+            {
+                ss.curBell = 0;
+            }else
+            {
+                if (ss.bells[ss.curBell + 1])
+                {
+                    ss.curBell++;
+                }
+            }
         }
 
         if (Input.GetButton("Fire1"))
@@ -72,10 +90,38 @@ public class Player : MonoBehaviour {
                 charge = 0;
                 switch (ss.curBell)
                 {
+                    case 0:
+                        if (ss.bells[0])
+                            awarenessBell.Emit();
+                        break;
+                    case 1:
+                        if (ss.bells[1])
+                            airBell.Emit();
+                        break;
+                    case 2:
+                        if (ss.bells[2])
+                            fireBell.Emit();
+                        break;
+                    case 3:
+                        if (ss.bells[3])
+                            waterBell.Emit();
+                        break;
+                    case 4:
+                        if (ss.bells[4])
+                            earthBell.Emit();
+                        break;
+                    case 5:
+                        if (ss.bells[5])
+                            enlightenmentBell.Emit();
+                        break;
+                    default:
+                        break;
                 }
             }else
             {
                 cooldown -= Time.deltaTime;
+                if (cooldown < 0)
+                    cooldown = 0;
             }
         }
     }

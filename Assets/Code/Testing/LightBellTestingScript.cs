@@ -7,6 +7,8 @@ public class LightBellTestingScript : MonoBehaviour {
 	[SerializeField] Light mySpotLight;
 	[SerializeField] Light myPointLight;
 
+	[SerializeField] ParticleSystem myParticleSystem;
+
 	[SerializeField] AnimationCurve SpotLightIntensityCurve;
 	[SerializeField] AnimationCurve PointLightIntensityCurve;
 	[SerializeField] AnimationCurve SpotLightAngleCurve;
@@ -32,6 +34,8 @@ public class LightBellTestingScript : MonoBehaviour {
 
 	IEnumerator PlayLightCoRoutine() {
 		float startTime = Time.realtimeSinceStartup;
+
+		myParticleSystem.Play();
 		
 		while(Time.realtimeSinceStartup - startTime < SpotLightDuration) {
 			float delta = (Time.realtimeSinceStartup - startTime) / SpotLightDuration;
@@ -45,5 +49,7 @@ public class LightBellTestingScript : MonoBehaviour {
 
 			yield return null;
 		}
+
+		myParticleSystem.Stop();
 	}
 }

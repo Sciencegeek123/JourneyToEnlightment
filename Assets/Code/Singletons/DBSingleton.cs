@@ -12,6 +12,7 @@ public class DBSingleton
     private static IDbCommand cmd = null;
     private string connString = "URI=file:" + Application.dataPath + "/Code/Data/JourneyToEnlightenment.db";
     private static StateSingleton ss;
+    public enum BellType {Awareness, Fire, Water, Air, Earth, Enlightenment};
 
     public static DBSingleton get()
     {
@@ -161,12 +162,12 @@ public class DBSingleton
         Debug.Log("Loaded Bells to Player " + ss.uid);
     }
 
-    public int updateBell(int bellNum)
+    public int updateBell(BellType bellNum)
     {
         ss = StateSingleton.get();
         conn = getConn();
         cmd = getCmd();
-        cmd.CommandText = "UPDATE Player SET Bell" + bellNum + "  =  1 WHERE UID = " + ss.uid;
+        cmd.CommandText = "UPDATE Player SET " + bellNum + "  =  1 WHERE UID = " + ss.uid;
         if (cmd.ExecuteNonQuery() > 0)
         {
             Debug.Log("Updated Bell...");
@@ -175,7 +176,7 @@ public class DBSingleton
         {
             Debug.LogError("Failed to Update Bell");
             return 0;
-        }        
+        }  
     }
 
 

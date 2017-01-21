@@ -6,9 +6,11 @@ public class TestScript : MonoBehaviour {
 
     private static StateSingleton ss;
     private static DBSingleton db;
+    public float charge = 0f;
+    public float cooldown = 0f;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         ss = StateSingleton.get();
         db = DBSingleton.get();
         ss.uid = db.createNewPlayer("User");
@@ -21,10 +23,11 @@ public class TestScript : MonoBehaviour {
         db.setBells();
         db.deletePlayer(ss.uid);
     }
-	
-	// Update is called once per frame
-	void Update () {
-		if (Input.GetButtonDown("PrevBell"))
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (Input.GetButtonDown("PrevBell"))
         {
             Debug.Log("Grabbing Previous Bell");
             if (ss.curBell == 0)
@@ -33,7 +36,8 @@ public class TestScript : MonoBehaviour {
                 {
                     ss.curBell = 5;
                 }
-            }else
+            }
+            else
             {
                 ss.curBell--;
             }
@@ -54,9 +58,33 @@ public class TestScript : MonoBehaviour {
             }
         }
 
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButton("Fire1"))
         {
-            ss.bells[ss.curBell].Emit();
+            if (cooldown == 0f)
+            {
+                charge += Time.deltaTime;
+                if (charge > 5f)
+                {
+                    charge = 5f;
+                }
+            }
         }
-	}
+        else
+        {
+            if (charge > 0)
+            {
+                cooldown = charge;
+                charge = 0;
+                ss.bells[ss.curBell].Emit();
+            }
+            else
+            {
+                cooldown -= Time.deltaTime;
+                if (cooldown < 0)
+                {
+                    cooldown = 0;
+                }
+            }
+        }
+    }
 }

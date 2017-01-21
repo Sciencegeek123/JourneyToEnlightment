@@ -7,7 +7,8 @@ public class EnemyAttack : EnemyState{
 	// Use this for initialization
 	public override void Start () {
         // Do Damage
-        // go To idle
+        // go To idle\
+        Debug.Log("Enemy Attack!");
         if (Enemy != null)
         {
             Enemy.TimeSinceAttack = 0.0f;

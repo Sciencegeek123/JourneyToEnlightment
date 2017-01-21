@@ -5,17 +5,20 @@ using UnityEngine;
 public class EnemyChase : EnemyState
 {
     public UnityEngine.AI.NavMeshAgent agent { get; set; }
+    Rigidbody rb;
 
     // Use this for initialization
     public override void Start () {
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         Player = GameObject.FindGameObjectWithTag("Player");
+
     }
 
     // Update is called once per frame
     public override void Update () {
         if(agent != null)
         {
+            Enemy.RotateTowardVelocity();
             agent.SetDestination(Player.transform.position);
             agent.Resume();
         }

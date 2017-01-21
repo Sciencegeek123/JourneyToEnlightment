@@ -17,7 +17,6 @@ public class EnemyState : MonoBehaviour {
 	
 	// Update is called once per frame
 	public virtual void Update () {
-		
 	}
 
     // Basic Enemy States

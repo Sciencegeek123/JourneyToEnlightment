@@ -11,6 +11,8 @@ public class EnemyRoam : EnemyState
 
     void GetNewRoamPosition()
     {
+        int maxRecalculationAttempts = 3;
+        int attempt = 0;
         // Find a random spot in a circle from ya
         RoamToPosition = Random.insideUnitCircle * Random.Range(MinRoamDistance, MaxRoamDistance);
         RoamToPosition += gameObject.transform.position;
@@ -18,6 +20,12 @@ public class EnemyRoam : EnemyState
         if (agent != null)
         {
             agent.SetDestination(RoamToPosition);
+            while (agent.pathStatus != NavMeshPathStatus.PathComplete && attempt < maxRecalculationAttempts)
+            {
+                agent.SetDestination(RoamToPosition);
+                ++attempt;
+            }
+
         }
         //Debug.Log("Target Location Vector: " + RoamToPosition.ToString());
     }

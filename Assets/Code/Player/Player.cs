@@ -94,37 +94,38 @@ public class Player : MonoBehaviour {
             if(charge > 0)
             {
                 cooldown = charge;
-                charge = 0;
                 switch (ss.curBell)
                 {
                     case 0:
                         if (ss.bells[0])
-                            awarenessBell.Emit();
+                            awarenessBell.Emit(charge);
                         break;
                     case 1:
                         if (ss.bells[1])
-                            airBell.Emit();
+                            airBell.Emit(charge);
                         break;
                     case 2:
                         if (ss.bells[2])
-                            fireBell.Emit();
+                            fireBell.Emit(charge);
                         break;
                     case 3:
                         if (ss.bells[3])
-                            waterBell.Emit();
+                            waterBell.Emit(charge);
                         break;
                     case 4:
                         if (ss.bells[4])
-                            earthBell.Emit();
+                            earthBell.Emit(charge);
                         break;
                     case 5:
                         if (ss.bells[5])
-                            enlightenmentBell.Emit();
+                            enlightenmentBell.Emit(charge);
                         break;
                     default:
                         break;
                 }
-            }else
+                charge = 0;
+            }
+            else
             {
                 cooldown -= Time.deltaTime;
                 if (cooldown < 0)

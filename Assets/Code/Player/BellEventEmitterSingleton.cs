@@ -7,7 +7,7 @@ public delegate void BellPing(float delay);
 public enum BellEventType
 {
     AwarenessBellEvent = 0,
-    WindBellEvent,
+    AirBellEvent,
     FireBellEvent,
     WaterBellEvent,
     EarthBellEvent,
@@ -43,7 +43,7 @@ public class BellEventEmitterSingleton
     BellEventEmitterSingleton()
     {
         PingDictionaries.Add(BellEventType.AwarenessBellEvent, new List<PingPair>());
-        PingDictionaries.Add(BellEventType.WindBellEvent, new List<PingPair>());
+        PingDictionaries.Add(BellEventType.AirBellEvent, new List<PingPair>());
         PingDictionaries.Add(BellEventType.FireBellEvent, new List<PingPair>());
         PingDictionaries.Add(BellEventType.WaterBellEvent, new List<PingPair>());
         PingDictionaries.Add(BellEventType.EarthBellEvent, new List<PingPair>());

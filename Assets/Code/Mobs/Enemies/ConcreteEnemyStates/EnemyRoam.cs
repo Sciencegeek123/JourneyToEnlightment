@@ -33,6 +33,7 @@ public class EnemyRoam : EnemyState
     public override void Start () {
         base.Start();
         GetNewRoamPosition();
+        Enemy.RotateTowardVelocity();
     }
 
     // Update is called once per frame
@@ -41,6 +42,7 @@ public class EnemyRoam : EnemyState
         {
             GetNewRoamPosition();
         }
+        Enemy.RotateTowardVelocity();
     }
 
     // Basic Enemy States

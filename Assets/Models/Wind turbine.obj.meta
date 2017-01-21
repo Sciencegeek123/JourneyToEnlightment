@@ -1,16 +1,22 @@
 fileFormatVersion: 2
-guid: 6af21f01d4a22a44c8f9327392f19da9
-timeCreated: 1485014167
+guid: 7cecc007c3b864be39fd2e2ec7ee74ce
+timeCreated: 1485036521
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Group11958
-    9500000: //RootNode
+    100000: pCube53
+    100002: polySurface34
+    100004: //RootNode
+    400000: pCube53
+    400002: polySurface34
+    400004: //RootNode
+    2300000: pCube53
+    2300002: polySurface34
+    3300000: pCube53
+    3300002: polySurface34
+    4300000: pCube53
+    4300002: polySurface34
   materials:
     importMaterials: 1
     materialName: 0
@@ -35,7 +41,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 27
+    globalScale: 1.5
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
@@ -73,7 +79,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

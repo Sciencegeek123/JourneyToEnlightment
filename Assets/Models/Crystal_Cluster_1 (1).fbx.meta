@@ -1,53 +1,15 @@
 fileFormatVersion: 2
-guid: 5e0a676eed9b348959cdf7a345366e6e
-timeCreated: 1485028125
+guid: 00935ae25c3f44b9ba7e169389333308
+timeCreated: 1485034376
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
     100000: //RootNode
-    100002: Crystal1
-    100004: Crystal2
-    100006: Crystal21
-    100008: Crystal3
-    100010: Crystal4
-    100012: Crystal5
-    100014: Crystal6
-    100016: Crystal_Column_Large
-    100018: Crystal_Column_Medium
-    100020: pPlane3
-    100022: transform1
-    100024: transform2
-    100026: transform3
-    100028: transform4
-    100030: transform5
-    100032: transform6
-    100034: transform7
-    100036: transform8
-    100038: transform9
     400000: //RootNode
-    400002: Crystal1
-    400004: Crystal2
-    400006: Crystal21
-    400008: Crystal3
-    400010: Crystal4
-    400012: Crystal5
-    400014: Crystal6
-    400016: Crystal_Column_Large
-    400018: Crystal_Column_Medium
-    400020: pPlane3
-    400022: transform1
-    400024: transform2
-    400026: transform3
-    400028: transform4
-    400030: transform5
-    400032: transform6
-    400034: transform7
-    400036: transform8
-    400038: transform9
-    2300000: Crystal21
-    3300000: Crystal21
-    4300000: Crystal21
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: pPlane7
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -73,7 +35,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 100
+    globalScale: 500
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1

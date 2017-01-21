@@ -3,10 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-class Fire : BaseBell
+public class EarthBell : BaseBell
 {
     public override void Emit()
     {
-        Debug.Log("Emitting Fire");
+        Debug.Log("Emitting Earth");
     }
 }

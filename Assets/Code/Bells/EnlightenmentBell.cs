@@ -3,10 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-class Awareness : BaseBell
+public class EnlightenmentBell : BaseBell
 {
     public override void Emit()
     {
-        Debug.Log("Emitting Awareness");
+        Debug.Log("Emitting Enlightenment");
     }
 }

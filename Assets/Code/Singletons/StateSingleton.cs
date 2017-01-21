@@ -7,15 +7,14 @@ public class StateSingleton {
     private static StateSingleton instance;
     private static DBSingleton db;
     public int uid = 0;
-    public List<BaseBell> bells = new List<BaseBell>()
-    {
-        new Awareness(),
-        new Air(),
-        new Fire(),
-        new Water(),
-        new Earth(),
-        new Enlightenment()
-    };
+    public int[] bells = new int[6];
+    public AwarenessBell awarenessBell = null;
+    public AirBell airBell = null;
+    public FireBell fireBell = null;
+    public WaterBell waterBell = null;
+    public EarthBell earthBell = null;
+    public EnlightenmentBell enlightenmentBell = null;
+
     public int curBell = 0;
 
     public static StateSingleton get()
@@ -34,7 +33,24 @@ public class StateSingleton {
         {
             if (bellsArr[i] == 1)
             {
-                bells[i].isActive = true;
+                switch (i)
+                {
+                    case 0: awarenessBell = Player.FindObjectOfType<AwarenessBell>();
+                        break;
+                    case 1: airBell = Player.FindObjectOfType<AirBell>();
+                        break;
+                    case 2: fireBell = Player.FindObjectOfType<FireBell>();
+                        break;
+                    case 3: waterBell = Player.FindObjectOfType<WaterBell>();
+                        break;
+                    case 4: earthBell = Player.FindObjectOfType<EarthBell>();
+                        break;
+                    case 5: enlightenmentBell = Player.FindObjectOfType<EnlightenmentBell>();
+                        break;
+                    default:
+                        break;
+                }
+                bells[i] = bellsArr[i];
             }
         }
     }

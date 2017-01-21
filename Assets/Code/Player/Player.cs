@@ -9,11 +9,33 @@ public class Player : MonoBehaviour {
     private static DBSingleton db;
     public float charge = 0f;
     public float cooldown = 0f;
+    [SerializeField]
+    AwarenessBell awarenessBell = null;
+    [SerializeField]
+    AirBell airBell = null;
+    [SerializeField]
+    FireBell fireBell = null;
+    [SerializeField]
+    WaterBell waterBell = null;
+    [SerializeField]
+    EarthBell earthBell = null;
+    [SerializeField]
+    EnlightenmentBell enlightenmentBell = null;
+
 
     void Awake()
     {
         ss = StateSingleton.get();
         db = DBSingleton.get();
+        ss.uid = db.createNewPlayer("User");
+        db.updateBell(DBSingleton.BellType.Awareness);
+        db.updateBell(DBSingleton.BellType.Air);
+        db.updateBell(DBSingleton.BellType.Fire);
+        db.updateBell(DBSingleton.BellType.Water);
+        db.updateBell(DBSingleton.BellType.Earth);
+        db.updateBell(DBSingleton.BellType.Enlightenment);
+        db.setBells();
+        db.deletePlayer(ss.uid);
     }
 
 	// Use this for initialization
@@ -26,32 +48,10 @@ public class Player : MonoBehaviour {
         if (Input.GetButtonDown("PrevBell"))
         {
             Debug.Log("Grabbing Previous Bell");
-            if (ss.curBell == 0)
-            {
-                if (ss.bells[5].isActive)
-                {
-                    ss.curBell = 5;
-                }
-            }
-            else
-            {
-                ss.curBell--;
-            }
         }
         if (Input.GetButtonDown("NextBell"))
         {
             Debug.Log("Grabbing Next Bell");
-            if (ss.curBell == 5)
-            {
-                ss.curBell = 0;
-            }
-            else
-            {
-                if (ss.bells[ss.curBell + 1].isActive)
-                {
-                    ss.curBell++;
-                }
-            }
         }
 
         if (Input.GetButton("Fire1"))
@@ -70,7 +70,9 @@ public class Player : MonoBehaviour {
             {
                 cooldown = charge;
                 charge = 0;
-                ss.bells[ss.curBell].Emit();
+                switch (ss.curBell)
+                {
+                }
             }else
             {
                 cooldown -= Time.deltaTime;

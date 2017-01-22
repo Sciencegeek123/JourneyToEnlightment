@@ -18,7 +18,7 @@ public class FireBell : BaseBell
         
         foreach (var item in BellEventEmitterSingleton.Instance.PingListeners[(int)BellEventType.FireBellEvent])
         {
-            if (item.p != null)
+            if (item.p != null && item.o != null)
             {
                 if ((item.o.position - transform.position).magnitude < range)
                 {
@@ -33,7 +33,7 @@ public class FireBell : BaseBell
         }
         foreach (var item in BellEventEmitterSingleton.Instance.PingListeners[(int)BellEventType.AllBellEvents])
         {
-            if (item.p != null)
+            if (item.p != null && item.o != null)
             {
                 if ((item.o.position - transform.position).magnitude < range)
                 {

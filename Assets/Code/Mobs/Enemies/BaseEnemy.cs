@@ -59,9 +59,10 @@ public class BaseEnemy : MonoBehaviour {
     void Ping(BellEventType type, Transform transform, float delay)
     {
         Debug.Log("Received Ping");
-        if(type == BellEventType.AirBellEvent)
+        if(type == BellEventType.AirBellEvent
+            || type == BellEventType.FireBellEvent)
         {
-            Debug.Log("Is Air");
+            Debug.Log("Caught Air or Fire");
             DoDeath();
         }
     }
@@ -70,12 +71,12 @@ public class BaseEnemy : MonoBehaviour {
     {
         Debug.Log("Dead");
         enabled = false;
-        Destroy(this);
+        Destroy(gameObject);
     }
 
     // Use this for initialization
     public virtual void Start () {
-        BellEventEmitterSingleton.Instance.Register(BellEventType.AwarenessBellEvent, this.transform, Ping);
+        BellEventEmitterSingleton.Instance.Register(BellEventType.AllBellEvents, this.transform, Ping);
         EnemyState tempState = null;
         tempState = GetComponent<EnemyIdle>();
         lastSoundStart = Random.Range(0,30);

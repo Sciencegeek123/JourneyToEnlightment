@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyAttack : EnemyState{
-
+    public float AttackLength = 1.5f;
+    float TimeInAttack = 0.0f;
 	// Use this for initialization
 	public override void Start () {
         // Do Damage
@@ -11,14 +12,17 @@ public class EnemyAttack : EnemyState{
         Debug.Log("Enemy Attack!");
         if (Enemy != null)
         {
-            Enemy.TimeSinceAttack = 0.0f;
-            ToIdle(Enemy);
+            TimeInAttack = 0.0f;
         }
     }
 
     // Update is called once per frame
     public override void Update () {
-		
+        TimeInAttack += Time.deltaTime;
+		if(TimeInAttack > AttackLength)
+        {
+            ToIdle(Enemy);
+        }
 	}
 
     // Basic Enemy States

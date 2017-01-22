@@ -19,7 +19,8 @@ public class FrogAudioScript : MonoBehaviour {
         if (audioSource != null)
         {
             if (audioSource.isPlaying == false
-                && Random.Range(0.0f, 1.0f) > croakChance)
+                && Random.Range(0.0f, 1.0f) > croakChance
+                && FrogCroaks.Length > 0)
             {
                 audioSource.clip = FrogCroaks[Random.Range(0, FrogCroaks.Length - 1)];
                 //Debug.Log("Croak!");

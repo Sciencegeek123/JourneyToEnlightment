@@ -1024,6 +1024,11 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114565334051939906, guid: f1ba265eab911f44e9b750afadce1ebf,
+        type: 2}
+      propertyPath: croakChance
+      value: 0.9995
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f1ba265eab911f44e9b750afadce1ebf, type: 2}
   m_IsPrefabParent: 0
@@ -6233,6 +6238,11 @@ Prefab:
     - target: {fileID: 4849093378894680, guid: f1ba265eab911f44e9b750afadce1ebf, type: 2}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114565334051939906, guid: f1ba265eab911f44e9b750afadce1ebf,
+        type: 2}
+      propertyPath: croakChance
+      value: 0.9995
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f1ba265eab911f44e9b750afadce1ebf, type: 2}
@@ -13146,6 +13156,11 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114565334051939906, guid: f1ba265eab911f44e9b750afadce1ebf,
+        type: 2}
+      propertyPath: croakChance
+      value: 0.9995
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f1ba265eab911f44e9b750afadce1ebf, type: 2}
   m_IsPrefabParent: 0
@@ -14436,6 +14451,11 @@ Prefab:
     - target: {fileID: 4849093378894680, guid: f1ba265eab911f44e9b750afadce1ebf, type: 2}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114565334051939906, guid: f1ba265eab911f44e9b750afadce1ebf,
+        type: 2}
+      propertyPath: croakChance
+      value: 0.9995
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f1ba265eab911f44e9b750afadce1ebf, type: 2}
@@ -16229,6 +16249,11 @@ Prefab:
     - target: {fileID: 4849093378894680, guid: f1ba265eab911f44e9b750afadce1ebf, type: 2}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114565334051939906, guid: f1ba265eab911f44e9b750afadce1ebf,
+        type: 2}
+      propertyPath: croakChance
+      value: 0.9995
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f1ba265eab911f44e9b750afadce1ebf, type: 2}

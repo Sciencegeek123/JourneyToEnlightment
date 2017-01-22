@@ -25,16 +25,39 @@ public class AttainBell : MonoBehaviour {
     private CapsuleCollider col;
     private static StateSingleton ss;
 
+    [SerializeField] float duration = 5;
+    [SerializeField] Light crystalLight;
+    [SerializeField] Material crystalSpecialMaterial;
+    [SerializeField] Color PointLightColor;
+    [SerializeField] AnimationCurve PointLightIntensityOverLife;
+    [SerializeField] Gradient EmissionColorOverLife;
+
+
+    private Material InitialMaterial;
+
+    float startTime = -60;
+
 	// Use this for initialization
 	void Start () {
         //col = GetComponent<CapsuleCollider>();
         ss = StateSingleton.get();
-	}
+        BellEventEmitterSingleton.Instance.Register(BellEventType.AwarenessBellEvent, this.transform, Ping);
+        InitialMaterial = this.gameObject.GetComponent<MeshRenderer>().material;
+    }
 	
 	// Update is called once per frame
 	void Update () {
-
-	}
+        if (startTime < Time.realtimeSinceStartup && Time.realtimeSinceStartup - startTime < duration)
+        {
+            if (!crystalLight.enabled) { crystalLight.enabled = true; }
+            float delta = (Time.realtimeSinceStartup - startTime) / duration;
+            this.gameObject.GetComponent<MeshRenderer>().material = crystalSpecialMaterial;
+            crystalLight.color = PointLightColor;
+            crystalLight.intensity = PointLightIntensityOverLife.Evaluate(delta);
+            this.gameObject.GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", EmissionColorOverLife.Evaluate(delta));
+        }
+        else if (crystalLight.enabled) { crystalLight.enabled = false; }
+    }
 
     void OnTriggerEnter(Collider col)
     {
@@ -70,6 +93,13 @@ public class AttainBell : MonoBehaviour {
             Debug.Log("Bell Attained");
             ss.bells[bellNum] = true;
             Destroy(this.gameObject);
+        }
+    }
+    void Ping(BellEventType type, Transform transform, float delay)
+    {
+        if (Time.realtimeSinceStartup - startTime > duration)
+        {
+            startTime = Time.realtimeSinceStartup + delay;
         }
     }
 }

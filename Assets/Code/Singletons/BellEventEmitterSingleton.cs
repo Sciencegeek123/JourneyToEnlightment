@@ -68,7 +68,7 @@ public class BellEventEmitterSingleton
         {
             foreach (var item in dict)
             {
-                if ((item.o.position - root.position).magnitude < range)
+                if (item.p != null && (item.o.position - root.position).magnitude < range)
                 {
                     item.p(type, root, Mathf.Sqrt((item.o.position - root.position).magnitude) + 2.5f);
                 }
@@ -79,7 +79,7 @@ public class BellEventEmitterSingleton
         {
             foreach (var item in dict)
             {
-                if ((item.o.position - root.position).magnitude < range)
+                if (item.p != null && (item.o.position - root.position).magnitude < range)
                 {
                     item.p(type, root, Mathf.Sqrt((item.o.position - root.position).magnitude) + 2.5f);
                 }

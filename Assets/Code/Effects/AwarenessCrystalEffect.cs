@@ -16,7 +16,7 @@ public class AwarenessCrystalEffect : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        BellEventEmitterSingleton.Instance.Register(BellEventType.AwarenessBellEvent, transform, null);
+        BellEventEmitterSingleton.Instance.Register(BellEventType.AwarenessBellEvent, this.transform, Ping);
         InitialMaterial = this.gameObject.GetComponent<MeshRenderer>().material;
     }
 

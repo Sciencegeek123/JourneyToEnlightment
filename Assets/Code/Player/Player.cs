@@ -12,26 +12,24 @@ public class Player : MonoBehaviour
     private static DBSingleton db;
     private Vector3 moveDirection = Vector3.zero;
 
-
-    public float charge = 0f;
-    public float cooldown = 0f;
+    public float cooldown = 5f;
     public float speed = 6.0F;
     public float jumpSpeed = 8.0F;
     public float gravity = 20.0F;
     public float rotSpeed = 90f;
 
     [SerializeField]
-    AwarenessBell awarenessBell = null;
+    public AwarenessBell awarenessBell = null;
     [SerializeField]
-    AirBell airBell = null;
+    public AirBell airBell = null;
     [SerializeField]
-    FireBell fireBell = null;
+    public FireBell fireBell = null;
     [SerializeField]
-    WaterBell waterBell = null;
+    public WaterBell waterBell = null;
     [SerializeField]
-    EarthBell earthBell = null;
+    public EarthBell earthBell = null;
     [SerializeField]
-    EnlightenmentBell enlightenmentBell = null;
+    public EnlightenmentBell enlightenmentBell = null;
 
 
     NavMeshAgent agent;
@@ -97,73 +95,43 @@ public class Player : MonoBehaviour
             }
         }
 
-        if (Input.GetButton("Fire2"))
+        if (Input.GetButtonDown("Fire2"))
         {
-            if (cooldown == 0f)
+            if (cooldown == 0)
             {
-                charge += Time.deltaTime;
-                if (charge > 5f)
+                cooldown = 5f;
+                switch (ss.curBell)
                 {
-                    charge = 5f;
-                }
-                if (Input.GetButton("Fire1"))
-                {
-                    if (charge > 0)
-                    {
-                        cooldown = charge;
-                        charge = 0;
-                    }
-                }
-            }else
-            {
-                cooldown -= Time.deltaTime;
-                if (cooldown < 0f)
-                {
-                    cooldown = 0f;
+                    case 0:
+                        BellEventEmitterSingleton.Instance.Emit(BellEventType.AwarenessBellEvent, transform, 5f);
+                        break;
+                    case 1:
+                        BellEventEmitterSingleton.Instance.Emit(BellEventType.AirBellEvent, transform, 5f);
+                        break;
+                    case 2:
+                        BellEventEmitterSingleton.Instance.Emit(BellEventType.FireBellEvent, transform, 5f);
+                        break;
+                    case 3:
+                        BellEventEmitterSingleton.Instance.Emit(BellEventType.WaterBellEvent, transform, 5f);
+                        break;
+                    case 4:
+                        BellEventEmitterSingleton.Instance.Emit(BellEventType.EarthBellEvent, transform, 5f);
+                        break;
+                    case 5:
+                        BellEventEmitterSingleton.Instance.Emit(BellEventType.EnlightenmentBellEvent, transform, 5f);
+                        break;
+                    default:
+                        break;
+
                 }
             }
         }
         else
         {
-            if (charge > 0)
+            cooldown -= Time.deltaTime;
+            if (cooldown < 0)
             {
-                cooldown = charge;
-                switch (ss.curBell)
-                {
-                    case 0:
-                        if (ss.bells[0])
-                            awarenessBell.Emit(charge);
-                        break;
-                    case 1:
-                        if (ss.bells[1])
-                            airBell.Emit(charge);
-                        break;
-                    case 2:
-                        if (ss.bells[2])
-                            fireBell.Emit(charge);
-                        break;
-                    case 3:
-                        if (ss.bells[3])
-                            waterBell.Emit(charge);
-                        break;
-                    case 4:
-                        if (ss.bells[4])
-                            earthBell.Emit(charge);
-                        break;
-                    case 5:
-                        if (ss.bells[5])
-                            enlightenmentBell.Emit(charge);
-                        break;
-                    default:
-                        break;
-                }
-                charge = 0;
-            }
-            else
-            {
-                cooldown -= Time.deltaTime;
-                if (cooldown < 0)
-                    cooldown = 0;
+                cooldown = 0;
             }
         }
 

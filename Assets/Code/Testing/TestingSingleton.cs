@@ -32,7 +32,7 @@ public class TestingSingleton {
         foreach (var item in pings)
         {
             if((item.o.position - root.position).magnitude < range) {
-                item.p(5);
+                item.p(BellEventType.AirBellEvent, root, 5);
             }
         }
     }

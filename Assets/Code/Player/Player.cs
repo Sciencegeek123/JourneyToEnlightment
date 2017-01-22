@@ -38,8 +38,9 @@ public class Player : MonoBehaviour
     RaycastHit outHit;
     CharacterController controller;
     Animator anim;
-    AudioSource walkSource;
-    AudioSource bellSource;
+
+    public AudioSource walkSource;
+    public AudioSource bellSource;
 
 
     void Awake()
@@ -52,8 +53,6 @@ public class Player : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         controller = GetComponent<CharacterController>();
         anim = GetComponentInChildren<Animator>();
-        bellSource = GetComponent<AudioSource>();
-        walkSource = GetComponentInChildren<AudioSource>();
         walkSource.clip = walk;
     }
 

@@ -1,23 +1,33 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemySubdue : EnemyState {
+    float TimeSubdued = 0.0f;
+    public float SubdueDuration = 3.0f;
 
     // Use this for initialization
     public override void Start () {
-		
-	}
+        NavMeshAgent agent = GetComponent<NavMeshAgent>();
+        agent.SetDestination(transform.position);
+        TimeSubdued = 0.0f;
+    }
 
     // Update is called once per frame
     public override void Update () {
-		
+        TimeSubdued += Time.deltaTime;
+        if (TimeSubdued >= SubdueDuration)
+        {
+            ToIdle(Enemy);
+        }
 	}
 
     // Basic Enemy States
+    // To Idle from Subdue allowed
     public override void ToIdle(BaseEnemy myEnemy)
     {
-        // Idle from idle?  get out of here
+        base.ToIdle(myEnemy);
     }
 
     public override void ToRoam(BaseEnemy myEnemy)
@@ -28,7 +38,6 @@ public class EnemySubdue : EnemyState {
 
     public override void ToChase(BaseEnemy myEnemy)
     {
-        base.ToChase(myEnemy);
     }
 
     public override void ToAttack(BaseEnemy myEnemy)

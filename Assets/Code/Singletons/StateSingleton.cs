@@ -7,15 +7,8 @@ public class StateSingleton {
     private static StateSingleton instance;
     private static DBSingleton db;
     public int uid = 0;
-    public List<BaseBell> bells = new List<BaseBell>()
-    {
-        new Awareness(),
-        new Air(),
-        new Fire(),
-        new Water(),
-        new Earth(),
-        new Enlightenment()
-    };
+    public bool[] bells = new bool[6];
+
     public int curBell = 0;
 
     public static StateSingleton get()
@@ -34,7 +27,7 @@ public class StateSingleton {
         {
             if (bellsArr[i] == 1)
             {
-                bells[i].isActive = true;
+                bells[i] = true;
             }
         }
     }

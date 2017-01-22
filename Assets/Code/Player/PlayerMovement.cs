@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class PlayerMovement : MonoBehaviour {
 
@@ -11,25 +12,42 @@ public class PlayerMovement : MonoBehaviour {
     private CharacterController controller;
     private Camera cam;
     public float rotSpeed = 90;
+    NavMeshAgent agent;
+    RaycastHit outHit;
     
     void Awake()
     {
-        controller = GetComponent<CharacterController>();
+        agent = GetComponent<NavMeshAgent>();
     }
 
     void Update()
     {
-        if (controller.isGrounded)
-        {
-            moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-            moveDirection = transform.TransformDirection(moveDirection);
-            moveDirection *= speed;
-            if (Input.GetButton("Jump"))
-                moveDirection.y = jumpSpeed;
 
+        if (Input.GetMouseButton(0)) {
+            HandleAutoMove();
         }
-        moveDirection.y -= gravity * Time.deltaTime;
-        transform.Rotate(0, Input.GetAxis("Rotate") * rotSpeed * Time.deltaTime, 0);
-        controller.Move(moveDirection * Time.deltaTime);
+    }
+
+    public void HandleAutoMove()
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+        if (Physics.Raycast(ray, out outHit))
+        {
+            //sDebug.Log(outHit.transform.gameObject.layer);
+            if(outHit.transform.gameObject.layer == 9) {
+                agent.SetDestination(outHit.point);
+                agent.Resume();
+            } else {
+                CancelAutoMove();  
+            }
+            //Debug.DrawRay(ray.origin, ray.direction*10, Color.red, 10);
+            //Debug.DrawRay(outHit.point, Vector3.up*10, Color.green, 10);
+        }
+    }
+
+    public void CancelAutoMove()
+    {
+        agent.Stop();
     }
 }

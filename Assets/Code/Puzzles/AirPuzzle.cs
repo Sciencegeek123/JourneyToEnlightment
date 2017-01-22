@@ -22,7 +22,9 @@ public class AirPuzzle : PuzzleBase{
 
     public override void Complete()
     {
-        clip.Play();
-        Death();
+        Debug.Log("Air Puzzle Solved");
+        //clip.Play();
+        StartCoroutine(Death());
     }
+
 }

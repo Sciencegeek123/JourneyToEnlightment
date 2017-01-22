@@ -4,24 +4,32 @@ using UnityEngine;
 
 public class PuzzleCheats : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
+    // Use this for initialization
+    [SerializeField]
+    public  AirPuzzle air;
+    [SerializeField]
+    private FirePuzzle fire;
+    [SerializeField]
+    private EarthPuzzle earth;
+
+    void Start()
+    {
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
         if (Input.GetKeyDown("f1"))
         {
-            Debug.Log("Air Puzzle Solved");
+            air.Complete();
         }
         if (Input.GetKeyDown("f2"))
         {
-            Debug.Log("Fire Puzzle Solved");
+            fire.Complete();
         }
         if (Input.GetKeyDown("f3"))
         {
-            Debug.Log("Earth Puzzle Solved");
+            earth.Complete();
         }
     }
 }

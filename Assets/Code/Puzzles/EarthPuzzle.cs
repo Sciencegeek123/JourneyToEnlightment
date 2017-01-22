@@ -22,7 +22,9 @@ public class EarthPuzzle : PuzzleBase {
 
     public override void Complete()
     {
-        clip.Play();
-        Death();
+        Debug.Log("Earth Puzzle Solved");
+        //clip.Play();
+        StartCoroutine(Death());
     }
+
 }

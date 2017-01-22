@@ -20,7 +20,8 @@ public class FirePuzzle : PuzzleBase {
 
     public override void Complete()
     {
-        clip.Play();
-        Death();
+        Debug.Log("Fire Puzzle Solved");
+        //clip.Play();
+        StartCoroutine(Death());
     }
 }

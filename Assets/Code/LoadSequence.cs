@@ -122,7 +122,8 @@ public class LoadSequence : MonoBehaviour {
 		}
 
 		myCamera.gameObject.SetActive(false);
-		 SceneManager.UnloadSceneAsync("Intro");
+		RenderSettings.ambientIntensity = 0;
+		SceneManager.UnloadSceneAsync("Intro");
 
 	}
 }

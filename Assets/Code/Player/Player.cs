@@ -38,7 +38,8 @@ public class Player : MonoBehaviour
     RaycastHit outHit;
     CharacterController controller;
     Animator anim;
-    AudioSource audioSource; 
+    AudioSource walkSource;
+    AudioSource bellSource;
 
 
     void Awake()
@@ -51,8 +52,9 @@ public class Player : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         controller = GetComponent<CharacterController>();
         anim = GetComponentInChildren<Animator>();
-        audioSource = GetComponent<AudioSource>();
-        audioSource.clip = walk;
+        bellSource = GetComponent<AudioSource>();
+        walkSource = GetComponentInChildren<AudioSource>();
+        walkSource.clip = walk;
     }
 
     // Use this for initialization
@@ -66,8 +68,8 @@ public class Player : MonoBehaviour
     {
         if (Input.GetButton("Fire1"))
         {
-            if (audioSource.isPlaying == false)
-                audioSource.Play();
+            if (walkSource.isPlaying == false)
+                walkSource.Play();
             anim.SetBool("Idle", false);
             anim.SetBool("Walk", true);
 
@@ -109,8 +111,8 @@ public class Player : MonoBehaviour
             if (cooldown == 0)
             {
                 cooldown = 5f;
-                audioSource.clip = bellSounds[ss.curBell];
-                audioSource.Play();
+                bellSource.clip = bellSounds[ss.curBell];
+                bellSource.Play();
                 switch (ss.curBell)
                 {
                     case 0:

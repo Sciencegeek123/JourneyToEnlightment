@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BaseEnemy : MonoBehaviour {
+
+    [SerializeField] ParticleSystem OptionalParticleSystem;
+    [SerializeField] AudioSource OptionalAudioSource;
     // Bell-Enemy Interface
     public void Frenzy()
     {
@@ -23,6 +26,9 @@ public class BaseEnemy : MonoBehaviour {
     public float MaxIdleTime = 1.0f; // [s]
     public float MaxRoamTime = 4.0f; // [s]
     public float AttackCooldownTime = 2.0f;
+
+    public float SoundCooldown = 5.0f;
+    public float lastSoundStart;
 
     public void SetState(EnemyState nextState)
     { 
@@ -54,6 +60,7 @@ public class BaseEnemy : MonoBehaviour {
     public virtual void Start () {
         EnemyState tempState = null;
         tempState = GetComponent<EnemyIdle>();
+        lastSoundStart = Random.Range(0,30);
 
         if (tempState != null)
         {
@@ -71,6 +78,16 @@ public class BaseEnemy : MonoBehaviour {
 	// Update is called once per frame
 	public virtual void Update () {
         HandleStateInfo();
+
+        if(Time.realtimeSinceStartup - lastSoundStart > SoundCooldown) {
+            lastSoundStart = Time.realtimeSinceStartup;
+            if(OptionalAudioSource != null) {
+                OptionalAudioSource.Play();
+            }
+            if(OptionalParticleSystem != null) {
+                OptionalParticleSystem.Play();
+            }
+        }
 	}
 
     void HandleStateInfo()

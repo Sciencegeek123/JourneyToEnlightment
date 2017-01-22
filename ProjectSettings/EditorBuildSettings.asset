@@ -5,5 +5,27 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/TestScenes/Camerons test scene.unity
+  - enabled: 1
+    path: Assets/Scenes/MasterScene.unity
+  - enabled: 1
+    path: Assets/Scenes/Starting Decoration.unity
+  - enabled: 1
+    path: Assets/Scenes/WallScene1.unity
+  - enabled: 1
+    path: Assets/Scenes/WallScene2.unity
+  - enabled: 1
+    path: Assets/Scenes/WallScene3.unity
+  - enabled: 1
+    path: Assets/Scenes/WallScene4.unity
+  - enabled: 1
+    path: Assets/Scenes/WallScene5.unity
+  - enabled: 1
+    path: Assets/Scenes/WallColliders.unity
+  - enabled: 1
+    path: Assets/Scenes/EnemyScene.unity
+  - enabled: 1
+    path: Assets/Scenes/AmbientSourceScene.unity
+  - enabled: 1
+    path: Assets/Scenes/MainGameEnvironment.unity

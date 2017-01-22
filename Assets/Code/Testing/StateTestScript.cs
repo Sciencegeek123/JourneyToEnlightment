@@ -5,23 +5,12 @@ using UnityEngine;
 public class StateTestScript : MonoBehaviour {
 
     private static StateSingleton ss;
-    private static DBSingleton db;
     public float charge = 0f;
     public float cooldown = 0f;
 
     // Use this for initialization
     void Start () {
         ss = StateSingleton.get();
-        db = DBSingleton.get();
-        ss.uid = db.createNewPlayer("User");
-        db.updateBell(DBSingleton.BellType.Awareness);
-        db.updateBell(DBSingleton.BellType.Air);
-        db.updateBell(DBSingleton.BellType.Fire);
-        db.updateBell(DBSingleton.BellType.Water);
-        db.updateBell(DBSingleton.BellType.Earth);
-        db.updateBell(DBSingleton.BellType.Enlightenment);
-        db.setBells();
-        db.deletePlayer(ss.uid);
     }
 
     // Update is called once per frame

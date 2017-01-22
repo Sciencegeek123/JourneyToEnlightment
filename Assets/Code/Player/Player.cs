@@ -9,7 +9,6 @@ public class Player : MonoBehaviour
 
 
     private static StateSingleton ss;
-    private static DBSingleton db;
     private Vector3 moveDirection = Vector3.zero;
 
     public float cooldown = 5f;
@@ -47,9 +46,7 @@ public class Player : MonoBehaviour
     {
         ss = StateSingleton.get();
         ss.player = this;
-        db = DBSingleton.get();
         ss.uid = 1;
-        db.setBells();
         agent = GetComponent<NavMeshAgent>();
         controller = GetComponent<CharacterController>();
         anim = GetComponentInChildren<Animator>();
@@ -78,28 +75,32 @@ public class Player : MonoBehaviour
 
         if (Input.GetButtonDown("PrevBell"))
         {
-            Debug.Log("Grabbing Previous Bell");
             if (ss.curBell == 0)
             {
                 if (ss.bells[5])
+                {
+                    Debug.Log("Grabbing Previous Bell");
                     ss.curBell = 5;
+                }
             }
             else
             {
+                Debug.Log("Grabbing Previous Bell");
                 ss.curBell--;
             }
         }
         if (Input.GetButtonDown("NextBell"))
         {
-            Debug.Log("Grabbing Next Bell");
             if (ss.curBell == 5)
             {
+                Debug.Log("Grabbing Next Bell");
                 ss.curBell = 0;
             }
             else
             {
                 if (ss.bells[ss.curBell + 1])
                 {
+                    Debug.Log("Grabbing Next Bell");
                     ss.curBell++;
                 }
             }
@@ -112,29 +113,32 @@ public class Player : MonoBehaviour
                 cooldown = 5f;
                 bellSource.clip = bellSounds[ss.curBell];
                 bellSource.Play();
-                switch (ss.curBell)
+                if (ss.bells[ss.curBell])
                 {
-                    case 0:
-                        awarenessBell.Emit(25f);
-                        break;
-                    case 1:
-                        airBell.Emit(25f);
-                        break;
-                    case 2:
-                        fireBell.Emit(25f);
-                        break;
-                    case 3:
-                        waterBell.Emit(25f);
-                        break;
-                    case 4:
-                        earthBell.Emit(25f);
-                        break;
-                    case 5:
-                        enlightenmentBell.Emit(25f);
-                        break;
-                    default:
-                        break;
+                    switch (ss.curBell)
+                    {
+                        case 0:
+                            awarenessBell.Emit(25f);
+                            break;
+                        case 1:
+                            airBell.Emit(25f);
+                            break;
+                        case 2:
+                            fireBell.Emit(25f);
+                            break;
+                        case 3:
+                            waterBell.Emit(25f);
+                            break;
+                        case 4:
+                            earthBell.Emit(25f);
+                            break;
+                        case 5:
+                            enlightenmentBell.Emit(25f);
+                            break;
+                        default:
+                            break;
 
+                    }
                 }
             }
         }

@@ -14,5 +14,20 @@ public class AwarenessBell : BaseBell
         Debug.Log("Emitting Awareness");
         //BellEventEmitterSingleton.Instance.Emit(BellEventType.AwarenessBellEvent, this.transform, range);
 		Instantiate(AwarenessParticlePrefab,this.transform.position, this.transform.rotation,null);
+
+        foreach (var item in BellEventEmitterSingleton.Instance.PingListeners[(int)BellEventType.AwarenessBellEvent])
+        {
+            if (item.p != null && (item.o.position - transform.position).magnitude < range)
+            {
+                item.p(BellEventType.AwarenessBellEvent, transform, Mathf.Sqrt((item.o.position - transform.position).magnitude) + 2.5f);
+            }
+        }
+        foreach (var item in BellEventEmitterSingleton.Instance.PingListeners[(int)BellEventType.AllBellEvents])
+        {
+            if (item.p != null && (item.o.position - transform.position).magnitude < range)
+            {
+                item.p(BellEventType.AwarenessBellEvent, transform, Mathf.Sqrt((item.o.position - transform.position).magnitude) + 2.5f);
+            }
+        }
     }
 }

@@ -9,7 +9,6 @@ public class Player : MonoBehaviour
 
 
     private static StateSingleton ss;
-    private static DBSingleton db;
     private Vector3 moveDirection = Vector3.zero;
 
     public float cooldown = 5f;
@@ -47,9 +46,7 @@ public class Player : MonoBehaviour
     {
         ss = StateSingleton.get();
         ss.player = this;
-        db = DBSingleton.get();
         ss.uid = 1;
-        db.setBells();
         agent = GetComponent<NavMeshAgent>();
         controller = GetComponent<CharacterController>();
         anim = GetComponentInChildren<Animator>();

@@ -22,7 +22,6 @@ public class AwarenessBell : BaseBell
         BellEventEmitterSingleton.Instance.Emit(BellEventType.AwarenessBellEvent, GetComponentInParent<Transform>(), range);
 			myLightCoRoutine = PlayLightCoRoutine();
 			StartCoroutine(myLightCoRoutine);
-			TestingSingleton.Instance.Emit(this.transform, 1000);
     }
 
 	IEnumerator PlayLightCoRoutine() {

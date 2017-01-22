@@ -393,6 +393,11 @@ Prefab:
       propertyPath: m_Name
       value: FireFly (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 114107920584062644, guid: 7420a04d86d9ebe45869899732f6a0bc,
+        type: 2}
+      propertyPath: fireflyNoises.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 2d6776298c4bd024f9fa6be693fac433, type: 3}
     m_RemovedComponents:
     - {fileID: 135798550173271986, guid: 7420a04d86d9ebe45869899732f6a0bc, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 7420a04d86d9ebe45869899732f6a0bc, type: 2}
@@ -500,6 +505,11 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 44.507004
       objectReference: {fileID: 0}
+    - target: {fileID: 114107920584062644, guid: 7420a04d86d9ebe45869899732f6a0bc,
+        type: 2}
+      propertyPath: fireflyNoises.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 2d6776298c4bd024f9fa6be693fac433, type: 3}
     m_RemovedComponents:
     - {fileID: 135798550173271986, guid: 7420a04d86d9ebe45869899732f6a0bc, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 7420a04d86d9ebe45869899732f6a0bc, type: 2}
@@ -642,6 +652,11 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 44.507004
       objectReference: {fileID: 0}
+    - target: {fileID: 114107920584062644, guid: 7420a04d86d9ebe45869899732f6a0bc,
+        type: 2}
+      propertyPath: fireflyNoises.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 2d6776298c4bd024f9fa6be693fac433, type: 3}
     m_RemovedComponents:
     - {fileID: 135798550173271986, guid: 7420a04d86d9ebe45869899732f6a0bc, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 7420a04d86d9ebe45869899732f6a0bc, type: 2}
@@ -745,6 +760,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114107920584062644, guid: 7420a04d86d9ebe45869899732f6a0bc,
+        type: 2}
+      propertyPath: fireflyNoises.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 2d6776298c4bd024f9fa6be693fac433, type: 3}
     m_RemovedComponents:
     - {fileID: 135798550173271986, guid: 7420a04d86d9ebe45869899732f6a0bc, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 7420a04d86d9ebe45869899732f6a0bc, type: 2}
@@ -919,6 +939,11 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 44.507004
       objectReference: {fileID: 0}
+    - target: {fileID: 114107920584062644, guid: 7420a04d86d9ebe45869899732f6a0bc,
+        type: 2}
+      propertyPath: fireflyNoises.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 2d6776298c4bd024f9fa6be693fac433, type: 3}
     m_RemovedComponents:
     - {fileID: 135798550173271986, guid: 7420a04d86d9ebe45869899732f6a0bc, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 7420a04d86d9ebe45869899732f6a0bc, type: 2}
@@ -1026,6 +1051,11 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 44.507004
       objectReference: {fileID: 0}
+    - target: {fileID: 114107920584062644, guid: 7420a04d86d9ebe45869899732f6a0bc,
+        type: 2}
+      propertyPath: fireflyNoises.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 2d6776298c4bd024f9fa6be693fac433, type: 3}
     m_RemovedComponents:
     - {fileID: 135798550173271986, guid: 7420a04d86d9ebe45869899732f6a0bc, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 7420a04d86d9ebe45869899732f6a0bc, type: 2}
@@ -1294,6 +1324,11 @@ Prefab:
       propertyPath: m_Name
       value: FireFly (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 114107920584062644, guid: 7420a04d86d9ebe45869899732f6a0bc,
+        type: 2}
+      propertyPath: fireflyNoises.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 2d6776298c4bd024f9fa6be693fac433, type: 3}
     m_RemovedComponents:
     - {fileID: 135798550173271986, guid: 7420a04d86d9ebe45869899732f6a0bc, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 7420a04d86d9ebe45869899732f6a0bc, type: 2}
@@ -1498,6 +1533,11 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 111.961006
       objectReference: {fileID: 0}
+    - target: {fileID: 114107920584062644, guid: 7420a04d86d9ebe45869899732f6a0bc,
+        type: 2}
+      propertyPath: fireflyNoises.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 2d6776298c4bd024f9fa6be693fac433, type: 3}
     m_RemovedComponents:
     - {fileID: 135798550173271986, guid: 7420a04d86d9ebe45869899732f6a0bc, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 7420a04d86d9ebe45869899732f6a0bc, type: 2}
@@ -1786,6 +1826,11 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 111.961006
       objectReference: {fileID: 0}
+    - target: {fileID: 114107920584062644, guid: 7420a04d86d9ebe45869899732f6a0bc,
+        type: 2}
+      propertyPath: fireflyNoises.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 2d6776298c4bd024f9fa6be693fac433, type: 3}
     m_RemovedComponents:
     - {fileID: 135798550173271986, guid: 7420a04d86d9ebe45869899732f6a0bc, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 7420a04d86d9ebe45869899732f6a0bc, type: 2}
@@ -2015,6 +2060,11 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 44.507004
       objectReference: {fileID: 0}
+    - target: {fileID: 114107920584062644, guid: 7420a04d86d9ebe45869899732f6a0bc,
+        type: 2}
+      propertyPath: fireflyNoises.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 2d6776298c4bd024f9fa6be693fac433, type: 3}
     m_RemovedComponents:
     - {fileID: 135798550173271986, guid: 7420a04d86d9ebe45869899732f6a0bc, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 7420a04d86d9ebe45869899732f6a0bc, type: 2}
@@ -2071,6 +2121,11 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 44.507004
       objectReference: {fileID: 0}
+    - target: {fileID: 114107920584062644, guid: 7420a04d86d9ebe45869899732f6a0bc,
+        type: 2}
+      propertyPath: fireflyNoises.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 2d6776298c4bd024f9fa6be693fac433, type: 3}
     m_RemovedComponents:
     - {fileID: 135798550173271986, guid: 7420a04d86d9ebe45869899732f6a0bc, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 7420a04d86d9ebe45869899732f6a0bc, type: 2}
@@ -2245,6 +2300,11 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 111.961006
       objectReference: {fileID: 0}
+    - target: {fileID: 114107920584062644, guid: 7420a04d86d9ebe45869899732f6a0bc,
+        type: 2}
+      propertyPath: fireflyNoises.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 2d6776298c4bd024f9fa6be693fac433, type: 3}
     m_RemovedComponents:
     - {fileID: 135798550173271986, guid: 7420a04d86d9ebe45869899732f6a0bc, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 7420a04d86d9ebe45869899732f6a0bc, type: 2}
@@ -2407,6 +2467,11 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 44.507004
       objectReference: {fileID: 0}
+    - target: {fileID: 114107920584062644, guid: 7420a04d86d9ebe45869899732f6a0bc,
+        type: 2}
+      propertyPath: fireflyNoises.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 2d6776298c4bd024f9fa6be693fac433, type: 3}
     m_RemovedComponents:
     - {fileID: 135798550173271986, guid: 7420a04d86d9ebe45869899732f6a0bc, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 7420a04d86d9ebe45869899732f6a0bc, type: 2}
@@ -2514,6 +2579,11 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 44.507004
       objectReference: {fileID: 0}
+    - target: {fileID: 114107920584062644, guid: 7420a04d86d9ebe45869899732f6a0bc,
+        type: 2}
+      propertyPath: fireflyNoises.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 2d6776298c4bd024f9fa6be693fac433, type: 3}
     m_RemovedComponents:
     - {fileID: 135798550173271986, guid: 7420a04d86d9ebe45869899732f6a0bc, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 7420a04d86d9ebe45869899732f6a0bc, type: 2}
@@ -2570,6 +2640,11 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 44.507004
       objectReference: {fileID: 0}
+    - target: {fileID: 114107920584062644, guid: 7420a04d86d9ebe45869899732f6a0bc,
+        type: 2}
+      propertyPath: fireflyNoises.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 2d6776298c4bd024f9fa6be693fac433, type: 3}
     m_RemovedComponents:
     - {fileID: 135798550173271986, guid: 7420a04d86d9ebe45869899732f6a0bc, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 7420a04d86d9ebe45869899732f6a0bc, type: 2}

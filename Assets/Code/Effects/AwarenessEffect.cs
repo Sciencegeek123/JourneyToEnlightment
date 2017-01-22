@@ -27,4 +27,9 @@ public class AwarenessEffect : BaseEffect {
         StartCoroutine(Death());
     }
 
+    public void found()
+    {
+        BellEventEmitterSingleton.Instance.Emit(BellEventType.AwarenessBellEvent, transform, 1f);
+    }
+
 }

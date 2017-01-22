@@ -113,29 +113,32 @@ public class Player : MonoBehaviour
                 cooldown = 5f;
                 bellSource.clip = bellSounds[ss.curBell];
                 bellSource.Play();
-                switch (ss.curBell)
+                if (ss.bells[ss.curBell])
                 {
-                    case 0:
-                        awarenessBell.Emit(25f);
-                        break;
-                    case 1:
-                        airBell.Emit(25f);
-                        break;
-                    case 2:
-                        fireBell.Emit(25f);
-                        break;
-                    case 3:
-                        waterBell.Emit(25f);
-                        break;
-                    case 4:
-                        earthBell.Emit(25f);
-                        break;
-                    case 5:
-                        enlightenmentBell.Emit(25f);
-                        break;
-                    default:
-                        break;
+                    switch (ss.curBell)
+                    {
+                        case 0:
+                            awarenessBell.Emit(25f);
+                            break;
+                        case 1:
+                            airBell.Emit(25f);
+                            break;
+                        case 2:
+                            fireBell.Emit(25f);
+                            break;
+                        case 3:
+                            waterBell.Emit(25f);
+                            break;
+                        case 4:
+                            earthBell.Emit(25f);
+                            break;
+                        case 5:
+                            enlightenmentBell.Emit(25f);
+                            break;
+                        default:
+                            break;
 
+                    }
                 }
             }
         }

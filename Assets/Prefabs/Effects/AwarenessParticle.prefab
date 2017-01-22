@@ -140,9 +140,9 @@ Light:
   m_Enabled: 1
   serializedVersion: 7
   m_Type: 2
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0
-  m_Range: 15
+  m_Color: {r: 0.7352941, g: 0.93427986, b: 1, a: 1}
+  m_Intensity: 0.16
+  m_Range: 30
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -174,9 +174,9 @@ Light:
   m_Enabled: 1
   serializedVersion: 7
   m_Type: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0.66896534, b: 1, a: 1}
   m_Intensity: 0
-  m_Range: 31.36
+  m_Range: 60
   m_SpotAngle: 126.7
   m_CookieSize: 10
   m_Shadows:
@@ -196,7 +196,7 @@ Light:
     m_Bits: 4294967039
   m_Lightmapping: 4
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
+  m_BounceIntensity: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!114 &114265539564593422
@@ -223,16 +223,16 @@ MonoBehaviour:
       outSlope: 0
       tangentMode: 136
     - serializedVersion: 2
-      time: 0.1
-      value: 10
+      time: 0.10375847
+      value: 4.9484534
       inSlope: 0
       outSlope: 0
       tangentMode: 136
     - serializedVersion: 2
       time: 0.775
       value: 0.75
-      inSlope: -3.3333337
-      outSlope: -3.3333337
+      inSlope: -3.3473113
+      outSlope: -3.3473113
       tangentMode: 136
     - serializedVersion: 2
       time: 1
@@ -253,8 +253,8 @@ MonoBehaviour:
       outSlope: 0
       tangentMode: 136
     - serializedVersion: 2
-      time: 0.5
-      value: 6
+      time: 0.5012516
+      value: 4.0082474
       inSlope: 0
       outSlope: 0
       tangentMode: 136
@@ -277,6 +277,12 @@ MonoBehaviour:
       outSlope: 2
       tangentMode: 0
     - serializedVersion: 2
+      time: 0.49935648
+      value: 0.8925549
+      inSlope: 0.37257117
+      outSlope: 0.37257117
+      tangentMode: 0
+    - serializedVersion: 2
       time: 1
       value: 1
       inSlope: 0
@@ -290,26 +296,26 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 2
       time: 0
-      value: 0.05
+      value: 1
       inSlope: 0
       outSlope: 0
-      tangentMode: 136
+      tangentMode: 0
     - serializedVersion: 2
-      time: 0.5
-      value: 0.025
+      time: 0.50187737
+      value: 0
       inSlope: 0
       outSlope: 0
-      tangentMode: 136
+      tangentMode: 0
     - serializedVersion: 2
       time: 1
-      value: 0.05
+      value: 1
       inSlope: 0
       outSlope: 0
-      tangentMode: 136
+      tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
-  SpotLightDuration: 5
+  SpotLightDuration: 10
 --- !u!198 &198606981399906376
 ParticleSystem:
   m_ObjectHideFlags: 1

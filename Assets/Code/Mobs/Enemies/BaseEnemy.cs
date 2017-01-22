@@ -56,8 +56,26 @@ public class BaseEnemy : MonoBehaviour {
     public GameObject Player;
     public UnityEngine.AI.NavMeshAgent agent { get; set; }
 
+    void Ping(BellEventType type, Transform transform, float delay)
+    {
+        Debug.Log("Received Ping");
+        if(type == BellEventType.AirBellEvent)
+        {
+            Debug.Log("Is Air");
+            DoDeath();
+        }
+    }
+
+    void DoDeath()
+    {
+        Debug.Log("Dead");
+        enabled = false;
+        Destroy(this);
+    }
+
     // Use this for initialization
     public virtual void Start () {
+        BellEventEmitterSingleton.Instance.Register(BellEventType.AwarenessBellEvent, this.transform, Ping);
         EnemyState tempState = null;
         tempState = GetComponent<EnemyIdle>();
         lastSoundStart = Random.Range(0,30);

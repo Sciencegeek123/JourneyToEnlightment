@@ -2,26 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FireEffect : BaseEffect {
+public class FireEffect : MonoBehaviour {
 
-    [SerializeField]
-    public AudioSource clip;
-
+	[SerializeField] ParticleSystem ps;
 
 	// Use this for initialization
 	void Start () {
-        BellEventEmitterSingleton.Instance.Register(BellEventType.FireBellEvent, transform, null) ;
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+        BellEventEmitterSingleton.Instance.Register(BellEventType.FireBellEvent, this.transform, Ping);
 	}
 
-    public override void Complete()
+    void Ping(BellEventType type, Transform transform, float delay)
     {
-        Debug.Log("Fire Puzzle Solved");
-        //clip.Play();
-        StartCoroutine(Death());
+		ps.Play();
+		Destroy(gameObject, 2.5f);
     }
 }

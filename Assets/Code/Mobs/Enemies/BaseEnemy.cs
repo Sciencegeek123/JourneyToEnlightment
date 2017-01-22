@@ -51,7 +51,7 @@ public class BaseEnemy : MonoBehaviour {
     public UnityEngine.AI.NavMeshAgent agent { get; set; }
 
     // Use this for initialization
-    void Start () {
+    public virtual void Start () {
         EnemyState tempState = null;
         tempState = GetComponent<EnemyIdle>();
 
@@ -69,7 +69,7 @@ public class BaseEnemy : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	public virtual void Update () {
         HandleStateInfo();
 	}
 

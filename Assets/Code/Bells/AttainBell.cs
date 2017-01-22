@@ -33,7 +33,7 @@ public class AttainBell : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+
 	}
 
     void OnTriggerEnter(Collider col)
@@ -41,7 +41,30 @@ public class AttainBell : MonoBehaviour {
 
         if (col.gameObject.tag == "Player")
         {
-            awarenessBell.Emit(25f);
+            switch (bellNum)
+            {
+                case 0:
+                    awarenessBell.Emit(25f);
+                    break;
+                case 1:
+                    airBell.Emit(25f);
+                    break;
+                case 2:
+                    fireBell.Emit(25f);
+                    break;
+                case 3:
+                    waterBell.Emit(25f);
+                    break;
+                case 4:
+                    earthBell.Emit(25f);
+                    break;
+                case 5:
+                    enlightenmentBell.Emit(25f);
+                    break;
+                default:
+                    break;
+
+            }
             bellSource.clip = bellSounds[bellNum];
             bellSource.Play();
             Debug.Log("Bell Attained");

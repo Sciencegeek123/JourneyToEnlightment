@@ -134,7 +134,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4020084092435940, guid: ccb3745d51a85bf4fb6c1067b01b8e30, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -21.26
+      value: -21.02
       objectReference: {fileID: 0}
     - target: {fileID: 4020084092435940, guid: ccb3745d51a85bf4fb6c1067b01b8e30, type: 2}
       propertyPath: m_LocalRotation.x
@@ -191,6 +191,10 @@ Prefab:
       propertyPath: bellSource
       value: 
       objectReference: {fileID: 850690815}
+    - target: {fileID: 1714750058074580, guid: ccb3745d51a85bf4fb6c1067b01b8e30, type: 2}
+      propertyPath: m_Name
+      value: Awareness
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ccb3745d51a85bf4fb6c1067b01b8e30, type: 2}
   m_IsPrefabParent: 0
@@ -342,3 +346,89 @@ MonoBehaviour:
   WaterLightColor: {r: 1, g: 1, b: 1, a: 1}
   EarthFogColor: {r: 1, g: 1, b: 1, a: 1}
   EarthLightColor: {r: 1, g: 1, b: 1, a: 1}
+--- !u!1001 &2132885342
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4020084092435940, guid: ccb3745d51a85bf4fb6c1067b01b8e30, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 77.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4020084092435940, guid: ccb3745d51a85bf4fb6c1067b01b8e30, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 4020084092435940, guid: ccb3745d51a85bf4fb6c1067b01b8e30, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 20.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4020084092435940, guid: ccb3745d51a85bf4fb6c1067b01b8e30, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4020084092435940, guid: ccb3745d51a85bf4fb6c1067b01b8e30, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4020084092435940, guid: ccb3745d51a85bf4fb6c1067b01b8e30, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4020084092435940, guid: ccb3745d51a85bf4fb6c1067b01b8e30, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4020084092435940, guid: ccb3745d51a85bf4fb6c1067b01b8e30, type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114537303485813622, guid: ccb3745d51a85bf4fb6c1067b01b8e30,
+        type: 2}
+      propertyPath: awarenessBell
+      value: 
+      objectReference: {fileID: 257130663}
+    - target: {fileID: 114537303485813622, guid: ccb3745d51a85bf4fb6c1067b01b8e30,
+        type: 2}
+      propertyPath: airBell
+      value: 
+      objectReference: {fileID: 914261084}
+    - target: {fileID: 114537303485813622, guid: ccb3745d51a85bf4fb6c1067b01b8e30,
+        type: 2}
+      propertyPath: fireBell
+      value: 
+      objectReference: {fileID: 1484056343}
+    - target: {fileID: 114537303485813622, guid: ccb3745d51a85bf4fb6c1067b01b8e30,
+        type: 2}
+      propertyPath: waterBell
+      value: 
+      objectReference: {fileID: 1984285651}
+    - target: {fileID: 114537303485813622, guid: ccb3745d51a85bf4fb6c1067b01b8e30,
+        type: 2}
+      propertyPath: earthBell
+      value: 
+      objectReference: {fileID: 1950894682}
+    - target: {fileID: 114537303485813622, guid: ccb3745d51a85bf4fb6c1067b01b8e30,
+        type: 2}
+      propertyPath: enlightenmentBell
+      value: 
+      objectReference: {fileID: 1571994293}
+    - target: {fileID: 114537303485813622, guid: ccb3745d51a85bf4fb6c1067b01b8e30,
+        type: 2}
+      propertyPath: bellSource
+      value: 
+      objectReference: {fileID: 850690815}
+    - target: {fileID: 1714750058074580, guid: ccb3745d51a85bf4fb6c1067b01b8e30, type: 2}
+      propertyPath: m_Name
+      value: Wind
+      objectReference: {fileID: 0}
+    - target: {fileID: 114537303485813622, guid: ccb3745d51a85bf4fb6c1067b01b8e30,
+        type: 2}
+      propertyPath: bellNum
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: ccb3745d51a85bf4fb6c1067b01b8e30, type: 2}
+  m_IsPrefabParent: 0

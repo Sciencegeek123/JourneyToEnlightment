@@ -2252,7 +2252,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57799b3c83e955741985e6a6d894ec71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  charge: 0
   cooldown: 0
   speed: 6
   jumpSpeed: 8
@@ -3779,6 +3778,10 @@ Prefab:
     - target: {fileID: 4599461660414686, guid: 5902850eb8e586a42bc3ebf2e7c134ad, type: 2}
       propertyPath: m_RootOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1964397476087656, guid: 5902850eb8e586a42bc3ebf2e7c134ad, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5902850eb8e586a42bc3ebf2e7c134ad, type: 2}

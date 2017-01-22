@@ -20253,18 +20253,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1021
       objectReference: {fileID: 0}
-    - target: {fileID: 4990358933342546, guid: 31903bda20dcf444f98fa227e7a2048b, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 1.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4990358933342546, guid: 31903bda20dcf444f98fa227e7a2048b, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 2.0309324
-      objectReference: {fileID: 0}
-    - target: {fileID: 4990358933342546, guid: 31903bda20dcf444f98fa227e7a2048b, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -73.878006
-      objectReference: {fileID: 0}
     - target: {fileID: 1140970385714044, guid: 31903bda20dcf444f98fa227e7a2048b, type: 2}
       propertyPath: m_Name
       value: Crystal Wall (5)
@@ -20272,38 +20260,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 31903bda20dcf444f98fa227e7a2048b, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &505316069 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1140970385714044, guid: 31903bda20dcf444f98fa227e7a2048b,
-    type: 2}
-  m_PrefabInternal: {fileID: 505316068}
---- !u!208 &505316070
-NavMeshObstacle:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 505316069}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: 2.0670002, y: 2.765, z: 2.8100002}
-  m_MoveThreshold: 0.1
-  m_Carve: 0
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 2.765, z: 0}
-  m_TimeToStationary: 0.5
---- !u!65 &505316071
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 505316069}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 4.13435, y: 5.5295677, z: 5.620543}
-  m_Center: {x: 0, y: 2.7647839, z: -0.00000047683716}
 --- !u!1001 &506295413
 Prefab:
   m_ObjectHideFlags: 0

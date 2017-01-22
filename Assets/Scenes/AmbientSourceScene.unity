@@ -185,6 +185,11 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 113.661
       objectReference: {fileID: 0}
+    - target: {fileID: 114565334051939906, guid: d52cc133b630aea4bba056f801d719f3,
+        type: 2}
+      propertyPath: croakChance
+      value: 0.998
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d52cc133b630aea4bba056f801d719f3, type: 2}
   m_IsPrefabParent: 0
@@ -291,6 +296,11 @@ Prefab:
       propertyPath: m_Name
       value: SphericalFrog (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 114565334051939906, guid: d52cc133b630aea4bba056f801d719f3,
+        type: 2}
+      propertyPath: croakChance
+      value: 0.998
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d52cc133b630aea4bba056f801d719f3, type: 2}
   m_IsPrefabParent: 0
@@ -341,6 +351,11 @@ Prefab:
     - target: {fileID: 1103865079665138, guid: d52cc133b630aea4bba056f801d719f3, type: 2}
       propertyPath: m_Name
       value: SphericalFrog (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114565334051939906, guid: d52cc133b630aea4bba056f801d719f3,
+        type: 2}
+      propertyPath: croakChance
+      value: 0.998
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d52cc133b630aea4bba056f801d719f3, type: 2}
@@ -398,6 +413,11 @@ Prefab:
       propertyPath: fireflyNoises.Array.data[0]
       value: 
       objectReference: {fileID: 8300000, guid: 2d6776298c4bd024f9fa6be693fac433, type: 3}
+    - target: {fileID: 82168297185290196, guid: 7420a04d86d9ebe45869899732f6a0bc,
+        type: 2}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 135798550173271986, guid: 7420a04d86d9ebe45869899732f6a0bc, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 7420a04d86d9ebe45869899732f6a0bc, type: 2}
@@ -450,6 +470,11 @@ Prefab:
       propertyPath: m_Name
       value: SphericalFrog (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 114565334051939906, guid: d52cc133b630aea4bba056f801d719f3,
+        type: 2}
+      propertyPath: croakChance
+      value: 0.998
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d52cc133b630aea4bba056f801d719f3, type: 2}
   m_IsPrefabParent: 0
@@ -458,6 +483,61 @@ Transform:
   m_PrefabParentObject: {fileID: 4849093378894680, guid: d52cc133b630aea4bba056f801d719f3,
     type: 2}
   m_PrefabInternal: {fileID: 293775645}
+--- !u!1001 &328694111
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 346679369}
+    m_Modifications:
+    - target: {fileID: 4849093378894680, guid: f1ba265eab911f44e9b750afadce1ebf, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -153.15785
+      objectReference: {fileID: 0}
+    - target: {fileID: 4849093378894680, guid: f1ba265eab911f44e9b750afadce1ebf, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 59.933342
+      objectReference: {fileID: 0}
+    - target: {fileID: 4849093378894680, guid: f1ba265eab911f44e9b750afadce1ebf, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -9.262093
+      objectReference: {fileID: 0}
+    - target: {fileID: 4849093378894680, guid: f1ba265eab911f44e9b750afadce1ebf, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4849093378894680, guid: f1ba265eab911f44e9b750afadce1ebf, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0.4796836
+      objectReference: {fileID: 0}
+    - target: {fileID: 4849093378894680, guid: f1ba265eab911f44e9b750afadce1ebf, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4849093378894680, guid: f1ba265eab911f44e9b750afadce1ebf, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.8774416
+      objectReference: {fileID: 0}
+    - target: {fileID: 4849093378894680, guid: f1ba265eab911f44e9b750afadce1ebf, type: 2}
+      propertyPath: m_RootOrder
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 114565334051939906, guid: f1ba265eab911f44e9b750afadce1ebf,
+        type: 2}
+      propertyPath: croakChance
+      value: 0.998
+      objectReference: {fileID: 0}
+    - target: {fileID: 4849093378894680, guid: f1ba265eab911f44e9b750afadce1ebf, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4849093378894680, guid: f1ba265eab911f44e9b750afadce1ebf, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: f1ba265eab911f44e9b750afadce1ebf, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &343244742
 Prefab:
   m_ObjectHideFlags: 0
@@ -510,6 +590,11 @@ Prefab:
       propertyPath: fireflyNoises.Array.data[0]
       value: 
       objectReference: {fileID: 8300000, guid: 2d6776298c4bd024f9fa6be693fac433, type: 3}
+    - target: {fileID: 82168297185290196, guid: 7420a04d86d9ebe45869899732f6a0bc,
+        type: 2}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 135798550173271986, guid: 7420a04d86d9ebe45869899732f6a0bc, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 7420a04d86d9ebe45869899732f6a0bc, type: 2}
@@ -559,6 +644,8 @@ Transform:
   - {fileID: 1139512346}
   - {fileID: 846079841}
   - {fileID: 2097253647}
+  - {fileID: 1757823294}
+  - {fileID: 654741107}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -657,6 +744,11 @@ Prefab:
       propertyPath: fireflyNoises.Array.data[0]
       value: 
       objectReference: {fileID: 8300000, guid: 2d6776298c4bd024f9fa6be693fac433, type: 3}
+    - target: {fileID: 82168297185290196, guid: 7420a04d86d9ebe45869899732f6a0bc,
+        type: 2}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 135798550173271986, guid: 7420a04d86d9ebe45869899732f6a0bc, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 7420a04d86d9ebe45869899732f6a0bc, type: 2}
@@ -765,6 +857,11 @@ Prefab:
       propertyPath: fireflyNoises.Array.data[0]
       value: 
       objectReference: {fileID: 8300000, guid: 2d6776298c4bd024f9fa6be693fac433, type: 3}
+    - target: {fileID: 82168297185290196, guid: 7420a04d86d9ebe45869899732f6a0bc,
+        type: 2}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 135798550173271986, guid: 7420a04d86d9ebe45869899732f6a0bc, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 7420a04d86d9ebe45869899732f6a0bc, type: 2}
@@ -829,6 +926,11 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1.0000007
       objectReference: {fileID: 0}
+    - target: {fileID: 114565334051939906, guid: d52cc133b630aea4bba056f801d719f3,
+        type: 2}
+      propertyPath: croakChance
+      value: 0.998
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d52cc133b630aea4bba056f801d719f3, type: 2}
   m_IsPrefabParent: 0
@@ -837,6 +939,65 @@ Transform:
   m_PrefabParentObject: {fileID: 4849093378894680, guid: d52cc133b630aea4bba056f801d719f3,
     type: 2}
   m_PrefabInternal: {fileID: 434600636}
+--- !u!1001 &539357806
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 346679369}
+    m_Modifications:
+    - target: {fileID: 4849093378894680, guid: f1ba265eab911f44e9b750afadce1ebf, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -220.40886
+      objectReference: {fileID: 0}
+    - target: {fileID: 4849093378894680, guid: f1ba265eab911f44e9b750afadce1ebf, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 59.933342
+      objectReference: {fileID: 0}
+    - target: {fileID: 4849093378894680, guid: f1ba265eab911f44e9b750afadce1ebf, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 43.44403
+      objectReference: {fileID: 0}
+    - target: {fileID: 4849093378894680, guid: f1ba265eab911f44e9b750afadce1ebf, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4849093378894680, guid: f1ba265eab911f44e9b750afadce1ebf, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0.4796836
+      objectReference: {fileID: 0}
+    - target: {fileID: 4849093378894680, guid: f1ba265eab911f44e9b750afadce1ebf, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4849093378894680, guid: f1ba265eab911f44e9b750afadce1ebf, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.8774416
+      objectReference: {fileID: 0}
+    - target: {fileID: 4849093378894680, guid: f1ba265eab911f44e9b750afadce1ebf, type: 2}
+      propertyPath: m_RootOrder
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114565334051939906, guid: f1ba265eab911f44e9b750afadce1ebf,
+        type: 2}
+      propertyPath: croakChance
+      value: 0.998
+      objectReference: {fileID: 0}
+    - target: {fileID: 4849093378894680, guid: f1ba265eab911f44e9b750afadce1ebf, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4849093378894680, guid: f1ba265eab911f44e9b750afadce1ebf, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1103865079665138, guid: f1ba265eab911f44e9b750afadce1ebf, type: 2}
+      propertyPath: m_Name
+      value: SphericalFrog (4)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: f1ba265eab911f44e9b750afadce1ebf, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &542011498
 Prefab:
   m_ObjectHideFlags: 0
@@ -944,6 +1105,11 @@ Prefab:
       propertyPath: fireflyNoises.Array.data[0]
       value: 
       objectReference: {fileID: 8300000, guid: 2d6776298c4bd024f9fa6be693fac433, type: 3}
+    - target: {fileID: 82168297185290196, guid: 7420a04d86d9ebe45869899732f6a0bc,
+        type: 2}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 135798550173271986, guid: 7420a04d86d9ebe45869899732f6a0bc, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 7420a04d86d9ebe45869899732f6a0bc, type: 2}
@@ -953,6 +1119,11 @@ Transform:
   m_PrefabParentObject: {fileID: 4714589019930544, guid: 7420a04d86d9ebe45869899732f6a0bc,
     type: 2}
   m_PrefabInternal: {fileID: 638409061}
+--- !u!4 &654741107 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4849093378894680, guid: f1ba265eab911f44e9b750afadce1ebf,
+    type: 2}
+  m_PrefabInternal: {fileID: 539357806}
 --- !u!1001 &669297973
 Prefab:
   m_ObjectHideFlags: 0
@@ -1056,6 +1227,11 @@ Prefab:
       propertyPath: fireflyNoises.Array.data[0]
       value: 
       objectReference: {fileID: 8300000, guid: 2d6776298c4bd024f9fa6be693fac433, type: 3}
+    - target: {fileID: 82168297185290196, guid: 7420a04d86d9ebe45869899732f6a0bc,
+        type: 2}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 135798550173271986, guid: 7420a04d86d9ebe45869899732f6a0bc, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 7420a04d86d9ebe45869899732f6a0bc, type: 2}
@@ -1107,6 +1283,11 @@ Prefab:
     - target: {fileID: 1103865079665138, guid: d52cc133b630aea4bba056f801d719f3, type: 2}
       propertyPath: m_Name
       value: SphericalFrog (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114565334051939906, guid: d52cc133b630aea4bba056f801d719f3,
+        type: 2}
+      propertyPath: croakChance
+      value: 0.998
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d52cc133b630aea4bba056f801d719f3, type: 2}
@@ -1171,6 +1352,11 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1.0000007
       objectReference: {fileID: 0}
+    - target: {fileID: 114565334051939906, guid: d52cc133b630aea4bba056f801d719f3,
+        type: 2}
+      propertyPath: croakChance
+      value: 0.998
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d52cc133b630aea4bba056f801d719f3, type: 2}
   m_IsPrefabParent: 0
@@ -1217,6 +1403,11 @@ Prefab:
     - target: {fileID: 4849093378894680, guid: d52cc133b630aea4bba056f801d719f3, type: 2}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114565334051939906, guid: d52cc133b630aea4bba056f801d719f3,
+        type: 2}
+      propertyPath: croakChance
+      value: 0.998
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d52cc133b630aea4bba056f801d719f3, type: 2}
@@ -1329,6 +1520,11 @@ Prefab:
       propertyPath: fireflyNoises.Array.data[0]
       value: 
       objectReference: {fileID: 8300000, guid: 2d6776298c4bd024f9fa6be693fac433, type: 3}
+    - target: {fileID: 82168297185290196, guid: 7420a04d86d9ebe45869899732f6a0bc,
+        type: 2}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 135798550173271986, guid: 7420a04d86d9ebe45869899732f6a0bc, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 7420a04d86d9ebe45869899732f6a0bc, type: 2}
@@ -1423,6 +1619,11 @@ Prefab:
       propertyPath: m_Name
       value: SphericalFrog (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 114565334051939906, guid: d52cc133b630aea4bba056f801d719f3,
+        type: 2}
+      propertyPath: croakChance
+      value: 0.998
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d52cc133b630aea4bba056f801d719f3, type: 2}
   m_IsPrefabParent: 0
@@ -1477,6 +1678,11 @@ Prefab:
     - target: {fileID: 4849093378894680, guid: d52cc133b630aea4bba056f801d719f3, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 113.661
+      objectReference: {fileID: 0}
+    - target: {fileID: 114565334051939906, guid: d52cc133b630aea4bba056f801d719f3,
+        type: 2}
+      propertyPath: croakChance
+      value: 0.998
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d52cc133b630aea4bba056f801d719f3, type: 2}
@@ -1538,6 +1744,11 @@ Prefab:
       propertyPath: fireflyNoises.Array.data[0]
       value: 
       objectReference: {fileID: 8300000, guid: 2d6776298c4bd024f9fa6be693fac433, type: 3}
+    - target: {fileID: 82168297185290196, guid: 7420a04d86d9ebe45869899732f6a0bc,
+        type: 2}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 135798550173271986, guid: 7420a04d86d9ebe45869899732f6a0bc, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 7420a04d86d9ebe45869899732f6a0bc, type: 2}
@@ -1771,6 +1982,11 @@ Prefab:
       propertyPath: m_Name
       value: SphericalFrog (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 114565334051939906, guid: d52cc133b630aea4bba056f801d719f3,
+        type: 2}
+      propertyPath: croakChance
+      value: 0.998
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d52cc133b630aea4bba056f801d719f3, type: 2}
   m_IsPrefabParent: 0
@@ -1831,6 +2047,11 @@ Prefab:
       propertyPath: fireflyNoises.Array.data[0]
       value: 
       objectReference: {fileID: 8300000, guid: 2d6776298c4bd024f9fa6be693fac433, type: 3}
+    - target: {fileID: 82168297185290196, guid: 7420a04d86d9ebe45869899732f6a0bc,
+        type: 2}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 135798550173271986, guid: 7420a04d86d9ebe45869899732f6a0bc, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 7420a04d86d9ebe45869899732f6a0bc, type: 2}
@@ -2065,6 +2286,11 @@ Prefab:
       propertyPath: fireflyNoises.Array.data[0]
       value: 
       objectReference: {fileID: 8300000, guid: 2d6776298c4bd024f9fa6be693fac433, type: 3}
+    - target: {fileID: 82168297185290196, guid: 7420a04d86d9ebe45869899732f6a0bc,
+        type: 2}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 135798550173271986, guid: 7420a04d86d9ebe45869899732f6a0bc, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 7420a04d86d9ebe45869899732f6a0bc, type: 2}
@@ -2126,6 +2352,11 @@ Prefab:
       propertyPath: fireflyNoises.Array.data[0]
       value: 
       objectReference: {fileID: 8300000, guid: 2d6776298c4bd024f9fa6be693fac433, type: 3}
+    - target: {fileID: 82168297185290196, guid: 7420a04d86d9ebe45869899732f6a0bc,
+        type: 2}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 135798550173271986, guid: 7420a04d86d9ebe45869899732f6a0bc, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 7420a04d86d9ebe45869899732f6a0bc, type: 2}
@@ -2190,6 +2421,11 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1.0000007
       objectReference: {fileID: 0}
+    - target: {fileID: 114565334051939906, guid: d52cc133b630aea4bba056f801d719f3,
+        type: 2}
+      propertyPath: croakChance
+      value: 0.998
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d52cc133b630aea4bba056f801d719f3, type: 2}
   m_IsPrefabParent: 0
@@ -2245,6 +2481,11 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 113.661
       objectReference: {fileID: 0}
+    - target: {fileID: 114565334051939906, guid: d52cc133b630aea4bba056f801d719f3,
+        type: 2}
+      propertyPath: croakChance
+      value: 0.998
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d52cc133b630aea4bba056f801d719f3, type: 2}
   m_IsPrefabParent: 0
@@ -2253,6 +2494,11 @@ Transform:
   m_PrefabParentObject: {fileID: 4849093378894680, guid: d52cc133b630aea4bba056f801d719f3,
     type: 2}
   m_PrefabInternal: {fileID: 1638718706}
+--- !u!4 &1757823294 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4849093378894680, guid: f1ba265eab911f44e9b750afadce1ebf,
+    type: 2}
+  m_PrefabInternal: {fileID: 328694111}
 --- !u!1001 &1763917440
 Prefab:
   m_ObjectHideFlags: 0
@@ -2305,6 +2551,11 @@ Prefab:
       propertyPath: fireflyNoises.Array.data[0]
       value: 
       objectReference: {fileID: 8300000, guid: 2d6776298c4bd024f9fa6be693fac433, type: 3}
+    - target: {fileID: 82168297185290196, guid: 7420a04d86d9ebe45869899732f6a0bc,
+        type: 2}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 135798550173271986, guid: 7420a04d86d9ebe45869899732f6a0bc, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 7420a04d86d9ebe45869899732f6a0bc, type: 2}
@@ -2412,6 +2663,11 @@ Prefab:
       propertyPath: m_Name
       value: SphericalFrog (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 114565334051939906, guid: d52cc133b630aea4bba056f801d719f3,
+        type: 2}
+      propertyPath: croakChance
+      value: 0.998
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d52cc133b630aea4bba056f801d719f3, type: 2}
   m_IsPrefabParent: 0
@@ -2472,6 +2728,11 @@ Prefab:
       propertyPath: fireflyNoises.Array.data[0]
       value: 
       objectReference: {fileID: 8300000, guid: 2d6776298c4bd024f9fa6be693fac433, type: 3}
+    - target: {fileID: 82168297185290196, guid: 7420a04d86d9ebe45869899732f6a0bc,
+        type: 2}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 135798550173271986, guid: 7420a04d86d9ebe45869899732f6a0bc, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 7420a04d86d9ebe45869899732f6a0bc, type: 2}
@@ -2584,6 +2845,11 @@ Prefab:
       propertyPath: fireflyNoises.Array.data[0]
       value: 
       objectReference: {fileID: 8300000, guid: 2d6776298c4bd024f9fa6be693fac433, type: 3}
+    - target: {fileID: 82168297185290196, guid: 7420a04d86d9ebe45869899732f6a0bc,
+        type: 2}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 135798550173271986, guid: 7420a04d86d9ebe45869899732f6a0bc, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 7420a04d86d9ebe45869899732f6a0bc, type: 2}
@@ -2645,6 +2911,11 @@ Prefab:
       propertyPath: fireflyNoises.Array.data[0]
       value: 
       objectReference: {fileID: 8300000, guid: 2d6776298c4bd024f9fa6be693fac433, type: 3}
+    - target: {fileID: 82168297185290196, guid: 7420a04d86d9ebe45869899732f6a0bc,
+        type: 2}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 135798550173271986, guid: 7420a04d86d9ebe45869899732f6a0bc, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 7420a04d86d9ebe45869899732f6a0bc, type: 2}
@@ -2696,6 +2967,11 @@ Prefab:
     - target: {fileID: 1103865079665138, guid: d52cc133b630aea4bba056f801d719f3, type: 2}
       propertyPath: m_Name
       value: SphericalFrog (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114565334051939906, guid: d52cc133b630aea4bba056f801d719f3,
+        type: 2}
+      propertyPath: croakChance
+      value: 0.998
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d52cc133b630aea4bba056f801d719f3, type: 2}

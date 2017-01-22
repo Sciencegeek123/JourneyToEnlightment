@@ -19,7 +19,7 @@ public class AwarenessBell : BaseBell
     public override void Emit(float range)
     {
         Debug.Log("Emitting Awareness");
-        BellEventEmitterSingleton.Instance.Emit(BellEventType.AwarenessBellEvent, GetComponentInParent<Transform>(), range);
+        BellEventEmitterSingleton.Instance.Emit(BellEventType.AwarenessBellEvent, this.transform, range);
 			myLightCoRoutine = PlayLightCoRoutine();
 			StartCoroutine(myLightCoRoutine);
     }

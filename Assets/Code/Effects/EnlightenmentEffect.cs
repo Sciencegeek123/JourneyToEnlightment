@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AirPuzzle : PuzzleBase{
+public class EnlightenmentEffect : BaseEffect
+{
 
     [SerializeField]
     public AudioSource clip;
@@ -11,7 +12,7 @@ public class AirPuzzle : PuzzleBase{
     // Use this for initialization
     void Start()
     {
-
+        BellEventEmitterSingleton.Instance.Register(BellEventType.EnlightenmentBellEvent, transform, null);
     }
 
     // Update is called once per frame
@@ -22,9 +23,8 @@ public class AirPuzzle : PuzzleBase{
 
     public override void Complete()
     {
-        Debug.Log("Air Puzzle Solved");
+        Debug.Log("Enlightenment Puzzle Solved");
         //clip.Play();
-        StartCoroutine(Death());
     }
 
 }

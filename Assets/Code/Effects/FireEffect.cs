@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FirePuzzle : PuzzleBase {
+public class FireEffect : BaseEffect {
 
     [SerializeField]
     public AudioSource clip;
@@ -10,7 +10,7 @@ public class FirePuzzle : PuzzleBase {
 
 	// Use this for initialization
 	void Start () {
-		
+        BellEventEmitterSingleton.Instance.Register(BellEventType.FireBellEvent, transform, null) ;
 	}
 	
 	// Update is called once per frame

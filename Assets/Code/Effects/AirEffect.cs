@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EarthPuzzle : PuzzleBase {
+public class AirEffect : BaseEffect{
 
     [SerializeField]
     public AudioSource clip;
@@ -11,7 +11,7 @@ public class EarthPuzzle : PuzzleBase {
     // Use this for initialization
     void Start()
     {
-
+        BellEventEmitterSingleton.Instance.Register(BellEventType.AirBellEvent, transform, null);
     }
 
     // Update is called once per frame
@@ -22,7 +22,7 @@ public class EarthPuzzle : PuzzleBase {
 
     public override void Complete()
     {
-        Debug.Log("Earth Puzzle Solved");
+        Debug.Log("Air Puzzle Solved");
         //clip.Play();
         StartCoroutine(Death());
     }

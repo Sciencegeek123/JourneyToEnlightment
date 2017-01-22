@@ -13,9 +13,11 @@ public class EffectsCheats : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        /*
         if (Input.GetKeyDown("f1"))
         {
             Debug.Log("Emitting Awareness...");
+            aw
             bees.Emit(BellEventType.AwarenessBellEvent, transform, 5f);
         }
         if (Input.GetKeyDown("f2"))
@@ -43,5 +45,6 @@ public class EffectsCheats : MonoBehaviour {
             Debug.Log("Emitting Everything...");
             bees.Emit(BellEventType.AllBellEvents, transform, 5f);
         }
+        */
     }
 }

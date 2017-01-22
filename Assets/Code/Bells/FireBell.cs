@@ -8,6 +8,6 @@ public class FireBell : BaseBell
     public override void Emit(float range)
     {
         Debug.Log("Emitting Fire");
-        BellEventEmitterSingleton.Instance.Emit(BellEventType.FireBellEvent, GetComponentInParent<Transform>(), range);
+        //BellEventEmitterSingleton.Instance.Emit(BellEventType.FireBellEvent, GetComponentInParent<Transform>(), range);
     }
 }

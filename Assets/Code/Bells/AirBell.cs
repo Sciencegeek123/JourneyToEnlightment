@@ -12,7 +12,7 @@ public class AirBell : BaseBell
     public override void Emit(float range)
     {
         Debug.Log("Emitting Air");
-        BellEventEmitterSingleton.Instance.Emit(BellEventType.AirBellEvent, GetComponentInParent<Transform>(), range);
+        //BellEventEmitterSingleton.Instance.Emit(BellEventType.AirBellEvent, GetComponentInParent<Transform>(), range);
         emittedParticles = 0;
     }
 

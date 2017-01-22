@@ -29,7 +29,6 @@ public class AwarenessEffect : BaseEffect {
 
     public void found()
     {
-        BellEventEmitterSingleton.Instance.Emit(BellEventType.AwarenessBellEvent, transform, 1f);
     }
 
 }

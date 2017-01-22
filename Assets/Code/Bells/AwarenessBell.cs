@@ -12,7 +12,7 @@ public class AwarenessBell : BaseBell
     public override void Emit(float range)
     {
         Debug.Log("Emitting Awareness");
-        BellEventEmitterSingleton.Instance.Emit(BellEventType.AwarenessBellEvent, this.transform, range);
+        //BellEventEmitterSingleton.Instance.Emit(BellEventType.AwarenessBellEvent, this.transform, range);
 		Instantiate(AwarenessParticlePrefab,this.transform.position, this.transform.rotation,null);
     }
 }

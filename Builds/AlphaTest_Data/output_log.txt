@@ -21,29 +21,17 @@ Platform assembly: C:\Projects\JourneyToEnlightment\Builds\AlphaTest_Data\Manage
 Loading C:\Projects\JourneyToEnlightment\Builds\AlphaTest_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
 Platform assembly: C:\Projects\JourneyToEnlightment\Builds\AlphaTest_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
 Loading C:\Projects\JourneyToEnlightment\Builds\AlphaTest_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
-- Completed reload, in  0.029 seconds
+- Completed reload, in  0.034 seconds
 Platform assembly: C:\Projects\JourneyToEnlightment\Builds\AlphaTest_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Projects\JourneyToEnlightment\Builds\AlphaTest_Data\Managed\System.dll (this message is harmless)
 desktop: 3840x2160 60Hz; virtual: 3840x2160 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 1.250526 ms
-Connected to StateSingleton...
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Connected to StateSingleton...
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Connected to StateSingleton...
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
+UnloadTime: 1.169648 ms
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: 3ec0 -> priority: 1 
-  Thread -> id: 3414 -> priority: 1 
+  Thread -> id: 2b50 -> priority: 1 
+  Thread -> id: 3e1c -> priority: 1 
 Connected to StateSingleton...
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
@@ -148,27 +136,27 @@ Connected to StateSingleton...
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Emitting Awareness
+Connected to StateSingleton...
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Emitting Air
+Connected to StateSingleton...
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Playing particles
+Connected to StateSingleton...
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Playing particles
+Connected to StateSingleton...
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Stopping particles
+Connected to StateSingleton...
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Emitting Fire
+Connected to StateSingleton...
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 

@@ -5,18 +5,6 @@ using UnityEngine;
 public class AttainBell : MonoBehaviour {
 
     public int bellNum;
-    [SerializeField]
-    public AwarenessBell awarenessBell = null;
-    [SerializeField]
-    public AirBell airBell = null;
-    [SerializeField]
-    public FireBell fireBell = null;
-    [SerializeField]
-    public WaterBell waterBell = null;
-    [SerializeField]
-    public EarthBell earthBell = null;
-    [SerializeField]
-    public EnlightenmentBell enlightenmentBell = null;
 
     public AudioClip[] bellSounds;
 
@@ -31,6 +19,7 @@ public class AttainBell : MonoBehaviour {
     [SerializeField] Color PointLightColor;
     [SerializeField] AnimationCurve PointLightIntensityOverLife;
     [SerializeField] Gradient EmissionColorOverLife;
+    [SerializeField] Player player;
 
 
     private Material InitialMaterial;
@@ -41,22 +30,10 @@ public class AttainBell : MonoBehaviour {
 	void Start () {
         //col = GetComponent<CapsuleCollider>();
         ss = StateSingleton.get();
-        BellEventEmitterSingleton.Instance.Register(BellEventType.AwarenessBellEvent, this.transform, Ping);
-        InitialMaterial = this.gameObject.GetComponent<MeshRenderer>().material;
     }
 	
 	// Update is called once per frame
 	void Update () {
-        if (startTime < Time.realtimeSinceStartup && Time.realtimeSinceStartup - startTime < duration)
-        {
-            if (!crystalLight.enabled) { crystalLight.enabled = true; }
-            float delta = (Time.realtimeSinceStartup - startTime) / duration;
-            this.gameObject.GetComponent<MeshRenderer>().material = crystalSpecialMaterial;
-            crystalLight.color = PointLightColor;
-            crystalLight.intensity = PointLightIntensityOverLife.Evaluate(delta);
-            this.gameObject.GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", EmissionColorOverLife.Evaluate(delta));
-        }
-        else if (crystalLight.enabled) { crystalLight.enabled = false; }
     }
 
     void OnTriggerEnter(Collider col)
@@ -67,22 +44,22 @@ public class AttainBell : MonoBehaviour {
             switch (bellNum)
             {
                 case 0:
-                    awarenessBell.Emit(25f);
+                    player.awarenessBell.Emit(25f);
                     break;
                 case 1:
-                    airBell.Emit(25f);
+                    player.airBell.Emit(25f);
                     break;
                 case 2:
-                    fireBell.Emit(25f);
+                    player.fireBell.Emit(25f);
                     break;
                 case 3:
-                    waterBell.Emit(25f);
+                    player.waterBell.Emit(25f);
                     break;
                 case 4:
-                    earthBell.Emit(25f);
+                    player.earthBell.Emit(25f);
                     break;
                 case 5:
-                    enlightenmentBell.Emit(25f);
+                    player.enlightenmentBell.Emit(25f);
                     break;
                 default:
                     break;
@@ -95,11 +72,11 @@ public class AttainBell : MonoBehaviour {
             Destroy(this.gameObject);
         }
     }
-    void Ping(BellEventType type, Transform transform, float delay)
+    /*void Ping(BellEventType type, Transform transform, float delay)
     {
         if (Time.realtimeSinceStartup - startTime > duration)
         {
             startTime = Time.realtimeSinceStartup + delay;
         }
-    }
+    }*/
 }

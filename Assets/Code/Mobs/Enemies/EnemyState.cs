@@ -53,6 +53,7 @@ public class EnemyState : MonoBehaviour {
         {
             anim.SetBool("Idle", false);
             anim.SetBool("Chase", false);
+            anim.SetBool("Attack", false);
             anim.SetBool("Roam", true);
         }
         EnemyState tempState = null;
@@ -69,6 +70,7 @@ public class EnemyState : MonoBehaviour {
         {
             anim.SetBool("Idle", false);
             anim.SetBool("Roam", false);
+            anim.SetBool("Attack", false);
             anim.SetBool("Chase", true);
         }
         EnemyState tempState = null;

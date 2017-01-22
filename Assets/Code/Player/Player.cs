@@ -37,7 +37,7 @@ public class Player : MonoBehaviour
     RaycastHit outHit;
     CharacterController controller;
     Animator anim;
-    AudioSource audioSource; 
+    AudioSource audioSource;
 
 
     void Awake()
@@ -72,7 +72,7 @@ public class Player : MonoBehaviour
 
             HandleAutoMove();
         }
-        
+
 
         if (Input.GetButtonDown("PrevBell"))
         {
@@ -111,22 +111,22 @@ public class Player : MonoBehaviour
                 switch (ss.curBell)
                 {
                     case 0:
-                        BellEventEmitterSingleton.Instance.Emit(BellEventType.AwarenessBellEvent, transform, 5f);
+                        awarenessBell.Emit(25f);
                         break;
                     case 1:
-                        BellEventEmitterSingleton.Instance.Emit(BellEventType.AirBellEvent, transform, 5f);
+                        airBell.Emit(25f);
                         break;
                     case 2:
-                        BellEventEmitterSingleton.Instance.Emit(BellEventType.FireBellEvent, transform, 5f);
+                        fireBell.Emit(25f);
                         break;
                     case 3:
-                        BellEventEmitterSingleton.Instance.Emit(BellEventType.WaterBellEvent, transform, 5f);
+                        waterBell.Emit(25f);
                         break;
                     case 4:
-                        BellEventEmitterSingleton.Instance.Emit(BellEventType.EarthBellEvent, transform, 5f);
+                        earthBell.Emit(25f);
                         break;
                     case 5:
-                        BellEventEmitterSingleton.Instance.Emit(BellEventType.EnlightenmentBellEvent, transform, 5f);
+                        enlightenmentBell.Emit(25f);
                         break;
                     default:
                         break;
@@ -148,7 +148,7 @@ public class Player : MonoBehaviour
         moveDirection = transform.TransformDirection(moveDirection);
         moveDirection *= speed;
         float rotation = Input.GetAxis("Rotate");
-        if (moveDirection.magnitude > 0.1f || rotation!= 0f)
+        if (moveDirection.magnitude > 0.1f || rotation != 0f)
         {
             if (audioSource.isPlaying == false)
                 audioSource.Play();
@@ -157,7 +157,8 @@ public class Player : MonoBehaviour
             CancelAutoMove();
             controller.Move(moveDirection * Time.deltaTime);
             transform.Rotate(0, rotation * rotSpeed * Time.deltaTime, 0);
-        }else if (agent.velocity.magnitude < 0.1f)
+        }
+        else if (agent.velocity.magnitude < 0.1f)
         {
             anim.SetBool("Walk", false);
             anim.SetBool("Idle", true);

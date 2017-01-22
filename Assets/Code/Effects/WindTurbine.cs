@@ -12,6 +12,8 @@ public class WindTurbine : MonoBehaviour {
 	[SerializeField] AnimationCurve turbineLightIntensity;
 
 	bool sequenceStarted = false;
+	bool decorativeEnabled = false;
+	IEnumerator decorativeCoroutine = null;
 
 	// Use this for initialization
 	void Start () {
@@ -22,6 +24,12 @@ public class WindTurbine : MonoBehaviour {
 		if(!sequenceStarted) {
 			sequenceStarted = true;
 			StartCoroutine(TurbineSequence());
+		} else if(decorativeEnabled) {
+			if(decorativeCoroutine != null) {
+				StopCoroutine(decorativeCoroutine);
+			}
+			decorativeCoroutine = DecorativeTurbineSequence();
+			StartCoroutine(decorativeCoroutine);
 		}
 	}
 
@@ -50,5 +58,21 @@ public class WindTurbine : MonoBehaviour {
 			yield return null;
 		}
 		wallLight.enabled = false;
+		Destroy(wallLight);
+		Destroy(wall);
+		decorativeEnabled = true;
+	}
+	IEnumerator DecorativeTurbineSequence() {
+		float startTime = Time.realtimeSinceStartup;
+		turbineLight.enabled = true;
+
+		while(Time.realtimeSinceStartup - startTime < 5) {
+			float delta = (Time.realtimeSinceStartup - startTime) / 5;
+			turbineLight.intensity = turbineLightIntensity.Evaluate(delta);
+			turbine.transform.Rotate(Vector3.up * 90 * Time.smoothDeltaTime);
+			yield return null;
+		}
+
+		turbineLight.enabled = false;
 	}
 }

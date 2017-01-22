@@ -159,7 +159,8 @@ AudioSource:
   m_GameObject: {fileID: 1809936409629820}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 243600255251792692, guid: 01a712b7e34339241afa67314db88745,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -170,8 +171,8 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 0.1
-  MaxDistance: 2.5
+  MinDistance: 0.01
+  MaxDistance: 4
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -243,9 +244,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BatNoises:
-  - {fileID: 8300000, guid: 23f79ea75f77d5645894246ca9532096, type: 3}
-  - {fileID: 8300000, guid: 961444a7c256b9747a664140c54840c6, type: 3}
-  - {fileID: 8300000, guid: 3705ed941e2422349bb542109ed0396b, type: 3}
   - {fileID: 8300000, guid: 9daca440c30422c4ab539b1d36cb1a9b, type: 3}
   croakChance: 0.98
 --- !u!135 &135764025764541106

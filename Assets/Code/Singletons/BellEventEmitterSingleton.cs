@@ -70,7 +70,7 @@ public class BellEventEmitterSingleton
             {
                 if (item.p != null && (item.o.position - root.position).magnitude < range)
                 {
-                    item.p(type, root, Mathf.Sqrt((item.o.position - root.position).magnitude) + 2.5f);
+                    item.p(type, root, Mathf.Sqrt((item.o.position - root.position).magnitude) / 2.5f + 0.5f);
                 }
             }
             
@@ -81,7 +81,7 @@ public class BellEventEmitterSingleton
             {
                 if (item.p != null && (item.o.position - root.position).magnitude < range)
                 {
-                    item.p(type, root, Mathf.Sqrt((item.o.position - root.position).magnitude) + 2.5f);
+                    item.p(type, root, Mathf.Sqrt((item.o.position - root.position).magnitude) / 2.5f + 0.5f);
                 }
             }
         }

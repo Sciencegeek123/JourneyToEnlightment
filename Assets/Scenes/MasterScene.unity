@@ -2423,6 +2423,7 @@ MonoBehaviour:
   waterBell: {fileID: 589241283}
   earthBell: {fileID: 2069298508}
   enlightenmentBell: {fileID: 283282303}
+  clip: {fileID: 8300000, guid: 71ea8860e679b05498bb157b5bad27cb, type: 3}
 --- !u!143 &1178159685
 CharacterController:
   m_ObjectHideFlags: 0

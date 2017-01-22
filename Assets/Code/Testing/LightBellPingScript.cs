@@ -24,7 +24,7 @@ public class LightBellPingScript : MonoBehaviour {
 		TestingSingleton.Instance.Register(this.transform, Ping);	
 	}
 
-	void Ping(float delay) {
+	void Ping(BellEventType type, Transform transform, float delay) {
 		if(pingCoroutineReference != null) {
 			StopCoroutine(pingCoroutineReference);
 		}

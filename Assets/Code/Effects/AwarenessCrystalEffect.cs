@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AwarenessCrystalEffect : MonoBehaviour {
+public class AwarenessCrystalEffect : MonoBehaviour
+{
     [SerializeField] float duration = 5;
     [SerializeField] Light crystalLight;
     [SerializeField] Material crystalSpecialMaterial;
@@ -22,23 +23,23 @@ public class AwarenessCrystalEffect : MonoBehaviour {
 
     float startTime = -60;
 
-    void Update() {
-        if(startTime < Time.realtimeSinceStartup && Time.realtimeSinceStartup - startTime < duration) {
+    void Update()
+    {
+        if (startTime < Time.realtimeSinceStartup && Time.realtimeSinceStartup - startTime < duration)
+        {
             float delta = (Time.realtimeSinceStartup - startTime) / duration;
-            if(this.gameObject.GetComponent<MeshRenderer>().material != crystalSpecialMaterial) {
-                this.gameObject.GetComponent<MeshRenderer>().material = crystalSpecialMaterial;
-            }
+            this.gameObject.GetComponent<MeshRenderer>().material = crystalSpecialMaterial;
             crystalLight.color = PointLightColor;
             crystalLight.intensity = PointLightIntensityOverLife.Evaluate(delta);
-            crystalSpecialMaterial.SetColor("_EmissionColor", EmissionColorOverLife.Evaluate(delta));
-        } else {
-            if(this.gameObject.GetComponent<MeshRenderer>().material != InitialMaterial) {
-                this.gameObject.GetComponent<MeshRenderer>().material = InitialMaterial;
-            }
+            this.gameObject.GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", EmissionColorOverLife.Evaluate(delta));
         }
     }
 
-    void Ping(BellEventType type, Transform transform, float delay) {
-        startTime = Time.realtimeSinceStartup + delay;
+    void Ping(BellEventType type, Transform transform, float delay)
+    {
+        if (Time.realtimeSinceStartup - startTime > duration)
+        {
+            startTime = Time.realtimeSinceStartup + delay;
+        }
     }
 }

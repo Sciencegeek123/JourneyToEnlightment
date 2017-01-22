@@ -14,5 +14,11 @@ public class PuzzleBase : MonoBehaviour {
 		
 	}
 
+    public virtual void Complete() { }
 
+    public IEnumerator Death()
+    {
+        yield return new WaitForSeconds(3);
+        Destroy(this);
+    }
 }

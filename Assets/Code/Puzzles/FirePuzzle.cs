@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class FirePuzzle : PuzzleBase {
 
+    [SerializeField]
+    public AudioSource clip;
+
+
 	// Use this for initialization
 	void Start () {
 		
@@ -13,4 +17,10 @@ public class FirePuzzle : PuzzleBase {
 	void Update () {
 		
 	}
+
+    public override void Complete()
+    {
+        clip.Play();
+        Death();
+    }
 }

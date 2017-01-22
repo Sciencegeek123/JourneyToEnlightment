@@ -4,13 +4,25 @@ using UnityEngine;
 
 public class EarthPuzzle : PuzzleBase {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    [SerializeField]
+    public AudioSource clip;
+
+
+    // Use this for initialization
+    void Start()
+    {
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+
+    public override void Complete()
+    {
+        clip.Play();
+        Death();
+    }
 }

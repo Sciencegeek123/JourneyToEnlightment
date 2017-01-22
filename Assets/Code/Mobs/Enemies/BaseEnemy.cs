@@ -56,6 +56,7 @@ public class BaseEnemy : MonoBehaviour {
     public GameObject Player;
     public UnityEngine.AI.NavMeshAgent agent { get; set; }
 
+<<<<<<< HEAD
     void Ping(BellEventType type, Transform transform, float delay)
     {
         Debug.Log("Received Ping");
@@ -77,6 +78,10 @@ public class BaseEnemy : MonoBehaviour {
     // Use this for initialization
     public virtual void Start () {
         BellEventEmitterSingleton.Instance.Register(BellEventType.AllBellEvents, this.transform, Ping);
+=======
+    // Use this for initialization
+    public virtual void Start () {
+>>>>>>> 9ffff481e8cab0c4c0e3d00a32fccbeb5ddaa76a
         EnemyState tempState = null;
         tempState = GetComponent<EnemyIdle>();
         lastSoundStart = Random.Range(0,30);

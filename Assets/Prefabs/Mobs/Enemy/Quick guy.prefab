@@ -272,7 +272,7 @@ MonoBehaviour:
   MaxDistanceToChase: 5
   MinDistanceToAttack: 1.5
   MaxIdleTime: 0.3
-  MaxRoamTime: 1.5
+  MaxRoamTime: 0.7
   AttackCooldownTime: 0.5
   SoundCooldown: 5
   lastSoundStart: 0
@@ -294,7 +294,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Enemy: {fileID: 0}
   Player: {fileID: 0}
-  anim: {fileID: 0}
 --- !u!114 &114774080167058540
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -308,8 +307,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Enemy: {fileID: 0}
   Player: {fileID: 0}
-  anim: {fileID: 0}
-  AttackLength: 1.5
 --- !u!114 &114817196616303568
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -323,7 +320,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Enemy: {fileID: 0}
   Player: {fileID: 0}
-  anim: {fileID: 0}
   RoamToPosition: {x: 0, y: 0, z: 0}
   MinRoamDistance: 3
   MaxRoamDistance: 7
@@ -340,7 +336,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Enemy: {fileID: 0}
   Player: {fileID: 0}
-  anim: {fileID: 0}
 --- !u!195 &195422295257762926
 NavMeshAgent:
   m_ObjectHideFlags: 1

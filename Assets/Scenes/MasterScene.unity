@@ -741,12 +741,6 @@ Prefab:
       value: 
       objectReference: {fileID: 1655991553378124, guid: ecf6e9fc1ad9f6a419b6316cb4a1da7e,
         type: 2}
-    - target: {fileID: 114223023324567620, guid: dfb1412a93b8a2347b2dc5facc55284b,
-        type: 2}
-      propertyPath: WaterParticlePrefab
-      value: 
-      objectReference: {fileID: 1655991553378124, guid: 4b519c381dd2d584e93625e7ee659ff2,
-        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dfb1412a93b8a2347b2dc5facc55284b, type: 2}
   m_IsPrefabParent: 0

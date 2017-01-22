@@ -8,7 +8,7 @@ public class AirBell : BaseBell
     [SerializeField] GameObject WindProjectile;
 
     float startTime;
-    int emittedParticles = 4;
+    int emittedParticles = 5;
     public override void Emit(float range)
     {
         Debug.Log("Emitting Air");
@@ -17,10 +17,13 @@ public class AirBell : BaseBell
     }
 
     void Update() {
-        if(emittedParticles < 4 && Time.realtimeSinceStartup - startTime > 0.25f) {
+        if(emittedParticles < 5 && Time.realtimeSinceStartup - startTime > 0.25f) {
             startTime = Time.realtimeSinceStartup;
             emittedParticles++;
-            Instantiate(WindProjectile, transform.position, transform.rotation);
+
+            Quaternion targetRotation = transform.rotation * Quaternion.AngleAxis(-10+5*emittedParticles,Vector3.up);
+
+            Instantiate(WindProjectile, transform.position, targetRotation);
         }
     }
 }

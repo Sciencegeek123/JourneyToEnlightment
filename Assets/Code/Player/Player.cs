@@ -21,17 +21,17 @@ public class Player : MonoBehaviour
     public float rotSpeed = 90f;
 
     [SerializeField]
-    AwarenessBell awarenessBell = null;
+    public AwarenessBell awarenessBell = null;
     [SerializeField]
-    AirBell airBell = null;
+    public AirBell airBell = null;
     [SerializeField]
-    FireBell fireBell = null;
+    public FireBell fireBell = null;
     [SerializeField]
-    WaterBell waterBell = null;
+    public WaterBell waterBell = null;
     [SerializeField]
-    EarthBell earthBell = null;
+    public EarthBell earthBell = null;
     [SerializeField]
-    EnlightenmentBell enlightenmentBell = null;
+    public EnlightenmentBell enlightenmentBell = null;
 
 
     NavMeshAgent agent;

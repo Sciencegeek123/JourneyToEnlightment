@@ -185,3 +185,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c96cf7e4fea341945b58289e5007392d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  StartFogColor: {r: 1, g: 1, b: 1, a: 1}
+  StartLightColor: {r: 1, g: 1, b: 1, a: 1}
+  WindFogColor: {r: 1, g: 1, b: 1, a: 1}
+  WindLightColor: {r: 1, g: 1, b: 1, a: 1}
+  FireFogColor: {r: 1, g: 1, b: 1, a: 1}
+  FireLightColor: {r: 1, g: 1, b: 1, a: 1}
+  WaterFogColor: {r: 1, g: 1, b: 1, a: 1}
+  WaterLightColor: {r: 1, g: 1, b: 1, a: 1}
+  EarthFogColor: {r: 1, g: 1, b: 1, a: 1}
+  EarthLightColor: {r: 1, g: 1, b: 1, a: 1}

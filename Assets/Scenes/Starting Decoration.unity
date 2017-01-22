@@ -397,6 +397,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 603d767546db5456180a174178874e97, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &9102063 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1938157543765022, guid: 05b074293e29043dab99f7748c3a200c,
+    type: 2}
+  m_PrefabInternal: {fileID: 713280548}
 --- !u!1001 &9475835
 Prefab:
   m_ObjectHideFlags: 0
@@ -26371,6 +26376,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &960872874 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1905844144730062, guid: 6b6666746de724ced9040c54db65e273,
+    type: 2}
+  m_PrefabInternal: {fileID: 149813404}
 --- !u!1001 &963531061
 Prefab:
   m_ObjectHideFlags: 0
@@ -50607,6 +50617,26 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 603d767546db5456180a174178874e97, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1851227811 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1423069149152088, guid: 6b6666746de724ced9040c54db65e273,
+    type: 2}
+  m_PrefabInternal: {fileID: 149813404}
+--- !u!114 &1851227813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1851227811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4e22c77a2b4d9544b17126608d071c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turbine: {fileID: 960872874}
+  turbineLight: {fileID: 0}
+  wall: {fileID: 9102063}
+  wallLight: {fileID: 0}
 --- !u!1001 &1853166565
 Prefab:
   m_ObjectHideFlags: 0

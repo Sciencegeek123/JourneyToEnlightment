@@ -32,7 +32,8 @@ public class Player : MonoBehaviour
     public EnlightenmentBell enlightenmentBell = null;
 
 
-    public AudioClip clip;
+    public AudioClip walk;
+    public AudioClip[] bellSounds;
     NavMeshAgent agent;
     RaycastHit outHit;
     CharacterController controller;
@@ -51,7 +52,7 @@ public class Player : MonoBehaviour
         controller = GetComponent<CharacterController>();
         anim = GetComponentInChildren<Animator>();
         audioSource = GetComponent<AudioSource>();
-        audioSource.clip = clip;
+        audioSource.clip = walk;
     }
 
     // Use this for initialization
@@ -108,6 +109,8 @@ public class Player : MonoBehaviour
             if (cooldown == 0)
             {
                 cooldown = 5f;
+                audioSource.clip = bellSounds[ss.curBell];
+                audioSource.Play();
                 switch (ss.curBell)
                 {
                     case 0:

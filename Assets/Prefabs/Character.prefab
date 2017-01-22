@@ -896,7 +896,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1504552634460342
 GameObject:
   m_ObjectHideFlags: 1
@@ -3960,7 +3960,14 @@ MonoBehaviour:
   waterBell: {fileID: 114223023324567620}
   earthBell: {fileID: 114575813645352374}
   enlightenmentBell: {fileID: 114273376490017952}
-  clip: {fileID: 8300000, guid: 71ea8860e679b05498bb157b5bad27cb, type: 3}
+  walk: {fileID: 8300000, guid: 71ea8860e679b05498bb157b5bad27cb, type: 3}
+  bellSounds:
+  - {fileID: 8300000, guid: ee6606e04b9ae51498b340c05c1ccd14, type: 3}
+  - {fileID: 8300000, guid: f41775e2ad1a54045a927adeb4981a45, type: 3}
+  - {fileID: 8300000, guid: e32411f5992899f4fa7d793a18b7d2cd, type: 3}
+  - {fileID: 8300000, guid: fecbe65487ad59b489bd8d158c3b224b, type: 3}
+  - {fileID: 8300000, guid: 2ea05e4392d097540abe045b6f11327a, type: 3}
+  - {fileID: 8300000, guid: 0ad03ffe9dc17db4a960385047ac6d27, type: 3}
 --- !u!124 &124164722329952312
 Behaviour:
   m_ObjectHideFlags: 1

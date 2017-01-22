@@ -70,7 +70,7 @@ GameObject:
   - component: {fileID: 4697339822225894}
   - component: {fileID: 114265539564593422}
   m_Layer: 8
-  m_Name: EarthParticle
+  m_Name: WaterParticle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -122,7 +122,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1655991553378124}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -53.433163, y: 0, z: -13.662331}
+  m_LocalPosition: {x: -58.740467, y: 0, z: -15.7313}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4117043435655084}
@@ -140,7 +140,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 7
   m_Type: 2
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 0, g: 1, b: 1, a: 1}
   m_Intensity: 0
   m_Range: 30
   m_SpotAngle: 30
@@ -174,7 +174,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 7
   m_Type: 0
-  m_Color: {r: 0, g: 0.66896534, b: 0, a: 1}
+  m_Color: {r: 0, g: 0.60474485, b: 0.66896534, a: 1}
   m_Intensity: 0
   m_Range: 60
   m_SpotAngle: 120
@@ -187,7 +187,7 @@ Light:
     m_Bias: 0.05
     m_NormalBias: 0.4
     m_NearPlane: 0.2
-  m_Cookie: {fileID: 2800000, guid: 07dde146f8ac54195a7168a410ea9111, type: 3}
+  m_Cookie: {fileID: 2800000, guid: f4b8e7d19bc026d4c9427143ccb1b03e, type: 3}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
   m_RenderMode: 0
@@ -272,37 +272,49 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 2
       time: -0.0015090539
-      value: -0.00085972156
+      value: -0.0024757227
       inSlope: 2
       outSlope: 2
       tangentMode: 0
     - serializedVersion: 2
-      time: 0.017110009
-      value: 0.2977891
+      time: 0.0362439
+      value: 0.18709457
       inSlope: 5.810708
       outSlope: 5.810708
       tangentMode: 0
     - serializedVersion: 2
-      time: 0.15099068
-      value: 0.6598124
+      time: 0.17314571
+      value: 0.23238614
       inSlope: 0.37257117
       outSlope: 0.37257117
       tangentMode: 0
     - serializedVersion: 2
-      time: 0.3041613
-      value: 0.657699
+      time: 0.23819974
+      value: 0.5712441
       inSlope: 0.60860837
       outSlope: 0.60860837
       tangentMode: 0
     - serializedVersion: 2
-      time: 0.6272393
-      value: 0.6559758
+      time: 0.38427842
+      value: 0.5019726
+      inSlope: 0.51379204
+      outSlope: 0.51379204
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.49128795
+      value: 0.7093031
       inSlope: -0.6920099
       outSlope: -0.6920099
       tangentMode: 0
     - serializedVersion: 2
-      time: 0.9999992
-      value: 0.6546973
+      time: 0.7279978
+      value: 0.7138342
+      inSlope: -0.048577785
+      outSlope: -0.048577785
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.9843638
+      value: 0.7626528
       inSlope: 0
       outSlope: 0
       tangentMode: 0

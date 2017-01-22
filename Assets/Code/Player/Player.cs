@@ -53,8 +53,6 @@ public class Player : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         controller = GetComponent<CharacterController>();
         anim = GetComponentInChildren<Animator>();
-        bellSource = GetComponent<AudioSource>();
-        walkSource = GetComponentInChildren<AudioSource>();
         walkSource.clip = walk;
     }
 

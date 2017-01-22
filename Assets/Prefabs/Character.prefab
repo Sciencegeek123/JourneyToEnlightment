@@ -3388,7 +3388,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57799b3c83e955741985e6a6d894ec71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  charge: 0
   cooldown: 0
   speed: 6
   jumpSpeed: 8
@@ -3400,6 +3399,7 @@ MonoBehaviour:
   waterBell: {fileID: 0}
   earthBell: {fileID: 0}
   enlightenmentBell: {fileID: 0}
+  clip: {fileID: 8300000, guid: 71ea8860e679b05498bb157b5bad27cb, type: 3}
 --- !u!124 &124164722329952312
 Behaviour:
   m_ObjectHideFlags: 1

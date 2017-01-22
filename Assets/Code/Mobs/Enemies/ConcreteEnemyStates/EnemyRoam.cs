@@ -40,7 +40,7 @@ public class EnemyRoam : EnemyState
     public override void Update () {
         if (Mathf.Abs((RoamToPosition - gameObject.transform.position).magnitude) < 0.1f)
         {
-            GetNewRoamPosition();
+            ToIdle(Enemy);
         }
         Enemy.RotateTowardVelocity();
     }

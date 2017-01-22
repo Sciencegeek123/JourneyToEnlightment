@@ -32,21 +32,26 @@ public class Player : MonoBehaviour
     public EnlightenmentBell enlightenmentBell = null;
 
 
+    public AudioClip clip;
     NavMeshAgent agent;
     RaycastHit outHit;
     CharacterController controller;
     Animator anim;
+    AudioSource audioSource; 
 
 
     void Awake()
     {
         ss = StateSingleton.get();
+        ss.player = this;
         db = DBSingleton.get();
         ss.uid = 1;
         db.setBells();
         agent = GetComponent<NavMeshAgent>();
         controller = GetComponent<CharacterController>();
         anim = GetComponentInChildren<Animator>();
+        audioSource = GetComponent<AudioSource>();
+        audioSource.clip = clip;
     }
 
     // Use this for initialization
@@ -60,8 +65,11 @@ public class Player : MonoBehaviour
     {
         if (Input.GetButton("Fire1"))
         {
+            if (audioSource.isPlaying == false)
+                audioSource.Play();
             anim.SetBool("Idle", false);
             anim.SetBool("Walk", true);
+
             HandleAutoMove();
         }
         
@@ -142,6 +150,8 @@ public class Player : MonoBehaviour
         float rotation = Input.GetAxis("Rotate");
         if (moveDirection.magnitude > 0.1f || rotation!= 0f)
         {
+            if (audioSource.isPlaying == false)
+                audioSource.Play();
             anim.SetBool("Idle", false);
             anim.SetBool("Walk", true);
             CancelAutoMove();

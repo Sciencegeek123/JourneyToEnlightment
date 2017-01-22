@@ -5,44 +5,14 @@ using UnityEngine;
 
 public class AwarenessBell : BaseBell
 {
-	[SerializeField] Light mySpotLight;
-	[SerializeField] Light myPointLight;
+	[SerializeField] GameObject AwarenessParticlePrefab;
+	[SerializeField] float delay = 5;
 
-	[SerializeField] ParticleSystem myParticleSystem;
-
-	[SerializeField] AnimationCurve SpotLightIntensityCurve;
-	[SerializeField] AnimationCurve PointLightIntensityCurve;
-	[SerializeField] AnimationCurve SpotLightAngleCurve;
-	[SerializeField] AnimationCurve FogDensityCurve;
-	[SerializeField] float SpotLightDuration = 5;
-	private IEnumerator myLightCoRoutine = null;
+	float lastFire = -10;
     public override void Emit(float range)
     {
         Debug.Log("Emitting Awareness");
         BellEventEmitterSingleton.Instance.Emit(BellEventType.AwarenessBellEvent, this.transform, range);
-			myLightCoRoutine = PlayLightCoRoutine();
-			StartCoroutine(myLightCoRoutine);
+		Instantiate(AwarenessParticlePrefab,this.transform.position, this.transform.rotation,null);
     }
-
-	IEnumerator PlayLightCoRoutine() {
-		float startTime = Time.realtimeSinceStartup;
-
-		myParticleSystem.Play();
-		
-		while(Time.realtimeSinceStartup - startTime < SpotLightDuration) {
-			float delta = (Time.realtimeSinceStartup - startTime) / SpotLightDuration;
-			float spotAngle = Mathf.Clamp01(SpotLightAngleCurve.Evaluate(delta))*180;
-			float spotIntensity = SpotLightIntensityCurve.Evaluate(delta);
-			float pointIntensity = PointLightIntensityCurve.Evaluate(delta);
-            RenderSettings.fogDensity = FogDensityCurve.Evaluate(delta);
-
-			mySpotLight.intensity = spotIntensity;
-			mySpotLight.spotAngle = spotAngle;
-			myPointLight.intensity = pointIntensity;
-
-			yield return null;
-		}
-
-		myParticleSystem.Stop();
-	}
 }

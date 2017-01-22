@@ -6,10 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class LoadSequence : MonoBehaviour {
 
-	[SerializeField] float LoadDelay = 15;
+	[SerializeField] float LoadDelay = 10;
+	[SerializeField] float LoadDelay2 = 15;
 	[SerializeField] float KillDelay = 20;
 
 	bool loadOnce = false;
+	bool loadTwice = false;
 	[SerializeField] Gradient PaneAlpha;
 	[SerializeField] Image image;
 
@@ -17,8 +19,12 @@ public class LoadSequence : MonoBehaviour {
 	void Update () {
 		image.color = PaneAlpha.Evaluate(Time.realtimeSinceStartup / 20);
 		if(!loadOnce && Time.realtimeSinceStartup > LoadDelay) {
-			LoadAll();
+			SceneManager.LoadSceneAsync("MasterScene",LoadSceneMode.Additive);
 			loadOnce = true;
+		}
+		if(!loadTwice && Time.realtimeSinceStartup > LoadDelay2) {
+			LoadAll();
+			loadTwice = true;
 		}
 		if(Time.realtimeSinceStartup > KillDelay) {
 			SceneManager.UnloadSceneAsync("Intro");
@@ -30,8 +36,6 @@ public class LoadSequence : MonoBehaviour {
 		SceneManager.LoadSceneAsync("MainGameEnvironment",LoadSceneMode.Additive);
 		SceneManager.LoadSceneAsync("AmbientSourceScene",LoadSceneMode.Additive);
 		SceneManager.LoadSceneAsync("EnemyScene",LoadSceneMode.Additive);
-		SceneManager.LoadSceneAsync("MainGameEnvironment",LoadSceneMode.Additive);
-		SceneManager.LoadSceneAsync("MasterScene",LoadSceneMode.Additive);
 		SceneManager.LoadSceneAsync("Starting Decoration",LoadSceneMode.Additive);
 		SceneManager.LoadSceneAsync("WallColliders",LoadSceneMode.Additive);
 		SceneManager.LoadSceneAsync("WallScene1",LoadSceneMode.Additive);

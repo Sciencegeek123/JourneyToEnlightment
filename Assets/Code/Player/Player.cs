@@ -75,28 +75,32 @@ public class Player : MonoBehaviour
 
         if (Input.GetButtonDown("PrevBell"))
         {
-            Debug.Log("Grabbing Previous Bell");
             if (ss.curBell == 0)
             {
                 if (ss.bells[5])
+                {
+                    Debug.Log("Grabbing Previous Bell");
                     ss.curBell = 5;
+                }
             }
             else
             {
+                Debug.Log("Grabbing Previous Bell");
                 ss.curBell--;
             }
         }
         if (Input.GetButtonDown("NextBell"))
         {
-            Debug.Log("Grabbing Next Bell");
             if (ss.curBell == 5)
             {
+                Debug.Log("Grabbing Next Bell");
                 ss.curBell = 0;
             }
             else
             {
                 if (ss.bells[ss.curBell + 1])
                 {
+                    Debug.Log("Grabbing Next Bell");
                     ss.curBell++;
                 }
             }

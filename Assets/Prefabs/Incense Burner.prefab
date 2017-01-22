@@ -21,6 +21,8 @@ GameObject:
   - component: {fileID: 4901176021486804}
   - component: {fileID: 33241096916116246}
   - component: {fileID: 23514986549922976}
+  - component: {fileID: 208749190138296890}
+  - component: {fileID: 136691933860900296}
   m_Layer: 0
   m_Name: Incense Burner
   m_TagString: Untagged
@@ -35,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1722073393285140}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -120.86, y: 0, z: 10.97}
+  m_LocalPosition: {x: -161.12, y: 0, z: 66.68}
   m_LocalScale: {x: 0.43600002, y: 0.43600002, z: 0.43600002}
   m_Children: []
   m_Father: {fileID: 0}
@@ -79,3 +81,31 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1722073393285140}
   m_Mesh: {fileID: 4300000, guid: 5125d63aadb4f4bf5bd3d86406517685, type: 3}
+--- !u!136 &136691933860900296
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1722073393285140}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 8.002636
+  m_Height: 6.8092
+  m_Direction: 1
+  m_Center: {x: -0.0000004768371, y: 3.4046, z: 0.08593916}
+--- !u!208 &208749190138296890
+NavMeshObstacle:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1722073393285140}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: 8.003, y: 3.4050002, z: 8.003}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 3.4050002, z: 0.086}
+  m_TimeToStationary: 0.5

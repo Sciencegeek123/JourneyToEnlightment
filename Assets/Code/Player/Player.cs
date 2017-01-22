@@ -38,8 +38,9 @@ public class Player : MonoBehaviour
     RaycastHit outHit;
     CharacterController controller;
     Animator anim;
-    AudioSource walkSource;
-    AudioSource bellSource;
+
+    public AudioSource walkSource;
+    public AudioSource bellSource;
 
 
     void Awake()

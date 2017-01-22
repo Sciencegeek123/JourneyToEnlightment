@@ -7,6 +7,8 @@ public class StateSingleton {
     private static StateSingleton instance;
     private static DBSingleton db;
     public int uid = 0;
+
+    public Player player;
     public bool[] bells = new bool[6];
 
     public int curBell = 0;

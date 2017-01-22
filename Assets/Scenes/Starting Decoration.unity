@@ -397,6 +397,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 603d767546db5456180a174178874e97, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &9102063 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1938157543765022, guid: 05b074293e29043dab99f7748c3a200c,
+    type: 2}
+  m_PrefabInternal: {fileID: 713280548}
 --- !u!1001 &9475835
 Prefab:
   m_ObjectHideFlags: 0
@@ -5078,6 +5083,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 23
       objectReference: {fileID: 0}
+    - target: {fileID: 114964984406688964, guid: 6b6666746de724ced9040c54db65e273,
+        type: 2}
+      propertyPath: wall
+      value: 
+      objectReference: {fileID: 9102063}
+    - target: {fileID: 114964984406688964, guid: 6b6666746de724ced9040c54db65e273,
+        type: 2}
+      propertyPath: wallLight
+      value: 
+      objectReference: {fileID: 2029143863}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6b6666746de724ced9040c54db65e273, type: 2}
   m_IsPrefabParent: 0
@@ -13401,6 +13416,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 05b074293e29043dab99f7748c3a200c, type: 2}
   m_IsPrefabParent: 0
+--- !u!108 &418440447 stripped
+Light:
+  m_PrefabParentObject: {fileID: 108354303600137078, guid: 05b074293e29043dab99f7748c3a200c,
+    type: 2}
+  m_PrefabInternal: {fileID: 418440446}
 --- !u!1001 &419143271
 Prefab:
   m_ObjectHideFlags: 0
@@ -14495,6 +14515,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 603d767546db5456180a174178874e97, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &444353788 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1938157543765022, guid: 05b074293e29043dab99f7748c3a200c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1832371606}
 --- !u!1001 &448963376
 Prefab:
   m_ObjectHideFlags: 0
@@ -16842,6 +16867,11 @@ Transform:
   m_PrefabParentObject: {fileID: 4671541142472080, guid: 646081b8715284dcfb4b463f2d0a6b9c,
     type: 2}
   m_PrefabInternal: {fileID: 1098400959}
+--- !u!1 &518578354 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1938157543765022, guid: 05b074293e29043dab99f7748c3a200c,
+    type: 2}
+  m_PrefabInternal: {fileID: 418440446}
 --- !u!1001 &519151745
 Prefab:
   m_ObjectHideFlags: 0
@@ -16962,6 +16992,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 308548f574c42484bb82e8faba42ad09, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &519965907 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1938157543765022, guid: 05b074293e29043dab99f7748c3a200c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1089851761}
 --- !u!1001 &521339435
 Prefab:
   m_ObjectHideFlags: 0
@@ -20098,6 +20133,16 @@ Prefab:
       propertyPath: m_Name
       value: Wind turbine (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 114964984406688964, guid: 6b6666746de724ced9040c54db65e273,
+        type: 2}
+      propertyPath: wall
+      value: 
+      objectReference: {fileID: 519965907}
+    - target: {fileID: 114964984406688964, guid: 6b6666746de724ced9040c54db65e273,
+        type: 2}
+      propertyPath: wallLight
+      value: 
+      objectReference: {fileID: 1089851762}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6b6666746de724ced9040c54db65e273, type: 2}
   m_IsPrefabParent: 0
@@ -22728,6 +22773,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 05b074293e29043dab99f7748c3a200c, type: 2}
   m_IsPrefabParent: 0
+--- !u!108 &699341435 stripped
+Light:
+  m_PrefabParentObject: {fileID: 108354303600137078, guid: 05b074293e29043dab99f7748c3a200c,
+    type: 2}
+  m_PrefabInternal: {fileID: 699341434}
 --- !u!1001 &699832191
 Prefab:
   m_ObjectHideFlags: 0
@@ -23342,10 +23392,6 @@ Prefab:
     - target: {fileID: 1316838985339850, guid: 05b074293e29043dab99f7748c3a200c, type: 2}
       propertyPath: m_Name
       value: wind walls (4)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4995710234351048, guid: 05b074293e29043dab99f7748c3a200c, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 77.952
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 05b074293e29043dab99f7748c3a200c, type: 2}
@@ -26709,6 +26755,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 308548f574c42484bb82e8faba42ad09, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &820062179 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1938157543765022, guid: 05b074293e29043dab99f7748c3a200c,
+    type: 2}
+  m_PrefabInternal: {fileID: 699341434}
 --- !u!1001 &820797613
 Prefab:
   m_ObjectHideFlags: 0
@@ -33243,6 +33294,16 @@ Prefab:
       propertyPath: m_Name
       value: Wind turbine (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 114964984406688964, guid: 6b6666746de724ced9040c54db65e273,
+        type: 2}
+      propertyPath: wall
+      value: 
+      objectReference: {fileID: 820062179}
+    - target: {fileID: 114964984406688964, guid: 6b6666746de724ced9040c54db65e273,
+        type: 2}
+      propertyPath: wallLight
+      value: 
+      objectReference: {fileID: 699341435}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6b6666746de724ced9040c54db65e273, type: 2}
   m_IsPrefabParent: 0
@@ -34635,6 +34696,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 05b074293e29043dab99f7748c3a200c, type: 2}
   m_IsPrefabParent: 0
+--- !u!108 &1089851762 stripped
+Light:
+  m_PrefabParentObject: {fileID: 108354303600137078, guid: 05b074293e29043dab99f7748c3a200c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1089851761}
 --- !u!1001 &1090820842
 Prefab:
   m_ObjectHideFlags: 0
@@ -38833,6 +38899,16 @@ Prefab:
       propertyPath: m_Name
       value: Wind turbine (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 114964984406688964, guid: 6b6666746de724ced9040c54db65e273,
+        type: 2}
+      propertyPath: wall
+      value: 
+      objectReference: {fileID: 518578354}
+    - target: {fileID: 114964984406688964, guid: 6b6666746de724ced9040c54db65e273,
+        type: 2}
+      propertyPath: wallLight
+      value: 
+      objectReference: {fileID: 418440447}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6b6666746de724ced9040c54db65e273, type: 2}
   m_IsPrefabParent: 0
@@ -51769,6 +51845,16 @@ Prefab:
       propertyPath: m_Name
       value: Wind turbine (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 114964984406688964, guid: 6b6666746de724ced9040c54db65e273,
+        type: 2}
+      propertyPath: wall
+      value: 
+      objectReference: {fileID: 444353788}
+    - target: {fileID: 114964984406688964, guid: 6b6666746de724ced9040c54db65e273,
+        type: 2}
+      propertyPath: wallLight
+      value: 
+      objectReference: {fileID: 1832371607}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6b6666746de724ced9040c54db65e273, type: 2}
   m_IsPrefabParent: 0
@@ -56898,6 +56984,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 05b074293e29043dab99f7748c3a200c, type: 2}
   m_IsPrefabParent: 0
+--- !u!108 &1832371607 stripped
+Light:
+  m_PrefabParentObject: {fileID: 108354303600137078, guid: 05b074293e29043dab99f7748c3a200c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1832371606}
 --- !u!1001 &1833787410
 Prefab:
   m_ObjectHideFlags: 0
@@ -63423,6 +63514,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4e7dc89f077544abe8efd7ab05f031a3, type: 2}
   m_IsPrefabParent: 0
+--- !u!108 &2029143863 stripped
+Light:
+  m_PrefabParentObject: {fileID: 108354303600137078, guid: 05b074293e29043dab99f7748c3a200c,
+    type: 2}
+  m_PrefabInternal: {fileID: 713280548}
 --- !u!1001 &2031384399
 Prefab:
   m_ObjectHideFlags: 0

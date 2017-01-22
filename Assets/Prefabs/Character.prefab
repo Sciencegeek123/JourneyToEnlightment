@@ -2090,7 +2090,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1322945936675594}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -59.445957, y: 1.016, z: 4.151573}
+  m_LocalPosition: {x: 14.5, y: 1.016, z: -135.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4999174319938984}
@@ -4047,9 +4047,11 @@ MonoBehaviour:
   - {fileID: 8300000, guid: ee6606e04b9ae51498b340c05c1ccd14, type: 3}
   - {fileID: 8300000, guid: f41775e2ad1a54045a927adeb4981a45, type: 3}
   - {fileID: 8300000, guid: e32411f5992899f4fa7d793a18b7d2cd, type: 3}
-  - {fileID: 8300000, guid: f5e6d72225118f646902299c8b6b3229, type: 3}
-  - {fileID: 8300000, guid: 78426579b62d48243828ea260823056b, type: 3}
+  - {fileID: 8300000, guid: fecbe65487ad59b489bd8d158c3b224b, type: 3}
+  - {fileID: 8300000, guid: 2ea05e4392d097540abe045b6f11327a, type: 3}
   - {fileID: 8300000, guid: 0ad03ffe9dc17db4a960385047ac6d27, type: 3}
+  walkSource: {fileID: 82219986324731798}
+  bellSource: {fileID: 82606714298230620}
 --- !u!124 &124164722329952312
 Behaviour:
   m_ObjectHideFlags: 1

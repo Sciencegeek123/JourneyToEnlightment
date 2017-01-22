@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ZoneController : MonoBehaviour {
-
 	[SerializeField] Color StartFogColor = Color.white;
 	[SerializeField] Color StartLightColor = Color.white;
 	[SerializeField] Color WindFogColor = Color.white;
@@ -23,8 +22,55 @@ public class ZoneController : MonoBehaviour {
 		Earth
 	}
 
-	public void SetZone(ZoneEnum zone) {
+	ZoneEnum targetZone = ZoneEnum.Start;
+	float targetTime = 0;
+	Color oldFogColor, oldLightColor;
 
+	public void SetZone(ZoneEnum zone) {
+		targetZone = zone;
+		targetTime = Time.realtimeSinceStartup;
+		oldFogColor = RenderSettings.fogColor;
+		oldLightColor = RenderSettings.ambientLight;
+	}
+
+	void Update() {
+		switch(targetZone) {
+			case ZoneEnum.Start:
+			{
+				float delta = (Time.realtimeSinceStartup - targetTime) / 0.5f;
+				RenderSettings.fogColor = Color.Lerp(oldFogColor, StartFogColor, delta);
+				RenderSettings.ambientLight = Color.Lerp(oldLightColor, StartLightColor, delta);
+				break;
+			}
+			case ZoneEnum.Wind:
+			{
+				float delta = (Time.realtimeSinceStartup - targetTime) / 0.5f;
+				RenderSettings.fogColor = Color.Lerp(oldFogColor, WindFogColor, delta);
+				RenderSettings.ambientLight = Color.Lerp(oldLightColor, WindLightColor, delta);
+				break;
+			}
+			case ZoneEnum.Water:
+			{
+				float delta = (Time.realtimeSinceStartup - targetTime) / 0.5f;
+				RenderSettings.fogColor = Color.Lerp(oldFogColor, WaterFogColor, delta);
+				RenderSettings.ambientLight = Color.Lerp(oldLightColor, WaterLightColor, delta);
+				break;
+			}
+			case ZoneEnum.Earth:
+			{
+				float delta = (Time.realtimeSinceStartup - targetTime) / 0.5f;
+				RenderSettings.fogColor = Color.Lerp(oldFogColor, EarthFogColor, delta);
+				RenderSettings.ambientLight = Color.Lerp(oldLightColor, EarthLightColor, delta);
+				break;
+			}
+			case ZoneEnum.Fire:
+			{
+				float delta = (Time.realtimeSinceStartup - targetTime) / 0.5f;
+				RenderSettings.fogColor = Color.Lerp(oldFogColor, FireFogColor, delta);
+				RenderSettings.ambientLight = Color.Lerp(oldLightColor, FireLightColor, delta);
+				break;
+			}
+		}
 	}
 
 

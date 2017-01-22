@@ -489,6 +489,12 @@ Transform:
   m_PrefabParentObject: {fileID: 4198927026070178, guid: dfb1412a93b8a2347b2dc5facc55284b,
     type: 2}
   m_PrefabInternal: {fileID: 703613238}
+--- !u!114 &261877179 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114893106664834570, guid: dfb1412a93b8a2347b2dc5facc55284b,
+    type: 2}
+  m_PrefabInternal: {fileID: 703613238}
+  m_Script: {fileID: 11500000, guid: 57799b3c83e955741985e6a6d894ec71, type: 3}
 --- !u!54 &261877185
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -680,7 +686,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4198927026070178, guid: dfb1412a93b8a2347b2dc5facc55284b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -115.12
+      value: -62.5
       objectReference: {fileID: 0}
     - target: {fileID: 4198927026070178, guid: dfb1412a93b8a2347b2dc5facc55284b, type: 2}
       propertyPath: m_LocalPosition.y
@@ -688,7 +694,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4198927026070178, guid: dfb1412a93b8a2347b2dc5facc55284b, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -141.89
+      value: -20.1
       objectReference: {fileID: 0}
     - target: {fileID: 4198927026070178, guid: dfb1412a93b8a2347b2dc5facc55284b, type: 2}
       propertyPath: m_LocalRotation.x
@@ -696,7 +702,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4198927026070178, guid: dfb1412a93b8a2347b2dc5facc55284b, type: 2}
       propertyPath: m_LocalRotation.y
-      value: -0.83559257
+      value: -0.74589473
       objectReference: {fileID: 0}
     - target: {fileID: 4198927026070178, guid: dfb1412a93b8a2347b2dc5facc55284b, type: 2}
       propertyPath: m_LocalRotation.z
@@ -704,7 +710,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4198927026070178, guid: dfb1412a93b8a2347b2dc5facc55284b, type: 2}
       propertyPath: m_LocalRotation.w
-      value: -0.5493498
+      value: -0.6660639
       objectReference: {fileID: 0}
     - target: {fileID: 4198927026070178, guid: dfb1412a93b8a2347b2dc5facc55284b, type: 2}
       propertyPath: m_RootOrder
@@ -712,7 +718,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4198927026070178, guid: dfb1412a93b8a2347b2dc5facc55284b, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -246.64499
+      value: -263.52798
       objectReference: {fileID: 0}
     - target: {fileID: 136651350215005732, guid: dfb1412a93b8a2347b2dc5facc55284b,
         type: 2}
@@ -1021,6 +1027,11 @@ Prefab:
       propertyPath: EmissionColorOverLife.m_NumAlphaKeys
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114537303485813622, guid: ccb3745d51a85bf4fb6c1067b01b8e30,
+        type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 261877179}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ccb3745d51a85bf4fb6c1067b01b8e30, type: 2}
   m_IsPrefabParent: 0
@@ -1297,6 +1308,11 @@ Prefab:
       propertyPath: crystalLight
       value: 
       objectReference: {fileID: 703613239}
+    - target: {fileID: 114537303485813622, guid: ccb3745d51a85bf4fb6c1067b01b8e30,
+        type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 261877179}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ccb3745d51a85bf4fb6c1067b01b8e30, type: 2}
   m_IsPrefabParent: 0
@@ -1399,6 +1415,11 @@ Prefab:
       propertyPath: duration
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 114459529338905228, guid: cd8400db01afee443a29964bf6215b09,
+        type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 261877179}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cd8400db01afee443a29964bf6215b09, type: 2}
   m_IsPrefabParent: 0
@@ -1816,6 +1837,11 @@ Prefab:
       propertyPath: EmissionColorOverLife.m_NumAlphaKeys
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114537303485813622, guid: ccb3745d51a85bf4fb6c1067b01b8e30,
+        type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 261877179}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ccb3745d51a85bf4fb6c1067b01b8e30, type: 2}
   m_IsPrefabParent: 0
@@ -2149,7 +2175,6 @@ MonoBehaviour:
   WaterLightColor: {r: 0, g: 1, b: 0.8758621, a: 1}
   EarthFogColor: {r: 0.053, g: 0, b: 0.042765524, a: 0.13333334}
   EarthLightColor: {r: 1, g: 0, b: 0.64137936, a: 1}
-  directionalLight: {fileID: 1555553482}
 --- !u!1001 &2132885342
 Prefab:
   m_ObjectHideFlags: 0
@@ -2328,6 +2353,11 @@ Prefab:
       propertyPath: EmissionColorOverLife.m_NumAlphaKeys
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114537303485813622, guid: ccb3745d51a85bf4fb6c1067b01b8e30,
+        type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 261877179}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ccb3745d51a85bf4fb6c1067b01b8e30, type: 2}
   m_IsPrefabParent: 0

@@ -126,28 +126,21 @@ public class BaseEnemy : MonoBehaviour {
         }
 
         Vector3 displacement = PlayerPosition - MyPosition;
-        // if (plr-enemy).dist < engage distance
-        // Chase();
-        if (displacement.magnitude <= MinDistanceToChase
-            && displacement.magnitude > MinDistanceToAttack)
-        {
-            Chase();
-        }
-        // if (plr-enemy).dist < attack distance
-        // Attack();
-        else if (displacement.magnitude <= MinDistanceToAttack
+
+        if (displacement.magnitude <= MinDistanceToAttack
                 && TimeSinceAttack > AttackCooldownTime)
         {
             // Debug.Log("Attempting to Attack");
             Attack();
         }
-        // else if (roamingTime > maxroamTime)
-        // Idle();
-        else if (TimeRoaming > MaxRoamTime)
+        // if (plr-enemy).dist < engage distance
+        // Chase();
+        else if (displacement.magnitude <= MinDistanceToChase
+            && displacement.magnitude > MinDistanceToAttack)
         {
-            // Debug.Log("Attempting To Idle");
-            Idle();
+            Chase();
         }
+
         // else if (idleTime> maxIdleTime)
         // Roam();
         else if (TimeIdling > MaxIdleTime
@@ -156,6 +149,13 @@ public class BaseEnemy : MonoBehaviour {
         {
             //Debug.Log("Attempting To Roam");
             Roam();
+        }
+        // else if (roamingTime > maxroamTime)
+        // Idle();
+        else if (TimeRoaming > MaxRoamTime)
+        {
+            // Debug.Log("Attempting To Idle");
+            Idle();
         }
     }
 

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FirePuzzle : PuzzleBase {
+public class FireEffect : BaseEffect {
 
     [SerializeField]
     public AudioSource clip;

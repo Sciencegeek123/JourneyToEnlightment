@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     private static DBSingleton db;
     private Vector3 moveDirection = Vector3.zero;
 
+
     public float charge = 0f;
     public float cooldown = 0f;
     public float speed = 6.0F;
@@ -36,6 +37,7 @@ public class Player : MonoBehaviour
     NavMeshAgent agent;
     RaycastHit outHit;
     CharacterController controller;
+    Animator anim;
 
 
     void Awake()
@@ -46,6 +48,7 @@ public class Player : MonoBehaviour
         db.setBells();
         agent = GetComponent<NavMeshAgent>();
         controller = GetComponent<CharacterController>();
+        anim = GetComponentInChildren<Animator>();
     }
 
     // Use this for initialization
@@ -59,8 +62,11 @@ public class Player : MonoBehaviour
     {
         if (Input.GetButton("Fire1"))
         {
+            anim.SetBool("Idle", false);
+            anim.SetBool("Walk", true);
             HandleAutoMove();
         }
+        
 
         if (Input.GetButtonDown("PrevBell"))
         {
@@ -168,9 +174,15 @@ public class Player : MonoBehaviour
         float rotation = Input.GetAxis("Rotate");
         if (moveDirection.magnitude > 0.1f || rotation!= 0f)
         {
+            anim.SetBool("Idle", false);
+            anim.SetBool("Walk", true);
             CancelAutoMove();
             controller.Move(moveDirection * Time.deltaTime);
             transform.Rotate(0, rotation * rotSpeed * Time.deltaTime, 0);
+        }else if (agent.velocity.magnitude < 0.1f)
+        {
+            anim.SetBool("Walk", false);
+            anim.SetBool("Idle", true);
         }
     }
 

@@ -155,8 +155,8 @@ public class Player : MonoBehaviour
         float rotation = Input.GetAxis("Rotate");
         if (moveDirection.magnitude > 0.1f || rotation!= 0f)
         {
-            if (audioSource.isPlaying == false)
-                audioSource.Play();
+            if (walkSource.isPlaying == false)
+                walkSource.Play();
             anim.SetBool("Idle", false);
             anim.SetBool("Walk", true);
             CancelAutoMove();

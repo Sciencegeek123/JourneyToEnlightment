@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public delegate void BellPing(float delay);
+public delegate void BellPing(BellEventType type, Transform transform, float delay);
 
 public enum BellEventType
 {

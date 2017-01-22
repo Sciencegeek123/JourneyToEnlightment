@@ -10,7 +10,7 @@ public class FirePuzzle : PuzzleBase {
 
 	// Use this for initialization
 	void Start () {
-		
+        BellEventEmitterSingleton.Instance.Register(BellEventType.FireBellEvent, transform, null) ;
 	}
 	
 	// Update is called once per frame

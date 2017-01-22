@@ -11,7 +11,7 @@ public class AirPuzzle : PuzzleBase{
     // Use this for initialization
     void Start()
     {
-
+        BellEventEmitterSingleton.Instance.Register(BellEventType.AirBellEvent, transform, null);
     }
 
     // Update is called once per frame

@@ -10,8 +10,8 @@ public class EarthPuzzle : PuzzleBase {
 
     // Use this for initialization
     void Start()
-    {
-
+    { 
+        BellEventEmitterSingleton.Instance.Register(BellEventType.EarthBellEvent, transform, null) ;
     }
 
     // Update is called once per frame

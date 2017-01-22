@@ -11,10 +11,13 @@ public class EnemyState : MonoBehaviour {
     public BaseEnemy Enemy;
     public GameObject Player;
 
+    [SerializeField]
     Animator anim;
 	// Use this for initialization
 	public virtual void Start () {
+        if(anim==null) {
         anim = GetComponent<Animator>();
+        }
 	}
 	
 	// Update is called once per frame

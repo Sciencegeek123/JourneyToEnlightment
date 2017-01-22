@@ -27,12 +27,14 @@ public class AwarenessCrystalEffect : MonoBehaviour
     {
         if (startTime < Time.realtimeSinceStartup && Time.realtimeSinceStartup - startTime < duration)
         {
+            if (!crystalLight.enabled) { crystalLight.enabled = true; }
             float delta = (Time.realtimeSinceStartup - startTime) / duration;
             this.gameObject.GetComponent<MeshRenderer>().material = crystalSpecialMaterial;
             crystalLight.color = PointLightColor;
             crystalLight.intensity = PointLightIntensityOverLife.Evaluate(delta);
             this.gameObject.GetComponent<MeshRenderer>().material.SetColor("_EmissionColor", EmissionColorOverLife.Evaluate(delta));
         }
+        else if (crystalLight.enabled) { crystalLight.enabled = false; }
     }
 
     void Ping(BellEventType type, Transform transform, float delay)

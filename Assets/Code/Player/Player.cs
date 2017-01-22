@@ -41,6 +41,7 @@ public class Player : MonoBehaviour
     void Awake()
     {
         ss = StateSingleton.get();
+        ss.player = this;
         db = DBSingleton.get();
         ss.uid = 1;
         db.setBells();

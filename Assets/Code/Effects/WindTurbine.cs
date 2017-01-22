@@ -59,7 +59,7 @@ public class WindTurbine : MonoBehaviour {
 		}
 		wallLight.enabled = false;
 		Destroy(wallLight);
-		Destroy(wall);
+		wall.gameObject.SetActive(false);
 		decorativeEnabled = true;
 	}
 	IEnumerator DecorativeTurbineSequence() {

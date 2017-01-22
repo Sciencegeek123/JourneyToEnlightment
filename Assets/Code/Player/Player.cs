@@ -32,12 +32,14 @@ public class Player : MonoBehaviour
     public EnlightenmentBell enlightenmentBell = null;
 
 
-    public AudioClip clip;
+    public AudioClip walk;
+    public AudioClip[] bellSounds;
     NavMeshAgent agent;
     RaycastHit outHit;
     CharacterController controller;
     Animator anim;
-    AudioSource audioSource; 
+    AudioSource walkSource;
+    AudioSource bellSource;
 
 
     void Awake()
@@ -50,8 +52,9 @@ public class Player : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         controller = GetComponent<CharacterController>();
         anim = GetComponentInChildren<Animator>();
-        audioSource = GetComponent<AudioSource>();
-        audioSource.clip = clip;
+        bellSource = GetComponent<AudioSource>();
+        walkSource = GetComponentInChildren<AudioSource>();
+        walkSource.clip = walk;
     }
 
     // Use this for initialization
@@ -65,14 +68,14 @@ public class Player : MonoBehaviour
     {
         if (Input.GetButton("Fire1"))
         {
-            if (audioSource.isPlaying == false)
-                audioSource.Play();
+            if (walkSource.isPlaying == false)
+                walkSource.Play();
             anim.SetBool("Idle", false);
             anim.SetBool("Walk", true);
 
             HandleAutoMove();
         }
-        
+
 
         if (Input.GetButtonDown("PrevBell"))
         {
@@ -108,25 +111,27 @@ public class Player : MonoBehaviour
             if (cooldown == 0)
             {
                 cooldown = 5f;
+                bellSource.clip = bellSounds[ss.curBell];
+                bellSource.Play();
                 switch (ss.curBell)
                 {
                     case 0:
-                        BellEventEmitterSingleton.Instance.Emit(BellEventType.AwarenessBellEvent, transform, 5f);
+                        awarenessBell.Emit(25f);
                         break;
                     case 1:
-                        BellEventEmitterSingleton.Instance.Emit(BellEventType.AirBellEvent, transform, 5f);
+                        airBell.Emit(25f);
                         break;
                     case 2:
-                        BellEventEmitterSingleton.Instance.Emit(BellEventType.FireBellEvent, transform, 5f);
+                        fireBell.Emit(25f);
                         break;
                     case 3:
-                        BellEventEmitterSingleton.Instance.Emit(BellEventType.WaterBellEvent, transform, 5f);
+                        waterBell.Emit(25f);
                         break;
                     case 4:
-                        BellEventEmitterSingleton.Instance.Emit(BellEventType.EarthBellEvent, transform, 5f);
+                        earthBell.Emit(25f);
                         break;
                     case 5:
-                        BellEventEmitterSingleton.Instance.Emit(BellEventType.EnlightenmentBellEvent, transform, 5f);
+                        enlightenmentBell.Emit(25f);
                         break;
                     default:
                         break;
@@ -148,16 +153,17 @@ public class Player : MonoBehaviour
         moveDirection = transform.TransformDirection(moveDirection);
         moveDirection *= speed;
         float rotation = Input.GetAxis("Rotate");
-        if (moveDirection.magnitude > 0.1f || rotation!= 0f)
+        if (moveDirection.magnitude > 0.1f || rotation != 0f)
         {
-            if (audioSource.isPlaying == false)
-                audioSource.Play();
+            if (walkSource.isPlaying == false)
+                walkSource.Play();
             anim.SetBool("Idle", false);
             anim.SetBool("Walk", true);
             CancelAutoMove();
             controller.Move(moveDirection * Time.deltaTime);
             transform.Rotate(0, rotation * rotSpeed * Time.deltaTime, 0);
-        }else if (agent.velocity.magnitude < 0.1f)
+        }
+        else if (agent.velocity.magnitude < 0.1f)
         {
             anim.SetBool("Walk", false);
             anim.SetBool("Idle", true);

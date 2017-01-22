@@ -8,27 +8,20 @@ public class FireflyAudioScript : MonoBehaviour
     public AudioClip[] fireflyNoises;
     Player player;
     public float croakChance = 0.998f;
+    public float PitchRange = 1.5f;
 
     // Use this for initialization
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
         player = FindObjectOfType<Player>();
+        audioSource.pitch += Random.Range(-PitchRange / 2, PitchRange / 2);
+        audioSource.clip = fireflyNoises[0];
+        audioSource.Play();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (audioSource != null)
-        {
-            if (audioSource.isPlaying == false
-                && Random.Range(0.0f, 1.0f) > croakChance
-                && fireflyNoises.Length > 0)
-            {
-                audioSource.clip = fireflyNoises[Random.Range(0, fireflyNoises.Length - 1)];
-                //Debug.Log("Croak!");
-                audioSource.Play();
-            }
-        }
     }
 }

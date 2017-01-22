@@ -8,6 +8,6 @@ public class WaterBell : BaseBell
     public override void Emit(float range)
     {
         Debug.Log("Emitting Water");
-        BellEventEmitterSingleton.Instance.Emit(BellEventType.WaterBellEvent, GetComponentInParent<Transform>(), range);
+        //BellEventEmitterSingleton.Instance.Emit(BellEventType.WaterBellEvent, GetComponentInParent<Transform>(), range);
     }
 }

@@ -17,7 +17,7 @@ public class GameMaster : MonoBehaviour {
         SceneManager.LoadScene("WallScene5", LoadSceneMode.Additive);
         SceneManager.LoadScene("Starting Decoration", LoadSceneMode.Additive);
         SceneManager.LoadScene("EnemyScene", LoadSceneMode.Additive);
-        SceneManager.LoadScene("AmbientSourcesScene", LoadSceneMode.Additive);
+        SceneManager.LoadScene("AmbientSourceScene", LoadSceneMode.Additive);
     }
 
     void Update() {

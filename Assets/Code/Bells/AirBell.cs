@@ -6,6 +6,7 @@ using UnityEngine;
 public class AirBell : BaseBell
 {
     [SerializeField] GameObject WindProjectile;
+    [SerializeField] ParticleSystem myParticleSystem;
 
     float startTime;
     int emittedParticles = 5;
@@ -50,12 +51,22 @@ public class AirBell : BaseBell
     {
         if (emittedParticles < 5 && Time.realtimeSinceStartup - startTime > 0.25f)
         {
+            if (!myParticleSystem.isEmitting)
+            {
+                myParticleSystem.Play();
+                Debug.Log("Playing particles");
+            }
             startTime = Time.realtimeSinceStartup;
             emittedParticles++;
 
             Quaternion targetRotation = transform.rotation * Quaternion.AngleAxis(-10 + 5 * emittedParticles, Vector3.up);
 
             Instantiate(WindProjectile, transform.position, targetRotation);
+        }
+        else if (emittedParticles >= 5 && myParticleSystem.isEmitting)
+        {
+            myParticleSystem.Stop();
+                Debug.Log("Stopping particles");
         }
     }
 }

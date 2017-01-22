@@ -19,13 +19,13 @@ public class AirBell : BaseBell
 
         foreach (var item in BellEventEmitterSingleton.Instance.PingListeners[(int)BellEventType.AirBellEvent])
         {
-            if (item.p != null)
+            if (item.p != null && item.o != null)
             {
                 if ((item.o.position - transform.position).magnitude < range)
                 {
                     float distanceFromLine = Vector3.Cross(transform.rotation * Vector3.forward, item.o.position - transform.position).magnitude;
                     Debug.Log("Line distance: " + distanceFromLine);
-                    if (distanceFromLine < 5)
+                    if (distanceFromLine < 10)
                     {
                         item.p(BellEventType.AirBellEvent, transform, Mathf.Sqrt((item.o.position - transform.position).magnitude) + 2.5f);
                     }
@@ -34,11 +34,11 @@ public class AirBell : BaseBell
         }
         foreach (var item in BellEventEmitterSingleton.Instance.PingListeners[(int)BellEventType.AllBellEvents])
         {
-            if (item.p != null)
+            if (item.p != null && item.o != null)
             {
                 if ((item.o.position - transform.position).magnitude < range)
                 {
-                    if (Vector3.Cross(transform.rotation * Vector3.forward, item.o.position - transform.position).magnitude < 5)
+                    if (Vector3.Cross(transform.rotation * Vector3.forward, item.o.position - transform.position).magnitude < 10)
                     {
                         item.p(BellEventType.AirBellEvent, transform, Mathf.Sqrt((item.o.position - transform.position).magnitude) + 2.5f);
                     }

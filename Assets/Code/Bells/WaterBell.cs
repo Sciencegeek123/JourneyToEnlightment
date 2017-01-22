@@ -11,7 +11,6 @@ public class WaterBell : BaseBell
         Debug.Log("Emitting Water");
         //BellEventEmitterSingleton.Instance.Emit(BellEventType.WaterBellEvent, GetComponentInParent<Transform>(), range);
     
-        //BellEventEmitterSingleton.Instance.Emit(BellEventType.AwarenessBellEvent, this.transform, range);
 		Instantiate(WaterParticlePrefab,this.transform.position, this.transform.rotation,null);
 
         foreach (var item in BellEventEmitterSingleton.Instance.PingListeners[(int)BellEventType.AwarenessBellEvent])

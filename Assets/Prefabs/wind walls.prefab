@@ -69,6 +69,8 @@ GameObject:
   - component: {fileID: 4823057588124590}
   - component: {fileID: 33436029872689820}
   - component: {fileID: 23960060671226804}
+  - component: {fileID: 208417587290013218}
+  - component: {fileID: 65467873459934518}
   m_Layer: 0
   m_Name: pCube56
   m_TagString: Untagged
@@ -121,8 +123,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1316838985339850}
-  m_LocalRotation: {x: -0, y: 0.62899226, z: -0, w: 0.77741164}
-  m_LocalPosition: {x: -66.538574, y: 0, z: 77.627945}
+  m_LocalRotation: {x: -0, y: 0.15010802, z: -0, w: 0.98866963}
+  m_LocalPosition: {x: -227.65, y: 0, z: 19.43}
   m_LocalScale: {x: 1.7735143, y: 1.7735136, z: 1.7735136}
   m_Children:
   - {fileID: 4823057588124590}
@@ -130,7 +132,7 @@ Transform:
   - {fileID: 4203489795204462}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 77.952, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 17.266, z: 0}
 --- !u!23 &23833241351375480
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -207,6 +209,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1938157543765022}
   m_Mesh: {fileID: 4300000, guid: 39290f9469ba54b2692c61450ed8dd00, type: 3}
+--- !u!65 &65467873459934518
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1938157543765022}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.1706381, y: 3.5040798, z: 5.72}
+  m_Center: {x: 0.01811999, y: 1.4555109, z: 0}
 --- !u!108 &108354303600137078
 Light:
   m_ObjectHideFlags: 1
@@ -241,3 +255,18 @@ Light:
   m_BounceIntensity: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!208 &208417587290013218
+NavMeshObstacle:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1938157543765022}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.58500004, y: 1.7520001, z: 2.5270002}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0.018000001, y: 1.4560001, z: 0}
+  m_TimeToStationary: 0.5

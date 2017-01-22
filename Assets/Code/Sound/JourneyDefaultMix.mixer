@@ -27,6 +27,7 @@ AudioMixerController:
     - f05f92ffefda13f4189da49267dd9d84
     - 15b1d51191ee80941ab17d5fff0c8052
     - a050f4f8157657f4eb87e2feb0d476c1
+    - d00ff23a6299fff41b9e066554c74997
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500003}
@@ -115,6 +116,7 @@ AudioMixerGroupController:
   - {fileID: 243573735292398748}
   - {fileID: 243665273822636878}
   - {fileID: 243689833310693632}
+  - {fileID: 243882080610945288}
   m_Volume: 9b3c56887f76a294c9408c19923f12cb
   m_Pitch: 852f6bbf078a52a45a916582e1909437
   m_Effects:
@@ -208,6 +210,23 @@ AudioMixerGroupController:
   m_Mute: 0
   m_Solo: 0
   m_BypassEffects: 0
+--- !u!243 &243882080610945288
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Skittle
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: d00ff23a6299fff41b9e066554c74997
+  m_Children: []
+  m_Volume: 35f34f0fff8885a4dbe87ffc6d75b7cd
+  m_Pitch: 9a7a480d2f8ffa34f93449b38c3ef1e8
+  m_Effects:
+  - {fileID: 244415704680537112}
+  m_UserColorIndex: 0
+  m_Mute: 1
+  m_Solo: 0
+  m_BypassEffects: 0
 --- !u!243 &243922882091692544
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -251,6 +270,19 @@ AudioMixerEffectController:
   m_EffectID: 5e5290a5cf3908e43997c7547a4d0ad9
   m_EffectName: Attenuation
   m_MixLevel: 289bf1f5fa2f1bd4292887c703695c62
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!244 &244415704680537112
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_EffectID: d9b2852147ddcd9489a483bb7c4ba56b
+  m_EffectName: Attenuation
+  m_MixLevel: a70558c107d0f8f4cbb7fc11a1862c94
   m_Parameters: []
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0

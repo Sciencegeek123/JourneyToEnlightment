@@ -51,79 +51,11 @@ public class LoadSequence : MonoBehaviour {
 
 		AsyncOperation status;
 		{
-			status = SceneManager.LoadSceneAsync("MasterScene",LoadSceneMode.Additive);
+			status = SceneManager.LoadSceneAsync("MasterScene",LoadSceneMode.Single);
 			while(!status.isDone) {
 				yield return null;
 			}
 		}
-		{
-			 status = SceneManager.LoadSceneAsync("MainGameEnvironment",LoadSceneMode.Additive);
-			while(!status.isDone) {
-				yield return null;
-			}
-		}
-		{
-			 status = SceneManager.LoadSceneAsync("WallScene1",LoadSceneMode.Additive);
-			while(!status.isDone) {
-				yield return null;
-			}
-		}
-		{
-			 status = SceneManager.LoadSceneAsync("WallScene2",LoadSceneMode.Additive);
-			while(!status.isDone) {
-				yield return null;
-			}
-		}
-		{
-			 status = SceneManager.LoadSceneAsync("WallScene3",LoadSceneMode.Additive);
-			while(!status.isDone) {
-				yield return null;
-			}
-		}
-		{
-			 status = SceneManager.LoadSceneAsync("WallScene4",LoadSceneMode.Additive);
-			while(!status.isDone) {
-				yield return null;
-			}
-		}
-		{
-			 status = SceneManager.LoadSceneAsync("WallScene5",LoadSceneMode.Additive);
-			while(!status.isDone) {
-				yield return null;
-			}
-		}
-		{
-			 status = SceneManager.LoadSceneAsync("Starting Decoration",LoadSceneMode.Additive);
-			while(!status.isDone) {
-				yield return null;
-			}
-		}
-		{
-			 status = SceneManager.LoadSceneAsync("WallColliders",LoadSceneMode.Additive);
-			while(!status.isDone) {
-				yield return null;
-			}
-		}
-		{
-			 status = SceneManager.LoadSceneAsync("AmbientSourceScene",LoadSceneMode.Additive);
-			while(!status.isDone) {
-				yield return null;
-			}
-		}
-		{
-			 status = SceneManager.LoadSceneAsync("EnemyScene",LoadSceneMode.Additive);
-			while(!status.isDone) {
-				yield return null;
-			}
-		}
-
-		while(Time.realtimeSinceStartup - startTime < CloseupTime) {
-			yield return null;
-		}
-
-		myCamera.gameObject.SetActive(false);
-		RenderSettings.ambientIntensity = 0;
-		SceneManager.UnloadSceneAsync("Intro");
 
 	}
 }

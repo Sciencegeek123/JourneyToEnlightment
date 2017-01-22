@@ -56,8 +56,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1484353278067840}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 34.16742, y: 3.09, z: 17.24939}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -164.79784, y: 3.1821098, z: -67.65002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4758184071851086}
@@ -126,12 +126,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bc9874b70a069b4c9fd94d12151fdf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OptionalParticleSystem: {fileID: 0}
+  OptionalAudioSource: {fileID: 0}
   MinDistanceToChase: 3
   MaxDistanceToChase: 7
   MinDistanceToAttack: 1
   MaxIdleTime: 3
   MaxRoamTime: 10
   AttackCooldownTime: 2.5
+  SoundCooldown: 5
+  lastSoundStart: 0
   TimeRoaming: 0
   TimeIdling: 0
   TimeSinceAttack: 0

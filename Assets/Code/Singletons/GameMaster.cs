@@ -7,6 +7,7 @@ public class GameMaster : MonoBehaviour {
 
     InputSingleton input;
     void Start() {
+        /*
         input = InputSingleton.Instance;
         SceneManager.LoadScene("MainGameEnvironment", LoadSceneMode.Additive);
         SceneManager.LoadScene("WallColliders", LoadSceneMode.Additive);
@@ -18,6 +19,7 @@ public class GameMaster : MonoBehaviour {
         SceneManager.LoadScene("Starting Decoration", LoadSceneMode.Additive);
         SceneManager.LoadScene("EnemyScene", LoadSceneMode.Additive);
         SceneManager.LoadScene("AmbientSourceScene", LoadSceneMode.Additive);
+        */
     }
 
     void Update() {

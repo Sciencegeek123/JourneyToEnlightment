@@ -5,13 +5,11 @@ using UnityEngine;
 public class FrogAudioScript : MonoBehaviour {
     AudioSource audioSource;
     public AudioClip[] FrogCroaks;
-    Player player;
     public float croakChance = 0.998f;
 
     // Use this for initialization
     void Start () {
         audioSource = GetComponent<AudioSource>();
-        player = FindObjectOfType<Player>();
     }
 	
 	// Update is called once per frame

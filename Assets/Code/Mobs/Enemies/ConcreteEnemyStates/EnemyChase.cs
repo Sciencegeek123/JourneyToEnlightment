@@ -9,9 +9,16 @@ public class EnemyChase : EnemyState
 
     // Use this for initialization
     public override void Start () {
+        base.Start();
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         Player = GameObject.FindGameObjectWithTag("Player");
+        anim.SetBool("Chase", true);
 
+    }
+    public override void Outro()
+    {
+        anim.SetBool("Chase", false);
+        base.Outro();
     }
 
     // Update is called once per frame

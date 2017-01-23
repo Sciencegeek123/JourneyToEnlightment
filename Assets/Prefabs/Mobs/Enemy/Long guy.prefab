@@ -126,12 +126,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9cf2c4c46b11984d97a7fab3dbdf9f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MinDistanceToChase: 4
-  MaxDistanceToChase: 10
-  MinDistanceToAttack: 1.5
+  DebugEnemy: 1
+  OptionalParticleSystem: {fileID: 0}
+  OptionalAudioSource: {fileID: 0}
+  MinDistanceToChase: 10
+  MaxDistanceToChase: 18
+  MinDistanceToAttack: 5
   MaxIdleTime: 3
   MaxRoamTime: 7
-  AttackCooldownTime: 2
+  AttackCooldownTime: 7
+  SoundCooldown: 5
+  lastSoundStart: 0
   TimeRoaming: 0
   TimeIdling: 0
   TimeSinceAttack: 0
@@ -150,6 +155,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Enemy: {fileID: 0}
   Player: {fileID: 0}
+  anim: {fileID: 0}
   RoamToPosition: {x: 0, y: 0, z: 0}
   MinRoamDistance: 1.5
   MaxRoamDistance: 4
@@ -166,6 +172,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Enemy: {fileID: 0}
   Player: {fileID: 0}
+  anim: {fileID: 0}
 --- !u!114 &114610489085954014
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -179,6 +186,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Enemy: {fileID: 0}
   Player: {fileID: 0}
+  anim: {fileID: 0}
 --- !u!114 &114757470158813842
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -192,6 +200,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Enemy: {fileID: 0}
   Player: {fileID: 0}
+  anim: {fileID: 0}
   MovementMultiplier: 2
 --- !u!114 &114789847012736392
 MonoBehaviour:
@@ -206,6 +215,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Enemy: {fileID: 0}
   Player: {fileID: 0}
+  anim: {fileID: 0}
+  AttackLength: 1.5
 --- !u!195 &195643533744493562
 NavMeshAgent:
   m_ObjectHideFlags: 1

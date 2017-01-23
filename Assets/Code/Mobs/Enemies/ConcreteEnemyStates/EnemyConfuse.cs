@@ -6,12 +6,18 @@ public class EnemyConfuse : EnemyState {
 
     // Use this for initialization
     public override void Start () {
-
+        base.Start();
+        anim.SetBool("Confuse", true);
 	}
+
+    public override void Outro()
+    {
+        anim.SetBool("Confuse", false);
+        base.Outro();
+    }
 
     // Update is called once per frame
     public override void Update () {
-
 	}
 
     // Basic Enemy States

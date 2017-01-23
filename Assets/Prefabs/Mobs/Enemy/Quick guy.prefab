@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 114715206723061558}
   - component: {fileID: 114774080167058540}
   - component: {fileID: 114477511739104288}
+  - component: {fileID: 95399473635887128}
   m_Layer: 0
   m_Name: Quick guy
   m_TagString: Untagged
@@ -114,20 +115,20 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1536229434472178}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4821029650932752}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!4 &4821029650932752
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1291264536260712}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -78.6021, y: 0.12325668, z: -226.03543}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -255,6 +256,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!95 &95399473635887128
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1291264536260712}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 94aa58ab39c0bb545b53d99b30c41928, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114477511739104288
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -266,10 +284,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bc9874b70a069b4c9fd94d12151fdf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DebugEnemy: 1
   OptionalParticleSystem: {fileID: 198223676473440706}
   OptionalAudioSource: {fileID: 82603019883221846}
-  MinDistanceToChase: 2
-  MaxDistanceToChase: 5
+  MinDistanceToChase: 7
+  MaxDistanceToChase: 15
   MinDistanceToAttack: 1.5
   MaxIdleTime: 0.3
   MaxRoamTime: 0.7
@@ -294,6 +313,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Enemy: {fileID: 0}
   Player: {fileID: 0}
+  anim: {fileID: 0}
 --- !u!114 &114774080167058540
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -307,6 +327,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Enemy: {fileID: 0}
   Player: {fileID: 0}
+  anim: {fileID: 0}
+  AttackLength: 1.5
 --- !u!114 &114817196616303568
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -320,6 +342,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Enemy: {fileID: 0}
   Player: {fileID: 0}
+  anim: {fileID: 0}
   RoamToPosition: {x: 0, y: 0, z: 0}
   MinRoamDistance: 3
   MaxRoamDistance: 7
@@ -336,6 +359,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Enemy: {fileID: 0}
   Player: {fileID: 0}
+  anim: {fileID: 0}
 --- !u!195 &195422295257762926
 NavMeshAgent:
   m_ObjectHideFlags: 1

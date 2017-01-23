@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CricketAudio : MonoBehaviour {
 	private AudioSource audioSrc;
-	[SerializeField] AudioClip audio;
+	//[SerializeField] AudioClip audio;
 	ParticleSystem part;
 
 	// Use this for initialization

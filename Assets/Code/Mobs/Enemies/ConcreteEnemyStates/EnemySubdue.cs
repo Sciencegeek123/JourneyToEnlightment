@@ -9,9 +9,17 @@ public class EnemySubdue : EnemyState {
 
     // Use this for initialization
     public override void Start () {
+        base.Start();
         NavMeshAgent agent = GetComponent<NavMeshAgent>();
         agent.SetDestination(transform.position);
         TimeSubdued = 0.0f;
+        anim.SetBool("Subdue", true);
+    }
+
+    public override void Outro()
+    {
+        anim.SetBool("Subdue", false);
+        base.Outro();
     }
 
     // Update is called once per frame

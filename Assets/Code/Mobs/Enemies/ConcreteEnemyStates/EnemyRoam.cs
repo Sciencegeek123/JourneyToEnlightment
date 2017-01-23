@@ -34,6 +34,12 @@ public class EnemyRoam : EnemyState
         base.Start();
         GetNewRoamPosition();
         Enemy.RotateTowardVelocity();
+        anim.SetBool("Roam", true);
+    }
+    public override void Outro()
+    {
+        anim.SetBool("Roam", false);
+        base.Outro();
     }
 
     // Update is called once per frame

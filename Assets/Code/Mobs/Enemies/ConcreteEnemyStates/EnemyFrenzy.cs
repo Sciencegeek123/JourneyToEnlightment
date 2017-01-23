@@ -13,10 +13,18 @@ public class EnemyFrenzy : EnemyState
 
     // Use this for initialization
     public override void Start () {
+        base.Start();
         agent = GetComponent<NavMeshAgent>();
         agent.speed *= MovementMultiplier;
         agent.angularSpeed *= MovementMultiplier;
         agent.SetDestination(Player.transform.position);
+        anim.SetBool("Frenzy", true);
+    }
+
+    public override void Outro()
+    {
+        anim.SetBool("Frenzy", false);
+        base.Outro();
     }
 
     // Update is called once per frame

@@ -9,8 +9,15 @@ public class EnemyIdle : EnemyState
 
     // Use this for initialization
     public override void Start () {
+        base.Start();
         NavMeshAgent agent = GetComponent<NavMeshAgent>();
         agent.SetDestination(transform.position);
+        anim.SetBool("Idle", true);
+    }
+    public override void Outro()
+    {
+        anim.SetBool("Idle", false);
+        base.Outro();
     }
 
     // Update is called once per frame

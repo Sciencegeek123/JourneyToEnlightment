@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BaseEnemy : MonoBehaviour {
-
+    [SerializeField] bool DebugEnemy;
     [SerializeField] ParticleSystem OptionalParticleSystem;
     [SerializeField] AudioSource OptionalAudioSource;
     // Bell-Enemy Interface
@@ -36,6 +36,7 @@ public class BaseEnemy : MonoBehaviour {
         {
             if (CurrentState != null)
             {
+                CurrentState.Outro();
                 CurrentState.enabled = false;
             }
             CurrentState = nextState;
@@ -58,12 +59,26 @@ public class BaseEnemy : MonoBehaviour {
 
     void Ping(BellEventType type, Transform transform, float delay)
     {
-        Debug.Log("Received Ping");
+        if (DebugEnemy)
+        {
+            Debug.Log("Received Ping");
+        } 
         if(type == BellEventType.AirBellEvent
             || type == BellEventType.FireBellEvent)
         {
-            Debug.Log("Caught Air or Fire");
             DoDeath();
+            if (DebugEnemy)
+            {
+                Debug.Log(gameObject.name + " caught Air or Fire");
+            }
+        }
+        if(type == BellEventType.WaterBellEvent)
+        {
+            Subdue();
+            if (DebugEnemy)
+            {
+                Debug.Log(gameObject.name + " caught water, subduing");
+            }
         }
     }
 
@@ -97,7 +112,6 @@ public class BaseEnemy : MonoBehaviour {
 	// Update is called once per frame
 	public virtual void Update () {
         HandleStateInfo();
-
         if(Time.realtimeSinceStartup - lastSoundStart > SoundCooldown) {
             lastSoundStart = Time.realtimeSinceStartup;
             if(OptionalAudioSource != null) {
@@ -108,6 +122,18 @@ public class BaseEnemy : MonoBehaviour {
             }
         }
 	}
+
+    void OnDrawGizmos()
+    {
+        if (DebugEnemy)
+        {
+            Gizmos.color = Color.yellow;
+            Gizmos.DrawWireSphere(transform.position, MinDistanceToChase);
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(transform.position, MaxDistanceToChase);
+        }
+    }
+
 
     void HandleStateInfo()
     {

@@ -7,20 +7,32 @@ public class EnemyAttack : EnemyState{
     float TimeInAttack = 0.0f;
 	// Use this for initialization
 	public override void Start () {
+        base.Start();
+        Player = Enemy.Player;
         // Do Damage
         // go To idle\
+        Enemy.agent.SetDestination(Player.transform.position);
         Debug.Log("Enemy Attack!");
         if (Enemy != null)
         {
             TimeInAttack = 0.0f;
         }
+        anim.SetBool("Attack", true);
     }
-
+    public override void Outro()
+    {
+        anim.SetBool("Attack", false);
+        base.Outro();
+    }
     // Update is called once per frame
     public override void Update () {
         TimeInAttack += Time.deltaTime;
 		if(TimeInAttack > AttackLength)
         {
+            if( (Player.transform.position-transform.position).magnitude < Enemy.MinDistanceToAttack )
+            {
+                //Player.TakeHit();
+            }
             ToIdle(Enemy);
         }
 	}

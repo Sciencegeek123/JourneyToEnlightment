@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 114699605177035742}
   - component: {fileID: 114107060123149768}
   - component: {fileID: 114733952363158154}
+  - component: {fileID: 95026630287288048}
   m_Layer: 0
   m_Name: KoiFish
   m_TagString: Untagged
@@ -115,6 +116,23 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1285889035179376}
   m_Mesh: {fileID: 4300000, guid: f4caca1251877b14594a7a09126f8988, type: 3}
+--- !u!95 &95026630287288048
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1751988882692760}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 94aa58ab39c0bb545b53d99b30c41928, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114031353276979426
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -128,6 +146,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Enemy: {fileID: 0}
   Player: {fileID: 0}
+  anim: {fileID: 0}
 --- !u!114 &114107060123149768
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -141,6 +160,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Enemy: {fileID: 0}
   Player: {fileID: 0}
+  anim: {fileID: 0}
+  AttackLength: 1.5
 --- !u!114 &114699605177035742
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -154,6 +175,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Enemy: {fileID: 0}
   Player: {fileID: 0}
+  anim: {fileID: 0}
 --- !u!114 &114707027839605032
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -167,6 +189,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Enemy: {fileID: 0}
   Player: {fileID: 0}
+  anim: {fileID: 0}
   SubdueDuration: 6
 --- !u!114 &114733952363158154
 MonoBehaviour:
@@ -179,12 +202,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bc9874b70a069b4c9fd94d12151fdf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MinDistanceToChase: 2.5
-  MaxDistanceToChase: 5
+  DebugEnemy: 1
+  OptionalParticleSystem: {fileID: 0}
+  OptionalAudioSource: {fileID: 0}
+  MinDistanceToChase: 10
+  MaxDistanceToChase: 15
   MinDistanceToAttack: 0.3
   MaxIdleTime: 1
   MaxRoamTime: 10
   AttackCooldownTime: 1
+  SoundCooldown: 5
+  lastSoundStart: 0
   TimeRoaming: 0
   TimeIdling: 0
   TimeSinceAttack: 0
@@ -203,10 +231,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Enemy: {fileID: 0}
   Player: {fileID: 0}
+  anim: {fileID: 0}
   RoamToPosition: {x: 0, y: 0, z: 0}
   MinRoamDistance: 3
   MaxRoamDistance: 7
-  NavMeshRecalcAttempts: 3
 --- !u!195 &195783850460987662
 NavMeshAgent:
   m_ObjectHideFlags: 1

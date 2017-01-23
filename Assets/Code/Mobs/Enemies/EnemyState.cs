@@ -12,32 +12,33 @@ public class EnemyState : MonoBehaviour {
     public GameObject Player;
 
     [SerializeField]
-    Animator anim;
-	// Use this for initialization
-	public virtual void Start () {
-        if(anim==null) {
-        anim = GetComponent<Animator>();
+    protected Animator anim;
+    void Awake()
+    {
+        if (anim == null)
+        {
+            anim = GetComponent<Animator>();
         }
+    }
+    // 
+    //Use this for initialization
+	public virtual void Start () {
+
 	}
-	
-	// Update is called once per frame
-	public virtual void Update () {
+    // override in children to give outro functionality
+    public virtual void Outro()
+    {
+
+    }
+    // Update is called once per frame
+    public virtual void Update () {
 	}
+
 
     // Basic Enemy States
     // Transition exclusion rules in these
     public virtual void ToIdle(BaseEnemy myEnemy)
     {
-        if (anim)
-        {
-            anim.SetBool("Roam", false);
-            anim.SetBool("Chase", false);
-            anim.SetBool("Attack", false);
-            anim.SetBool("Subdue", false);
-            anim.SetBool("Confuse", false);
-            anim.SetBool("Frenzy", false);
-            anim.SetBool("Idle", true);
-        }
         EnemyState tempState = null;
         tempState = GetComponent<EnemyIdle>();
         if (tempState != null)
@@ -49,13 +50,6 @@ public class EnemyState : MonoBehaviour {
 
     public virtual void ToRoam(BaseEnemy myEnemy)
     {
-        if (anim)
-        {
-            anim.SetBool("Idle", false);
-            anim.SetBool("Chase", false);
-            anim.SetBool("Attack", false);
-            anim.SetBool("Roam", true);
-        }
         EnemyState tempState = null;
         tempState = GetComponent<EnemyRoam>();
         if (tempState != null)
@@ -66,13 +60,6 @@ public class EnemyState : MonoBehaviour {
 
     public virtual void ToChase(BaseEnemy myEnemy)
     {
-        if (anim)
-        {
-            anim.SetBool("Idle", false);
-            anim.SetBool("Roam", false);
-            anim.SetBool("Attack", false);
-            anim.SetBool("Chase", true);
-        }
         EnemyState tempState = null;
         tempState = GetComponent<EnemyChase>();
 
@@ -84,12 +71,7 @@ public class EnemyState : MonoBehaviour {
 
     public virtual void ToAttack(BaseEnemy myEnemy)
     {
-        if (anim)
-        {
-            anim.SetBool("Idle", false);
-            anim.SetBool("Chase", false);
-            anim.SetBool("Attack", true);
-        }
+
         EnemyState tempState = null;
         tempState = GetComponent<EnemyAttack>();
 
@@ -103,11 +85,6 @@ public class EnemyState : MonoBehaviour {
     // Super attack
     public virtual void ToFrenzy(BaseEnemy myEnemy)
     {
-        if (anim)
-        {
-            anim.SetBool("Idle", false);
-            anim.SetBool("Frenzy", true);
-        }
         EnemyState tempState = null;
         tempState = GetComponent<EnemyFrenzy>();
 
@@ -120,11 +97,6 @@ public class EnemyState : MonoBehaviour {
     // stop attack; wander around
     public virtual void ToConfuse(BaseEnemy myEnemy)
     {
-        if (anim)
-        {
-            anim.SetBool("Idle", false);
-            anim.SetBool("Confuse", true);
-        }
         EnemyState tempState = null;
         tempState = GetComponent<EnemyConfuse>();
 
@@ -137,11 +109,6 @@ public class EnemyState : MonoBehaviour {
     // go nice NPC
     public virtual void ToSubdue(BaseEnemy myEnemy)
     {
-        if (anim)
-        {
-            anim.SetBool("Idle", false);
-            anim.SetBool("Subdue", true);
-        }
         EnemyState tempState = null;
         tempState = GetComponent<EnemySubdue>();
 

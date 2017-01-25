@@ -336,12 +336,14 @@ GameObject:
   m_Component:
   - component: {fileID: 4604649493051480}
   - component: {fileID: 195417245183986190}
-  - component: {fileID: 114574512750479594}
   - component: {fileID: 114622620033212468}
   - component: {fileID: 114203194488234368}
   - component: {fileID: 95145687265626568}
   - component: {fileID: 114538302395461282}
   - component: {fileID: 114077782031024448}
+  - component: {fileID: 114696336618671526}
+  - component: {fileID: 114133101425834920}
+  - component: {fileID: 114268821441355968}
   m_Layer: 0
   m_Name: Panda_Model
   m_TagString: Untagged
@@ -746,6 +748,21 @@ MonoBehaviour:
   Player: {fileID: 0}
   anim: {fileID: 0}
   AttackLength: 1.5
+--- !u!114 &114133101425834920
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1889227654220610}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 508c9a23751e46f468746ea3a13bc03c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Enemy: {fileID: 0}
+  Player: {fileID: 0}
+  anim: {fileID: 0}
+  MovementMultiplier: 2
 --- !u!114 &114203194488234368
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -760,6 +777,21 @@ MonoBehaviour:
   Enemy: {fileID: 0}
   Player: {fileID: 0}
   anim: {fileID: 95145687265626568}
+--- !u!114 &114268821441355968
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1889227654220610}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69b56c9f01bace1428a97f8a26a65135, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Enemy: {fileID: 0}
+  Player: {fileID: 0}
+  anim: {fileID: 0}
+  SubdueDuration: 5
 --- !u!114 &114538302395461282
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -774,7 +806,24 @@ MonoBehaviour:
   Enemy: {fileID: 0}
   Player: {fileID: 0}
   anim: {fileID: 0}
---- !u!114 &114574512750479594
+--- !u!114 &114622620033212468
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1889227654220610}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ffc4cb5abdfc0546aa3783048ef857c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Enemy: {fileID: 0}
+  Player: {fileID: 0}
+  anim: {fileID: 95145687265626568}
+  RoamToPosition: {x: 0, y: 0, z: 0}
+  MinRoamDistance: 4
+  MaxRoamDistance: 8
+--- !u!114 &114696336618671526
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -782,7 +831,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1889227654220610}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3bc9874b70a069b4c9fd94d12151fdf3, type: 3}
+  m_Script: {fileID: 11500000, guid: 2383880d20f1c8d4aae92cc8274fd0fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   DebugEnemy: 1
@@ -801,23 +850,6 @@ MonoBehaviour:
   TimeSinceAttack: 0
   CurrentState: {fileID: 0}
   Player: {fileID: 0}
---- !u!114 &114622620033212468
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1889227654220610}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ffc4cb5abdfc0546aa3783048ef857c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Enemy: {fileID: 0}
-  Player: {fileID: 0}
-  anim: {fileID: 95145687265626568}
-  RoamToPosition: {x: 0, y: 0, z: 0}
-  MinRoamDistance: 4
-  MaxRoamDistance: 8
 --- !u!137 &137782958227126046
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

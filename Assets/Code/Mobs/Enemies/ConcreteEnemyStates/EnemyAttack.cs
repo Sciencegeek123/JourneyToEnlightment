@@ -62,7 +62,7 @@ public class EnemyAttack : EnemyState{
     // Super attack
     public override void ToFrenzy(BaseEnemy myEnemy)
     {
-        //define frenzy behaviour
+        base.ToFrenzy(myEnemy);
     }
 
     // stop attack; wander around
@@ -74,6 +74,6 @@ public class EnemyAttack : EnemyState{
     // go nice NPC
     public override void ToSubdue(BaseEnemy myEnemy)
     {
-        ToIdle(myEnemy);
+        base.ToSubdue(myEnemy);
     }
 }

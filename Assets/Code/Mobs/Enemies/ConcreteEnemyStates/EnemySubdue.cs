@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class EnemySubdue : EnemyState {
     float TimeSubdued = 0.0f;
-    public float SubdueDuration = 3.0f;
+    public float SubdueDuration = 5.0f;
 
     // Use this for initialization
     public override void Start () {

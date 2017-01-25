@@ -14,6 +14,7 @@ public class EnemyFrenzy : EnemyState
     // Use this for initialization
     public override void Start () {
         base.Start();
+        Player = Enemy.Player;
         agent = GetComponent<NavMeshAgent>();
         agent.speed *= MovementMultiplier;
         agent.angularSpeed *= MovementMultiplier;
@@ -24,6 +25,8 @@ public class EnemyFrenzy : EnemyState
     public override void Outro()
     {
         anim.SetBool("Frenzy", false);
+        agent.speed /= MovementMultiplier;
+        agent.angularSpeed /= MovementMultiplier;
         base.Outro();
     }
 
@@ -32,10 +35,13 @@ public class EnemyFrenzy : EnemyState
         TimeInFrenzy += Time.deltaTime;
         if (TimeInFrenzy >= MaxFrenzyTime)
         {
-            agent.speed /= MovementMultiplier;
-            agent.angularSpeed /= MovementMultiplier;
-            ToChase(Enemy);
+            ToIdle(Enemy);
         }
+        else
+        {
+            agent.SetDestination(Player.transform.position);
+        }
+
     }
 
 
@@ -47,13 +53,10 @@ public class EnemyFrenzy : EnemyState
 
     public override void ToRoam(BaseEnemy myEnemy)
     {
-        // Conditions to prevent idle to roam
-        base.ToRoam(myEnemy);
     }
 
     public override void ToChase(BaseEnemy myEnemy)
     {
-        base.ToChase(myEnemy);
     }
 
     public override void ToAttack(BaseEnemy myEnemy)

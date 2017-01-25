@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BaseEnemy : MonoBehaviour {
-    [SerializeField] bool DebugEnemy;
+    [SerializeField] protected bool DebugEnemy;
     [SerializeField] ParticleSystem OptionalParticleSystem;
     [SerializeField] AudioSource OptionalAudioSource;
     // Bell-Enemy Interface
@@ -57,7 +57,7 @@ public class BaseEnemy : MonoBehaviour {
     public GameObject Player;
     public UnityEngine.AI.NavMeshAgent agent { get; set; }
 
-    void Ping(BellEventType type, Transform transform, float delay)
+    public virtual void Ping(BellEventType type, Transform transform, float delay)
     {
         if (DebugEnemy)
         {
@@ -82,7 +82,7 @@ public class BaseEnemy : MonoBehaviour {
         }
     }
 
-    void DoDeath()
+    protected void DoDeath()
     {
         Debug.Log("Dead");
         enabled = false;
@@ -127,6 +127,8 @@ public class BaseEnemy : MonoBehaviour {
     {
         if (DebugEnemy)
         {
+            Gizmos.color = Color.green;
+            Gizmos.DrawWireSphere(transform.position, MinDistanceToAttack);
             Gizmos.color = Color.yellow;
             Gizmos.DrawWireSphere(transform.position, MinDistanceToChase);
             Gizmos.color = Color.red;
@@ -144,6 +146,9 @@ public class BaseEnemy : MonoBehaviour {
         EnemyRoam tempRoam = CurrentState as EnemyRoam;
         EnemyAttack tempAttack = CurrentState as EnemyAttack;
         EnemyChase tempChase = CurrentState as EnemyChase;
+        EnemyFrenzy tempFrenzy = CurrentState as EnemyFrenzy;
+        EnemyConfuse tempConfuse = CurrentState as EnemyConfuse;
+        EnemySubdue tempSubdue = CurrentState as EnemySubdue;
 
         if (tempIdle != null)
         {
@@ -170,37 +175,41 @@ public class BaseEnemy : MonoBehaviour {
             TimeSinceAttack = 0.0f;
         }
 
-        Vector3 displacement = PlayerPosition - MyPosition;
+        // Prevent base enemy state transitions from overriding the more important ones.
+        if (!tempConfuse && !tempFrenzy && !tempSubdue)
+        {
+            Vector3 displacement = PlayerPosition - MyPosition;
 
-        if (displacement.magnitude <= MinDistanceToAttack
-                && TimeSinceAttack > AttackCooldownTime)
-        {
-            // Debug.Log("Attempting to Attack");
-            Attack();
-        }
-        // if (plr-enemy).dist < engage distance
-        // Chase();
-        else if (displacement.magnitude <= MinDistanceToChase
-            && displacement.magnitude > MinDistanceToAttack)
-        {
-            Chase();
-        }
+            if (displacement.magnitude <= MinDistanceToAttack
+                    && TimeSinceAttack > AttackCooldownTime)
+            {
+                // Debug.Log("Attempting to Attack");
+                Attack();
+            }
+            // if (plr-enemy).dist < engage distance
+            // Chase();
+            else if (displacement.magnitude <= MinDistanceToChase
+                && displacement.magnitude > MinDistanceToAttack)
+            {
+                Chase();
+            }
 
-        // else if (idleTime> maxIdleTime)
-        // Roam();
-        else if (TimeIdling > MaxIdleTime
-               || (displacement.magnitude >= MaxDistanceToChase
-                   && tempChase != null))
-        {
-            //Debug.Log("Attempting To Roam");
-            Roam();
-        }
-        // else if (roamingTime > maxroamTime)
-        // Idle();
-        else if (TimeRoaming > MaxRoamTime)
-        {
-            // Debug.Log("Attempting To Idle");
-            Idle();
+            // else if (idleTime> maxIdleTime)
+            // Roam();
+            else if (TimeIdling > MaxIdleTime
+                   || (displacement.magnitude >= MaxDistanceToChase
+                       && tempChase != null))
+            {
+                //Debug.Log("Attempting To Roam");
+                Roam();
+            }
+            // else if (roamingTime > maxroamTime)
+            // Idle();
+            else if (TimeRoaming > MaxRoamTime)
+            {
+                // Debug.Log("Attempting To Idle");
+                Idle();
+            }
         }
     }
 
